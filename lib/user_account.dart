@@ -1,13 +1,15 @@
+import 'package:flutter/cupertino.dart';
+import 'package:user_account/user_account_style.dart';
 
-import 'dart:async';
-
-import 'package:flutter/services.dart';
+import 'user_account_service.dart';
 
 class UserAccount {
-  static const MethodChannel _channel = MethodChannel('user_account');
+  final UserAccountService _service;
 
-  static Future<String?> get platformVersion async {
-    final String? version = await _channel.invokeMethod('getPlatformVersion');
-    return version;
+  UserAccount({UserAccountStyle? style}) :
+        _service = UserAccountService(style: style ?? UserAccountStyle());
+
+  open(BuildContext context) {
+    _service.presenter.showModal(context);
   }
 }

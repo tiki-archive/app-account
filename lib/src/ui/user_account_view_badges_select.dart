@@ -46,10 +46,10 @@ class UserAccountViewBadgesSelect extends StatelessWidget {
             child: Stack(
               alignment: AlignmentDirectional.topStart,
               children: [
-                Image(
-                  image: AssetImage(isSelected
+                Image.asset(isSelected
                       ? 'res/images/' + image + '-active.png'
-                      : 'res/images/' + image + '-inactive.png'),
+                      : 'res/images/' + image + '-inactive.png',
+                  package: 'user_account',
                   width: style.size(15*3.75),
                   fit: BoxFit.fitWidth,
                 ),

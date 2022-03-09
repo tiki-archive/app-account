@@ -20,19 +20,19 @@ class UserAccountViewProfileAvatar extends StatelessWidget {
     return Stack(
       alignment: AlignmentDirectional.bottomCenter,
       children: [
-        Image(
-          image: AssetImage('res/images/' + avatar + '.png'),
+        Image.asset('res/images/' + avatar + '.png',
           height: style.size(10*8.12),
           fit: BoxFit.fitHeight,
+          package: 'user_account'
         ),
         Stack(alignment: AlignmentDirectional.center, children: [
-          Image(
-            image: const AssetImage('res/images/badge-account.png'),
-            width: style.size(_labelWidth),
+          Image.asset('res/images/badge-account.png',
+            width: style.size(_labelWidth*3.75),
             fit: BoxFit.fitWidth,
+            package: 'user_account'
           ),
           SizedBox(
-              width: style.size(_labelWidth),
+              width: style.size(_labelWidth*3.75),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -45,10 +45,10 @@ class UserAccountViewProfileAvatar extends StatelessWidget {
                   ),
                   Padding(
                       padding: EdgeInsets.only(left: style.size(1*3.75)),
-                      child: Image(
-                        image: const AssetImage('res/images/icon-star.png'),
+                      child: Image.asset('res/images/icon-star.png',
                         height: style.text(8),
                         fit: BoxFit.fitHeight,
+                        package: 'user_account'
                       )),
                 ],
               ))

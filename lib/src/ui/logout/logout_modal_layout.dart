@@ -40,7 +40,7 @@ class LogoutModalLayout extends StatelessWidget {
                       color: const Color(0xFFFF521C),
                       fontSize: service.style.text(14),
                       fontWeight: FontWeight.bold)),
-              onPressed: () => service.controller.onLogout(context),
+              onPressed: () => service.controller.logout(context),
             ),
             Padding(padding: EdgeInsets.only(top: service.style.size(8))),
             ElevatedButton(

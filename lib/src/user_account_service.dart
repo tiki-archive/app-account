@@ -15,7 +15,6 @@ class UserAccountService extends ChangeNotifier {
   late final UserAccountController controller;
 
   final dynamic login;
-  final dynamic referralService;
   final dynamic tikiKeysService;
   final dynamic apiAppDataService;
   final dynamic apiSignupService;
@@ -24,7 +23,6 @@ class UserAccountService extends ChangeNotifier {
     required this.style,
     required this.login,
     required referalCode,
-    required this.referralService,
     required this.tikiKeysService,
     required this.apiAppDataService,
     required this.apiSignupService
@@ -35,26 +33,21 @@ class UserAccountService extends ChangeNotifier {
     model.code = referalCode;
   }
 
-  Future<void> updateSignups() async {
-    int? total = await referralService.apiSignupService.getTotal();
-    if (total != null) {
-      model.signupCount = total;
-      notifyListeners();
-    }
-  }
 
   Future<void> showQrCode() async {
-    var keys = await tikiKeysService.get(login.user!.address!);
-    if (keys != null) {
-      String combinedKey = keys.address +
-          '.' +
-          keys.data.encode() +
-          '.' +
-          keys.sign.privateKey.encode();
-      model.showQrCode = true;
-      model.qrCode = combinedKey;
-      notifyListeners();
+    if(login != null) {
+      var keys = await tikiKeysService.get(login.user!.address!);
+      if (keys != null) {
+        String combinedKey = keys.address +
+            '.' +
+            keys.data.encode() +
+            '.' +
+            keys.sign.privateKey.encode();
+        model.qrCode = combinedKey;
+      }
     }
+    model.showQrCode = true;
+    notifyListeners();
   }
 
   void hideQrCode() {

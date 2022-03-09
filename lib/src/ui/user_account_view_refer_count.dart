@@ -17,7 +17,6 @@ class UserAccountViewReferCount extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var service = Provider.of<UserAccountService>(context);
-    service.controller.updateUserCount();
     return Column(children: [
       Text(
           service.model.signupCount?.toString().replaceAllMapped(

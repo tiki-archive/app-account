@@ -11,7 +11,6 @@ class UserAccount {
     required referalCode,
     required login,
     required tikiKeysService,
-    required referralService,
     required apiSignupService,
     required apiAppDataService}) :
         _service = UserAccountService(
@@ -19,7 +18,6 @@ class UserAccount {
             referalCode: referalCode,
             login: login,
             tikiKeysService: tikiKeysService,
-            referralService: referralService,
             apiSignupService: apiSignupService,
             apiAppDataService: apiAppDataService);
 

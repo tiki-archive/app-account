@@ -34,3 +34,5 @@ flutter:
         pluginClass: UserAccountPlugin
       ios:
         pluginClass: UserAccountPlugin
+  assets:
+    - res/images/

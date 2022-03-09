@@ -29,10 +29,6 @@ class UserAccountController {
     }
   }
 
-  void updateUserCount() {
-    service.updateSignups();
-  }
-
   void goToSupport(BuildContext context) {
     Navigator.of(context).pop();
     ZendeskFlutterStyle style = ZendeskFlutterStyle(

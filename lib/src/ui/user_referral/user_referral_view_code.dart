@@ -39,7 +39,7 @@ class UserReferralViewCode extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                         color: const Color(0xFF00133F))))
           ]),
-          Image.asset("res/images/icon-copy.png", height: service.style.text(_fontSize)),
+          Image.asset("res/images/icon-copy.png", height: service.style.text(_fontSize), package: 'user_account'),
         ]));
   }
 }

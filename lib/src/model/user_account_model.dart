@@ -10,7 +10,7 @@ class UserAccountModel {
 
   bool showQrCode = false;
 
-  String? qrCode;
+  String? qrCode = "sample QR code";
 
   String code = "";
 

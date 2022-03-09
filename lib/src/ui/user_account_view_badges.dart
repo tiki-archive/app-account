@@ -3,8 +3,8 @@
  * MIT license. See LICENSE file in root directory.
  */
 import 'package:flutter/material.dart';
-import 'package:user_account/user_account_style.dart';
 
+import '../user_account_style.dart';
 import 'user_account_view_badges_select.dart';
 
 class UserAccountViewBadges extends StatelessWidget {

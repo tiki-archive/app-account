@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:sizer/sizer.dart';
 
-import '../../../utils/helper_image.dart';
-import '../../../widgets/tiki_card/tiki_card.dart';
-import '../../../widgets/tiki_card/tiki_card_controller.dart';
-import '../../../widgets/tiki_card/tiki_card_view_cta_grid.dart';
-import '../../../widgets/tiki_card/tiki_card_view_figure.dart';
-import '../../../widgets/tiki_card/tiki_card_view_text.dart';
-import '../../../widgets/tiki_card/tiki_card_view_title.dart';
+import '../user_account_style.dart';
+import 'widgets/tiki_card/tiki_card.dart';
+import 'widgets/tiki_card/tiki_card_controller.dart';
+import 'widgets/tiki_card/tiki_card_view_cta_grid.dart';
+import 'widgets/tiki_card/tiki_card_view_figure.dart';
+import 'widgets/tiki_card/tiki_card_view_text.dart';
+import 'widgets/tiki_card/tiki_card_view_title.dart';
 
 class UserAccountViewFollowUs extends StatelessWidget {
   static const num _btnPaddingHorizontal = 2;
@@ -21,6 +20,9 @@ class UserAccountViewFollowUs extends StatelessWidget {
   static const String _instagramUrl = "https://www.instagram.com/my.tiki/";
   static const String _tiktokUrl = "https://www.tiktok.com/@my.tiki";
   final UserAccountStyle style;
+
+  const UserAccountViewFollowUs({Key? key, this.style}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return TikiCard(

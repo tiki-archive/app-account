@@ -5,28 +5,27 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:sizer/sizer.dart';
 
-import '../../../config/config_color.dart';
-import '../../../utils/helper_image.dart';
-import '../user_referral_service.dart';
+import '../../user_account_service.dart';
 
 class UserReferralViewCount extends StatelessWidget {
-  static const num _fontSize = 13;
+  static const double _fontSize = 13;
   static const String _text = " people joined";
+
+  const UserReferralViewCount({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    var service = Provider.of<UserReferralService>(context);
+    UserAccountService service = Provider.of<UserAccountService>(context);
     return Row(mainAxisSize: MainAxisSize.min, children: [
       Container(
-          margin: EdgeInsets.only(right: 2.w),
-          child: HelperImage("ref-user", height: _fontSize.sp)),
+          margin: EdgeInsets.only(right: service.style.size(8)),
+          child: Image.asset("res/images/ref-user.png", height: service.style.text(_fontSize))),
       Text(service.model.referCount.toString() + _text,
           style: TextStyle(
-              fontSize: _fontSize.sp,
+              fontSize: service.style.text(_fontSize),
               fontWeight: FontWeight.w600,
-              color: ConfigColor.green))
+              color: const Color(0xFF00B272)))
     ]);
   }
 }

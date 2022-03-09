@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:sizer/sizer.dart';
 
-import '../../../config/config_color.dart';
-import '../../../utils/helper_image.dart';
-import '../user_account_modal_service.dart';
+import '../user_account_service.dart';
+import '../user_account_style.dart';
 
 class UserAccountViewQrCodeBtn extends StatelessWidget {
   static const String _title = "Show QR Code";
   final UserAccountStyle style;
+
+  const UserAccountViewQrCodeBtn({Key? key, required this.style}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     UserAccountService service =
@@ -18,7 +19,7 @@ class UserAccountViewQrCodeBtn extends StatelessWidget {
         child: Container(
             padding: EdgeInsets.symmetric(vertical: style.size(1.5*8.12), horizontal: style.size(1.5*8.12)),
             decoration: BoxDecoration(
-              color: Color(0xFFF0F0F0),
+              color: const Color(0xFFF0F0F0),
               borderRadius: BorderRadius.circular(12),
             ),
             child: Row(

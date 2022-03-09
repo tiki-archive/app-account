@@ -5,57 +5,55 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:sizer/sizer.dart';
-
-import '../../../config/config_color.dart';
-import '../logout_modal_service.dart';
+import '../../user_account_service.dart';
 import 'logout_modal_view_header.dart';
 
 class LogoutModalLayout extends StatelessWidget {
-  static const num _paddingVert = 2;
+
+  const LogoutModalLayout({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    LogoutModalService service = Provider.of<LogoutModalService>(context);
-    return Container(
-        height: 35.h,
+    UserAccountService service = Provider.of<UserAccountService>(context);
+    return SizedBox(
+        height: service.style.size(285),
         child: Column(mainAxisSize: MainAxisSize.min, children: [
-          LogoutModalViewHeader(),
-          Padding(padding: EdgeInsets.only(top: 1.5 * _paddingVert.h)),
+          LogoutModalViewHeader(style: service.style),
+          Padding(padding: EdgeInsets.only(top: service.style.size(24))),
           Expanded(
               child: Column(children: [
             Text("Are you sure you want to log out?",
                 style: TextStyle(
-                    color: ConfigColor.tikiBlue,
-                    fontSize: 14.sp,
+                    color: const Color(0xFF00133F),
+                    fontSize: service.style.text(14),
                     fontWeight: FontWeight.w800)),
-            Padding(padding: EdgeInsets.only(top: _paddingVert.h)),
+            Padding(padding: EdgeInsets.only(top: service.style.size(12))),
             TextButton(
               style: TextButton.styleFrom(
-                  fixedSize: Size.fromWidth(80.w),
-                  padding: EdgeInsets.symmetric(vertical: 2.h),
+                  fixedSize: Size.fromWidth(service.style.size(300)),
+                  padding: EdgeInsets.symmetric(vertical: service.style.size(16)),
                   shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(3.w))),
-                  side: BorderSide(width: 2, color: ConfigColor.orange)),
+                      borderRadius: BorderRadius.all(Radius.circular(service.style.size(10)))),
+                  side: const BorderSide(width: 2, color: Color(0xFFFF521C))),
               child: Text("Log out",
                   style: TextStyle(
-                      color: ConfigColor.orange,
-                      fontSize: 14.sp,
+                      color: const Color(0xFFFF521C),
+                      fontSize: service.style.text(14),
                       fontWeight: FontWeight.bold)),
               onPressed: () => service.controller.onLogout(context),
             ),
-            Padding(padding: EdgeInsets.only(top: 0.5 * _paddingVert.h)),
+            Padding(padding: EdgeInsets.only(top: service.style.size(8))),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                fixedSize: Size.fromWidth(80.w),
-                primary: ConfigColor.orange,
-                padding: EdgeInsets.symmetric(vertical: 2.h),
+                fixedSize: Size.fromWidth(service.style.size(300)),
+                primary: const Color(0xFFFF521C),
+                padding: EdgeInsets.symmetric(vertical: service.style.size(16)),
                 shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(3.w))),
+                    borderRadius: BorderRadius.all(Radius.circular(service.style.size(10)))),
               ),
               child: Text("Cancel",
                   style:
-                      TextStyle(fontSize: 14.sp, fontWeight: FontWeight.bold)),
+                      TextStyle(fontSize: service.style.text(14), fontWeight: FontWeight.bold)),
               onPressed: () => Navigator.of(context).pop(),
             )
           ]))

@@ -5,49 +5,46 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:sizer/sizer.dart';
-
-import '../../../config/config_color.dart';
-import '../../user_referral/user_referral_service.dart';
-import '../user_account_modal_controller.dart';
-import '../user_account_modal_service.dart';
+import '../user_account_controller.dart';
+import '../user_account_service.dart';
+import '../user_account_style.dart';
 
 class UserAccountViewReferShare extends StatelessWidget {
-  final UserAccountStyle style;
+
   static const String _text = "SHARE";
+
+  const UserAccountViewReferShare({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    UserAccountService UserAccountService =
-        Provider.of<UserAccountService>(context);
-    UserAccountController controller = UserAccountService.controller;
-    UserReferralService userReferralService =
-        UserAccountService.referralService;
+    UserAccountService service = Provider.of<UserAccountService>(context);
+    UserAccountStyle style = service.style;
+    UserAccountController controller = service.controller;
     return ElevatedButton(
         style: ElevatedButton.styleFrom(
-            padding: EdgeInsets.symmetric(vertical: style.size(1.25*8.12)),
+            padding: EdgeInsets.symmetric(vertical: style.size(10)),
             shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.all(Radius.circular(10.h))),
-            primary: ConfigColor.tikiPurple),
+                borderRadius: BorderRadius.all(Radius.circular(service.style.size(80)))),
+            primary: const Color(0xFF27002E)),
         child: Row(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
-                padding: EdgeInsets.only(right: style.size(5*3.75)),
+                padding: EdgeInsets.only(right: style.size(18)),
                 child: Text(_text,
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontWeight: FontWeight.w800,
                       fontSize: style.text(18),
-                      letterSpacing: style.size(0.05*3.75),
+                      letterSpacing: style.size(2),
                     ))),
             Icon(
               Icons.share,
-              size: 18.sp * 1.2,
+              size: service.style.text(22),
             ),
           ],
         ),
-        onPressed: () => controller.onShare(userReferralService));
+        onPressed: () => controller.onShare());
   }
 }

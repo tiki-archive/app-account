@@ -1,14 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:sizer/sizer.dart';
-
-import '../../../config/config_color.dart';
-import '../../../utils/helper_image.dart';
-import '../../../widgets/tiki_card/tiki_card.dart';
-import '../../../widgets/tiki_card/tiki_card_controller.dart';
-import '../../../widgets/tiki_card/tiki_card_view_cta_row.dart';
-import '../../../widgets/tiki_card/tiki_card_view_figure.dart';
-import '../../../widgets/tiki_card/tiki_card_view_text.dart';
-import '../../../widgets/tiki_card/tiki_card_view_title.dart';
 
 class UserAccountViewCommunity extends StatelessWidget {
   static const num _btnHeight = 5;

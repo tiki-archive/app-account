@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:qr_flutter/qr_flutter.dart';
-import 'package:sizer/sizer.dart';
 
-import '../user_account_modal_service.dart';
+import '../user_account_service.dart';
+import '../user_account_style.dart';
 
 class UserAccountViewQrCodeShow extends StatelessWidget {
 
   final UserAccountStyle style;
+
+  const UserAccountViewQrCodeShow({Key? key, required this.style}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

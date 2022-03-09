@@ -4,12 +4,15 @@
  */
 
 import 'package:flutter/material.dart';
-import 'package:sizer/sizer.dart';
 
-import '../../../utils/helper_image.dart';
+import '../../user_account_style.dart';
 
 class LogoutModalViewHeader extends StatelessWidget {
-  static const num _paddingVert = 2.5;
+  static const double _paddingVert = 20;
+
+  final UserAccountStyle style;
+
+  const LogoutModalViewHeader({Key? key, required this.style}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,10 +20,10 @@ class LogoutModalViewHeader extends StatelessWidget {
       Container(
           alignment: Alignment.center,
           padding: EdgeInsets.only(
-            top: _paddingVert.h,
-            bottom: _paddingVert.h,
+            top: style.size(_paddingVert),
+            bottom: style.size(_paddingVert),
           ),
-          child: HelperImage('modal-top'))
+          child: Image.asset('res/images/modal-top.png', package: 'user_account'))
     ]);
   }
 }

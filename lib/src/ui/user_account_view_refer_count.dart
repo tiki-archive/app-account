@@ -5,14 +5,14 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:sizer/sizer.dart';
-
-import '../../../config/config_color.dart';
-import '../user_account_modal_service.dart';
+import '../user_account_service.dart';
+import '../user_account_style.dart';
 
 class UserAccountViewReferCount extends StatelessWidget {
   final UserAccountStyle style;
   static const String _text = "people joined the TIKI tribe";
+
+  const UserAccountViewReferCount({Key? key, required this.style}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,10 +21,10 @@ class UserAccountViewReferCount extends StatelessWidget {
     return Column(children: [
       Text(
           service.model.signupCount?.toString().replaceAllMapped(
-                  new RegExp(r'(\d{1,3})(?=(\d{3})+$)'), (m) => "${m[1]},") ??
+                  RegExp(r'(\d{1,3})(?=(\d{3})+$)'), (m) => "${m[1]},") ??
               "...",
           style: TextStyle(
-              color: ConfigColor.tikiPink,
+              color: const Color(0xFFB5006C),
               fontFamily: 'Koara',
               fontWeight: FontWeight.bold,
               height: 0,
@@ -34,7 +34,7 @@ class UserAccountViewReferCount extends StatelessWidget {
               fontSize: style.text(14),
               height: 2.25,
               fontWeight: FontWeight.w800,
-              color: Color(0xFF00133F)))
+              color: const Color(0xFF00133F)))
     ]);
   }
 }

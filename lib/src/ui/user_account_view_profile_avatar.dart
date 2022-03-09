@@ -3,18 +3,17 @@
  * MIT license. See LICENSE file in root directory.
  */
 import 'package:flutter/material.dart';
-import 'package:sizer/sizer.dart';
-
-import '../../../config/config_color.dart';
+import '../user_account_style.dart';
 
 class UserAccountViewProfileAvatar extends StatelessWidget {
-  static const num _labelWidth = 26.5;
+  static const double _labelWidth = 26.5;
 
   final String label;
   final String avatar;
   final UserAccountStyle style;
-  UserAccountViewProfileAvatar(
-      {required this.label, required this.avatar});
+  
+  const UserAccountViewProfileAvatar(
+      {Key? key, required this.label, required this.avatar, required this.style}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -28,12 +27,12 @@ class UserAccountViewProfileAvatar extends StatelessWidget {
         ),
         Stack(alignment: AlignmentDirectional.center, children: [
           Image(
-            image: AssetImage('res/images/badge-account.png'),
-            width: _labelWidth.w,
+            image: const AssetImage('res/images/badge-account.png'),
+            width: style.size(_labelWidth),
             fit: BoxFit.fitWidth,
           ),
-          Container(
-              width: _labelWidth.w,
+          SizedBox(
+              width: style.size(_labelWidth),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -47,8 +46,8 @@ class UserAccountViewProfileAvatar extends StatelessWidget {
                   Padding(
                       padding: EdgeInsets.only(left: style.size(1*3.75)),
                       child: Image(
-                        image: AssetImage('res/images/icon-star.png'),
-                        height: 8.sp,
+                        image: const AssetImage('res/images/icon-star.png'),
+                        height: style.text(8),
                         fit: BoxFit.fitHeight,
                       )),
                 ],

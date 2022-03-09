@@ -14,6 +14,7 @@ dependencies:
   logging: ^1.0.2
   package_info: ^2.0.2
   share_plus: ^3.1.0
+  qr_flutter: ^4.0.0
   zendesk_flutter:
     git:
       url: https://github.com/tiki/zendesk_flutter

@@ -3,20 +3,27 @@
  * MIT license. See LICENSE file in root directory.
  */
 import 'package:flutter/material.dart';
-import 'package:sizer/sizer.dart';
+import 'package:provider/provider.dart';
 
-import '../../../config/config_color.dart';
+import '../user_account_service.dart';
+import '../user_account_style.dart';
 
 class UserAccountViewBadgesSelect extends StatelessWidget {
   final bool isSelected;
   final String image;
   final String label;
   final UserAccountStyle style;
-  UserAccountViewBadgesSelect(
-      {required this.image, required this.label, this.isSelected = false});
+
+  const UserAccountViewBadgesSelect({
+    Key? key,
+    required this.image,
+    required this.label,
+    this.isSelected = false,
+    required this.style}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    UserAccountService service = Provider.of<UserAccountService>(context);
     return Column(
       children: [
         Text(
@@ -26,14 +33,14 @@ class UserAccountViewBadgesSelect extends StatelessWidget {
               fontFamily: "Koara",
               fontWeight: FontWeight.bold,
               fontSize: style.text(10),
-              color: isSelected ? Color(0xFF00133F) : ConfigColor.greyFive),
+              color: isSelected ? const Color(0xFF00133F) : ConfigColor.greyFive),
         ),
         Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10.w),
               boxShadow: [
                 BoxShadow(
-                  color: Color(0x08000000),
+                  color: const Color(0x08000000),
                   blurRadius: style.size(0.75*3.75),
                   offset: Offset(-0.5.w,style.size(0.75*3.75)), // Shadow position
                 ),

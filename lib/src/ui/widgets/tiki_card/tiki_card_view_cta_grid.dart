@@ -5,7 +5,7 @@ import 'tiki_card_view_cta.dart';
 class TikiCardViewCtaGrid extends TikiCardViewCta {
   final List<Widget> ctas;
 
-  TikiCardViewCtaGrid(this.ctas);
+  const TikiCardViewCtaGrid(this.ctas, {Key? key}) : super(key: key);
 
   Widget buildGrid() {
     return Column(

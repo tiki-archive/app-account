@@ -35,14 +35,14 @@ class UserAccountLayout extends StatelessWidget {
     return SizedBox(
         height: style.size(85*8.12),
         child: Column(mainAxisSize: MainAxisSize.min, children: [
-          UserAccountViewHeader(),
+          UserAccountViewHeader(style: style),
           Expanded(
               child: SingleChildScrollView(
                   child: Padding(
                       padding:
                           EdgeInsets.only(left: style.size(6*3.75), right: style.size(6*3.75), bottom: style.size(5*8.12)),
                       child: Column(mainAxisSize: MainAxisSize.min, children: [
-                        UserAccountViewProfile(),
+                        UserAccountViewProfile(style: style),
                         Container(
                             margin: EdgeInsets.only(top: style.size(4*8.12)),
                             child: UserAccountViewRefer(style:style)),
@@ -68,7 +68,7 @@ class UserAccountLayout extends StatelessWidget {
                                 : UserAccountViewQrCodeBtn(style:style)),
                         Container(
                             margin: EdgeInsets.only(top: style.size(_cardMarginTop*8.12)),
-                            child: UserAccountViewSupport(style:style)),
+                            child: const UserAccountViewSupport()),
                         Container(
                             margin: EdgeInsets.only(top: style.size(1.5*8.12)),
                             child: UserAccountViewVersion(style:style)),

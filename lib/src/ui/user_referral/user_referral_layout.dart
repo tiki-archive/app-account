@@ -18,15 +18,15 @@ class UserReferralLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     UserAccountService service = Provider.of<UserAccountService>(context);
     return Column(children: [
-      UserReferralViewText(),
+      const UserReferralViewText(),
       Container(
           margin: EdgeInsets.only(
               top: service.style.size(12),
               left: service.style.size(30),
               right: service.style.size(30)),
-          child: UserReferralViewCode()),
+          child: const UserReferralViewCode()),
       Container(
-          margin: EdgeInsets.only(top: service.style.size(8.12)), child: UserReferralViewCount())
+          margin: EdgeInsets.only(top: service.style.size(8.12)), child: const UserReferralViewCount())
     ]);
   }
 }

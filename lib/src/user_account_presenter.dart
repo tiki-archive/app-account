@@ -34,6 +34,6 @@ class UserAccountPresenter {
             borderRadius: BorderRadius.vertical(top: Radius.circular(service.style.size(26)))),
         builder: (BuildContext context) =>
             ChangeNotifierProvider.value(
-                value: service, child: LogoutModalLayout()));
+                value: service, child: const LogoutModalLayout()));
   }
 }

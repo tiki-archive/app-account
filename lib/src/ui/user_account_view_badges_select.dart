@@ -3,9 +3,6 @@
  * MIT license. See LICENSE file in root directory.
  */
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-
-import '../user_account_service.dart';
 import '../user_account_style.dart';
 
 class UserAccountViewBadgesSelect extends StatelessWidget {
@@ -23,7 +20,6 @@ class UserAccountViewBadgesSelect extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    UserAccountService service = Provider.of<UserAccountService>(context);
     return Column(
       children: [
         Text(
@@ -33,16 +29,16 @@ class UserAccountViewBadgesSelect extends StatelessWidget {
               fontFamily: "Koara",
               fontWeight: FontWeight.bold,
               fontSize: style.text(10),
-              color: isSelected ? const Color(0xFF00133F) : ConfigColor.greyFive),
+              color: isSelected ? const Color(0xFF00133F) : const Color(0xFF8D8D8D)),
         ),
         Container(
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10.w),
+              borderRadius: BorderRadius.circular(style.size(36)),
               boxShadow: [
                 BoxShadow(
                   color: const Color(0x08000000),
                   blurRadius: style.size(0.75*3.75),
-                  offset: Offset(-0.5.w,style.size(0.75*3.75)), // Shadow position
+                  offset: Offset(style.size(-0.5*3.75),style.size(0.75*3.75)), // Shadow position
                 ),
               ],
             ),

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class TikiCardViewFigure extends StatelessWidget {
   final Widget child;
 
-  TikiCardViewFigure(this.child);
+  const TikiCardViewFigure(this.child, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

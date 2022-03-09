@@ -30,7 +30,7 @@ class UserAccountViewRelease extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                       fontSize: style.text(12.5),
                       color: const Color(0xFFFF521C))),
-              const Icon(Icons.arrow_forward, color: const Color(0xFFFF521C)),
+              const Icon(Icons.arrow_forward, color: Color(0xFFFF521C)),
               () => TikiCardController.launchUrl(_url)),
         ),
         onTap: () => TikiCardController.launchUrl(_url));

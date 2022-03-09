@@ -50,19 +50,19 @@ class UserAccountViewBadges extends StatelessWidget {
                     UserAccountViewBadgesSelect(
                         image: "badge-beta",
                         label: _badgeBeta,
-                        isSelected: true),
+                        isSelected: true, style: style,),
                     UserAccountViewBadgesSelect(
                         image: "badge-alt-1",
                         label: _badgeSoon,
-                        isSelected: false),
+                        isSelected: false, style: style,),
                     UserAccountViewBadgesSelect(
                         image: "badge-alt-2",
                         label: _badgeSoon,
-                        isSelected: false),
+                        isSelected: false, style: style,),
                     UserAccountViewBadgesSelect(
                         image: "badge-alt-3",
                         label: _badgeSoon,
-                        isSelected: false),
+                        isSelected: false, style: style,),
                   ])),
           Padding(
               padding: EdgeInsets.only(top: style.size(1.25*8.12)),
@@ -73,19 +73,19 @@ class UserAccountViewBadges extends StatelessWidget {
                   UserAccountViewBadgesSelect(
                       image: "badge-alt-4",
                       label: _badgeSoon,
-                      isSelected: false),
+                      isSelected: false, style: style),
                   UserAccountViewBadgesSelect(
                       image: "badge-alt-5",
                       label: _badgeSoon,
-                      isSelected: false),
+                      isSelected: false, style: style),
                   UserAccountViewBadgesSelect(
                       image: "badge-alt-6",
                       label: _badgeSoon,
-                      isSelected: false),
+                      isSelected: false, style: style),
                   UserAccountViewBadgesSelect(
                       image: "badge-alt-7",
                       label: _badgeSoon,
-                      isSelected: false),
+                      isSelected: false, style: style),
                 ],
               ))
         ],

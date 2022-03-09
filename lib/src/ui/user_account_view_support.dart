@@ -7,6 +7,8 @@ import '../user_account_style.dart';
 class UserAccountViewSupport extends StatelessWidget {
   static const String _title = "Need help?";
 
+  const UserAccountViewSupport({Key? key}) : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +20,7 @@ class UserAccountViewSupport extends StatelessWidget {
         child: Container(
             padding: EdgeInsets.symmetric(vertical: style.size(1.5*8.12), horizontal: style.size(1.5*8.12)),
             decoration: BoxDecoration(
-              color: Color(0xFFF0F0F0),
+              color: const Color(0xFFF0F0F0),
               borderRadius: BorderRadius.circular(12),
             ),
             child: Row(

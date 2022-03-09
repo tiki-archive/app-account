@@ -23,7 +23,13 @@ class _MyAppState extends State<MyApp> {
         ),
         body: Center(
           child: LayoutBuilder( builder: (context, _) => ElevatedButton(
-            onPressed: () => UserAccount().open(context),
+            onPressed: () => UserAccount(
+                apiAppDataService: null,
+                tikiKeysService: null,
+                referalCode: "abcde",
+                apiSignupService: null,
+                login: null
+            ).open(context),
             child: const Text('Open modal'))),
         ),
       ),

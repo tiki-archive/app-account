@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:share_plus/share_plus.dart';
-import 'package:zendesk_flutter/zendesk_flutter.dart';
 import 'package:zendesk_flutter/src/zendesk_flutter_style.dart';
+import 'package:zendesk_flutter/zendesk_flutter.dart';
 
 import 'user_account_service.dart';
 
@@ -46,15 +46,13 @@ class UserAccountController {
     service.showQrCode();
   }
 
-  void logout(BuildContext context) => service.login.logout();
+  void logout(BuildContext context) => service.logout();
 
   copyLink(BuildContext context) async {
-    await Clipboard.setData(
-        ClipboardData(text: _linkUrl + service.model.code));
+    await Clipboard.setData(ClipboardData(text: _linkUrl + service.model.code));
   }
 
   Future<void> updateReferCount(BuildContext context) async {
     await service.updateReferCount();
   }
-
 }

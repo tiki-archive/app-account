@@ -13,7 +13,6 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -22,15 +21,14 @@ class _MyAppState extends State<MyApp> {
           title: const Text('Plugin example app'),
         ),
         body: Center(
-          child: LayoutBuilder( builder: (context, _) => ElevatedButton(
-            onPressed: () => UserAccount(
-                apiAppDataService: null,
-                tikiKeysService: null,
-                referalCode: "abcde",
-                apiSignupService: null,
-                login: null
-            ).open(context),
-            child: const Text('Open modal'))),
+          child: LayoutBuilder(
+              builder: (context, _) => ElevatedButton(
+                  onPressed: () => UserAccount(
+                          referalCode: "abcde",
+                          logout: () => print('logout'),
+                          combinedKeys: 'teste')
+                      .open(context),
+                  child: const Text('Open modal'))),
         ),
       ),
     );

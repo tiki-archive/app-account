@@ -24,7 +24,7 @@ class _MyAppState extends State<MyApp> {
           child: LayoutBuilder(
               builder: (context, _) => ElevatedButton(
                   onPressed: () => UserAccount(
-                          referalCode: "abcde",
+                          referalCode: "\$0000T",
                           logout: () => print('logout'),
                           combinedKeys: 'teste')
                       .open(context),

@@ -51,8 +51,4 @@ class UserAccountController {
   copyLink(BuildContext context) async {
     await Clipboard.setData(ClipboardData(text: _linkUrl + service.model.code));
   }
-
-  Future<void> updateReferCount(BuildContext context) async {
-    await service.updateReferCount();
-  }
 }

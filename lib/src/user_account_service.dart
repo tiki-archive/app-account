@@ -30,6 +30,7 @@ class UserAccountService extends ChangeNotifier {
     controller = UserAccountController(this);
     model.code = referalCode;
     model.qrCode = combinedKeys;
+    updateReferCount();
   }
 
   Future<void> showQrCode() async {

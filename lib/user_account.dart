@@ -1,13 +1,26 @@
+import 'package:flutter/cupertino.dart';
+import 'package:httpp/httpp.dart';
 
-import 'dart:async';
-
-import 'package:flutter/services.dart';
+import 'src/user_account_service.dart';
+import 'src/user_account_style.dart';
 
 class UserAccount {
-  static const MethodChannel _channel = MethodChannel('user_account');
+  final UserAccountService _service;
 
-  static Future<String?> get platformVersion async {
-    final String? version = await _channel.invokeMethod('getPlatformVersion');
-    return version;
+  UserAccount(
+      {UserAccountStyle? style,
+      HttppClient? httppClient,
+      required String referalCode,
+      required Function logout,
+      required String combinedKeys})
+      : _service = UserAccountService(
+            style: style ?? UserAccountStyle(),
+            httppClient: httppClient ?? Httpp().client(),
+            referalCode: referalCode,
+            logout: logout,
+            combinedKeys: combinedKeys);
+
+  open(BuildContext context) {
+    _service.presenter.showModal(context);
   }
 }

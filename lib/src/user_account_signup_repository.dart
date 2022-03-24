@@ -1,6 +1,6 @@
 import 'package:httpp/httpp.dart';
 
-import 'user_account_signup_api_model.dart';
+import 'model/user_account_signup_api_model.dart';
 
 class UserAccountSignupRepository {
   static const String _path = '/api/0-1-0/user';

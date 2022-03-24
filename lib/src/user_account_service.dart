@@ -44,7 +44,9 @@ class UserAccountService extends ChangeNotifier {
   }
 
   updateReferCount() async {
-    UserAccountSignupRepository.total(model.code, httppClient,
-        (total) => model.referCount = total, (error) => _log.warning(error));
+    UserAccountSignupRepository.total(model.code, httppClient, (total) {
+      model.referCount = total;
+      notifyListeners();
+    }, (error) => _log.warning(error));
   }
 }

@@ -1,9 +1,11 @@
 import 'package:flutter/cupertino.dart';
+import 'package:httpp/httpp.dart';
 import 'package:logging/logging.dart';
-import 'user_account_presenter.dart';
 
 import 'model/user_account_model.dart';
 import 'user_account_controller.dart';
+import 'user_account_presenter.dart';
+import 'user_account_signup_repository.dart';
 import 'user_account_style.dart';
 
 class UserAccountService extends ChangeNotifier {
@@ -14,38 +16,24 @@ class UserAccountService extends ChangeNotifier {
   late final UserAccountModel model;
   late final UserAccountController controller;
 
-  final dynamic login;
-  final dynamic tikiKeysService;
-  final dynamic apiAppDataService;
-  final dynamic apiSignupService;
+  final Function logout;
+  final HttppClient httppClient;
 
-  UserAccountService({
-    required this.style,
-    required this.login,
-    required referalCode,
-    required this.tikiKeysService,
-    required this.apiAppDataService,
-    required this.apiSignupService
-  }) {
+  UserAccountService(
+      {required this.style,
+      required this.logout,
+      required this.httppClient,
+      required String referalCode,
+      required String combinedKeys}) {
     presenter = UserAccountPresenter(this);
     model = UserAccountModel();
     controller = UserAccountController(this);
     model.code = referalCode;
+    model.qrCode = combinedKeys;
+    updateReferCount();
   }
 
-
   Future<void> showQrCode() async {
-    if(login != null) {
-      var keys = await tikiKeysService.get(login.user!.address!);
-      if (keys != null) {
-        String combinedKey = keys.address +
-            '.' +
-            keys.data.encode() +
-            '.' +
-            keys.sign.privateKey.encode();
-        model.qrCode = combinedKey;
-      }
-    }
     model.showQrCode = true;
     notifyListeners();
   }
@@ -56,10 +44,9 @@ class UserAccountService extends ChangeNotifier {
   }
 
   updateReferCount() async {
-    int? count = await apiSignupService.getTotal(code: model.code);
-    if (count != null) {
-      model.referCount = count;
+    UserAccountSignupRepository.total(model.code, httppClient, (total) {
+      model.referCount = total;
       notifyListeners();
-    }
+    }, (error) => _log.warning(error));
   }
 }

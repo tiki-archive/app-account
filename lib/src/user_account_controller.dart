@@ -39,7 +39,7 @@ class UserAccountController {
         fontFamily: 'NunitoSans',
         titleFont: 'Koara',
         subtitleFont: 'NunitoSans');
-    ZendeskFlutter(style: style).show(context);
+    ZendeskFlutter().show(context);
   }
 
   void showQrCode(BuildContext context) {

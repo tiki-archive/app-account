@@ -21,12 +21,12 @@ class UserReferralLayout extends StatelessWidget {
       const UserReferralViewText(),
       Container(
           margin: EdgeInsets.only(
-              top: service.style.size(12),
-              left: service.style.size(30),
-              right: service.style.size(30)),
+              top: SizeProvider.instance.width(12),
+              left: SizeProvider.instance.width(30),
+              right: SizeProvider.instance.width(30)),
           child: const UserReferralViewCode()),
       Container(
-          margin: EdgeInsets.only(top: service.style.size(8.12)), child: const UserReferralViewCount())
+          margin: EdgeInsets.only(top: SizeProvider.instance.width(8.12)), child: const UserReferralViewCount())
     ]);
   }
 }

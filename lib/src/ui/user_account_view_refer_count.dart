@@ -5,14 +5,15 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:style/style.dart';
 import '../user_account_service.dart';
-import '../user_account_style.dart';
+
 
 class UserAccountViewReferCount extends StatelessWidget {
-  final UserAccountStyle style;
+
   static const String _text = "people joined the TIKI tribe";
 
-  const UserAccountViewReferCount({Key? key, required this.style}) : super(key: key);
+  const UserAccountViewReferCount({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -27,10 +28,10 @@ class UserAccountViewReferCount extends StatelessWidget {
               fontFamily: 'Koara',
               fontWeight: FontWeight.bold,
               height: 0,
-              fontSize: style.text(63))),
+              fontSize: SizeProvider.instance.text(63))),
       Text(_text,
           style: TextStyle(
-              fontSize: style.text(14),
+              fontSize: SizeProvider.instance.text(14),
               height: 2.25,
               fontWeight: FontWeight.w800,
               color: const Color(0xFF00133F)))

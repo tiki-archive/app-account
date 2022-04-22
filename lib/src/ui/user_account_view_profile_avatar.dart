@@ -3,17 +3,18 @@
  * MIT license. See LICENSE file in root directory.
  */
 import 'package:flutter/material.dart';
-import '../user_account_style.dart';
+import 'package:style/style.dart';
+
 
 class UserAccountViewProfileAvatar extends StatelessWidget {
   static const double _labelWidth = 26.5;
 
   final String label;
   final String avatar;
-  final UserAccountStyle style;
+
   
   const UserAccountViewProfileAvatar(
-      {Key? key, required this.label, required this.avatar, required this.style}) : super(key: key);
+      {Key? key, required this.label, required this.avatar}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,18 +22,18 @@ class UserAccountViewProfileAvatar extends StatelessWidget {
       alignment: AlignmentDirectional.bottomCenter,
       children: [
         Image.asset('res/images/' + avatar + '.png',
-          height: style.size(10*8.12),
+          height: SizeProvider.instance.width(10*8.12),
           fit: BoxFit.fitHeight,
           package: 'user_account'
         ),
         Stack(alignment: AlignmentDirectional.center, children: [
           Image.asset('res/images/badge-account.png',
-            width: style.size(_labelWidth*3.75),
+            width: SizeProvider.instance.width(_labelWidth*3.75),
             fit: BoxFit.fitWidth,
             package: 'user_account'
           ),
           SizedBox(
-              width: style.size(_labelWidth*3.75),
+              width: SizeProvider.instance.width(_labelWidth*3.75),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -41,12 +42,12 @@ class UserAccountViewProfileAvatar extends StatelessWidget {
                     style: TextStyle(
                         fontWeight: FontWeight.w800,
                         color: Colors.white,
-                        fontSize: style.text(8)),
+                        fontSize: SizeProvider.instance.text(8)),
                   ),
                   Padding(
-                      padding: EdgeInsets.only(left: style.size(1*3.75)),
+                      padding: EdgeInsets.only(left: SizeProvider.instance.width(1*3.75)),
                       child: Image.asset('res/images/icon-star.png',
-                        height: style.text(8),
+                        height: SizeProvider.instance.text(8),
                         fit: BoxFit.fitHeight,
                         package: 'user_account'
                       )),

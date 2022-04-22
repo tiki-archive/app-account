@@ -11,13 +11,16 @@ dependencies:
   flutter:
     sdk: flutter
   httpp:
-    git: https://github.com/tiki/httpp
-    ref: 0.0.3
+    git:
+      url: https://github.com/tiki/httpp
+      ref: 0.0.3
   provider: ^6.0.2
   logging: ^1.0.2
   package_info: ^2.0.2
   share_plus: ^3.1.0
   qr_flutter: ^4.0.0
+  style:
+    path: ../style
   zendesk_flutter:
     git:
       url: https://github.com/tiki/zendesk_flutter
@@ -28,14 +31,3 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^1.0.0
-
-flutter:
-  plugin:
-    platforms:
-      android:
-        package: com.mytiki.user_account
-        pluginClass: UserAccountPlugin
-      ios:
-        pluginClass: UserAccountPlugin
-  assets:
-    - res/images/

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:style/style.dart';
 
-import '../user_account_style.dart';
+
 import 'widgets/tiki_card/tiki_card.dart';
 import 'widgets/tiki_card/tiki_card_controller.dart';
 import 'widgets/tiki_card/tiki_card_view_cta_grid.dart';
@@ -19,9 +20,9 @@ class UserAccountViewFollowUs extends StatelessWidget {
   static const String _twitterUrl = "https://twitter.com/my_tiki_";
   static const String _instagramUrl = "https://www.instagram.com/my.tiki/";
   static const String _tiktokUrl = "https://www.tiktok.com/@my.tiki";
-  final UserAccountStyle style;
 
-  const UserAccountViewFollowUs({Key? key, required this.style}) : super(key: key);
+
+  const UserAccountViewFollowUs({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -35,45 +36,45 @@ class UserAccountViewFollowUs extends StatelessWidget {
                 onTap: () => TikiCardController.launchUrl(_facebookUrl),
                 child: Container(
                     padding: EdgeInsets.only(
-                        left: style.size(3 * _btnPaddingHorizontal*3.75),
-                        top: style.size(3 * _btnPaddingVertical*8.12),
-                        right: style.size(_btnPaddingHorizontal*3.75),
-                        bottom: style.size(_btnPaddingVertical*8.12)),
+                        left: SizeProvider.instance.width(3 * _btnPaddingHorizontal*3.75),
+                        top: SizeProvider.instance.width(3 * _btnPaddingVertical*8.12),
+                        right: SizeProvider.instance.width(_btnPaddingHorizontal*3.75),
+                        bottom: SizeProvider.instance.width(_btnPaddingVertical*8.12)),
                     child:
-                        Image.asset("res/images/facebook-button.png", package: "user_account", height: style.size(_btnHeight*8.12))))),
+                        Image.asset("res/images/facebook-button.png", package: "user_account", height: SizeProvider.instance.width(_btnHeight*8.12))))),
         Expanded(
             child: GestureDetector(
                 onTap: () => TikiCardController.launchUrl(_twitterUrl),
                 child: Container(
                     padding: EdgeInsets.only(
-                        left: style.size(_btnPaddingHorizontal*3.75),
-                        top: style.size(3 * _btnPaddingVertical*8.12),
-                        right: style.size(3 * _btnPaddingHorizontal*3.75),
-                        bottom: style.size(_btnPaddingVertical*8.12)),
+                        left: SizeProvider.instance.width(_btnPaddingHorizontal*3.75),
+                        top: SizeProvider.instance.width(3 * _btnPaddingVertical*8.12),
+                        right: SizeProvider.instance.width(3 * _btnPaddingHorizontal*3.75),
+                        bottom: SizeProvider.instance.width(_btnPaddingVertical*8.12)),
                     child:
-                        Image.asset("res/images/twitter-button.png", package: "user_account", height: style.size(_btnHeight*8.12))))),
+                        Image.asset("res/images/twitter-button.png", package: "user_account", height: SizeProvider.instance.width(_btnHeight*8.12))))),
         Expanded(
             child: GestureDetector(
                 onTap: () => TikiCardController.launchUrl(_instagramUrl),
                 child: Container(
                     padding: EdgeInsets.only(
-                        left: style.size(3 * _btnPaddingHorizontal*3.75),
-                        top: style.size(_btnPaddingVertical*8.12),
-                        right: style.size(_btnPaddingHorizontal*3.75),
-                        bottom: style.size(4 * _btnPaddingVertical*8.12)),
+                        left: SizeProvider.instance.width(3 * _btnPaddingHorizontal*3.75),
+                        top: SizeProvider.instance.width(_btnPaddingVertical*8.12),
+                        right: SizeProvider.instance.width(_btnPaddingHorizontal*3.75),
+                        bottom: SizeProvider.instance.width(4 * _btnPaddingVertical*8.12)),
                     child: Image.asset("res/images/instagram-button.png", package: "user_account",
-                        height: style.size(_btnHeight*8.12))))),
+                        height: SizeProvider.instance.width(_btnHeight*8.12))))),
         Expanded(
             child: GestureDetector(
                 onTap: () => TikiCardController.launchUrl(_tiktokUrl),
                 child: Container(
                     padding: EdgeInsets.only(
-                        left: style.size(_btnPaddingHorizontal*3.75),
-                        top: style.size(_btnPaddingVertical*8.12),
-                        right: style.size(3 * _btnPaddingHorizontal*3.75),
-                        bottom: style.size(4 * _btnPaddingVertical*8.12)),
+                        left: SizeProvider.instance.width(_btnPaddingHorizontal*3.75),
+                        top: SizeProvider.instance.width(_btnPaddingVertical*8.12),
+                        right: SizeProvider.instance.width(3 * _btnPaddingHorizontal*3.75),
+                        bottom: SizeProvider.instance.width(4 * _btnPaddingVertical*8.12)),
                     child:
-                        Image.asset("res/images/tiktok-button.png", package: "user_account", height: style.size(_btnHeight*8.12))))),
+                        Image.asset("res/images/tiktok-button.png", package: "user_account", height: SizeProvider.instance.width(_btnHeight*8.12))))),
       ]),
     );
   }

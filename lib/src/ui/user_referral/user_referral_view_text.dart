@@ -23,7 +23,7 @@ class UserReferralViewText extends StatelessWidget {
           _textL1,
           textAlign: TextAlign.center,
           style: TextStyle(
-              fontSize: service.style.text(_fontSize),
+              fontSize: service.SizeProvider.instance.text(_fontSize),
               fontWeight: FontWeight.w600,
               color: const Color(0xFF00133F)),
         ),
@@ -31,7 +31,7 @@ class UserReferralViewText extends StatelessWidget {
           _textL2,
           textAlign: TextAlign.center,
           style: TextStyle(
-              fontSize: service.style.text(_fontSize),
+              fontSize: service.SizeProvider.instance.text(_fontSize),
               fontWeight: FontWeight.w800,
               color: const Color(0xFF00133F)),
         )

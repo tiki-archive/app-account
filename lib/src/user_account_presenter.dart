@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:style/style.dart';
 
 import 'ui/logout/logout_modal_layout.dart';
 import 'ui/user_account_layout.dart';
@@ -19,7 +20,7 @@ class UserAccountPresenter {
         backgroundColor: Colors.white,
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.vertical(
-                top: Radius.circular(service.style.size(26)))),
+                top: Radius.circular(SizeProvider.instance.width(26)))),
           builder: (BuildContext context) => ChangeNotifierProvider.value(
             value: service, child: const UserAccountLayout()));
   }
@@ -31,7 +32,7 @@ class UserAccountPresenter {
         isDismissible: true,
         backgroundColor: Colors.white,
         shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.vertical(top: Radius.circular(service.style.size(26)))),
+            borderRadius: BorderRadius.vertical(top: Radius.circular(SizeProvider.instance.width(26)))),
         builder: (BuildContext context) =>
             ChangeNotifierProvider.value(
                 value: service, child: const LogoutModalLayout()));

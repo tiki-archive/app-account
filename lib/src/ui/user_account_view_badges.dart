@@ -3,8 +3,8 @@
  * MIT license. See LICENSE file in root directory.
  */
 import 'package:flutter/material.dart';
+import 'package:style/style.dart';
 
-import '../user_account_style.dart';
 import 'user_account_view_badges_select.dart';
 
 class UserAccountViewBadges extends StatelessWidget {
@@ -14,16 +14,14 @@ class UserAccountViewBadges extends StatelessWidget {
   static const String _badgeBeta = "Beta \ntester";
   static const String _badgeSoon = "Coming \nsoon";
 
-  final UserAccountStyle style;
-
-  const UserAccountViewBadges({Key? key, required this.style}) : super(key: key);
+  const UserAccountViewBadges({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
           color: const Color(0xFFF0F0F0), borderRadius: BorderRadius.circular(24)),
-      padding: EdgeInsets.only(top: style.size(3*8.12), left: style.size(6*3.75), right: style.size(6*3.75), bottom: style.size(3*8.12)),
+      padding: EdgeInsets.only(top: SizeProvider.instance.width(3*8.12), left: SizeProvider.instance.width(6*3.75), right: SizeProvider.instance.width(6*3.75), bottom: SizeProvider.instance.width(3*8.12)),
       child: Column(
         children: [
           Text(
@@ -31,61 +29,61 @@ class UserAccountViewBadges extends StatelessWidget {
             style: TextStyle(
                 fontWeight: FontWeight.w800,
                 color: const Color(0xFF00133F),
-                fontSize: style.text(14)),
+                fontSize: SizeProvider.instance.text(14)),
           ),
           Padding(
-              padding: EdgeInsets.only(top: style.size(1.25*8.12)),
+              padding: EdgeInsets.only(top: SizeProvider.instance.width(1.25*8.12)),
               child: Text(_text,
                   textAlign: TextAlign.center,
                   style: TextStyle(
                       fontWeight: FontWeight.w600,
                       color: const Color(0xFF00133F),
-                      fontSize: style.text(11)))),
+                      fontSize: SizeProvider.instance.text(11)))),
           Padding(
-              padding: EdgeInsets.only(top: style.size(3*8.12)),
+              padding: EdgeInsets.only(top: SizeProvider.instance.width(3*8.12)),
               child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
+                  children: const [
                     UserAccountViewBadgesSelect(
                         image: "badge-beta",
                         label: _badgeBeta,
-                        isSelected: true, style: style,),
+                        isSelected: true),
                     UserAccountViewBadgesSelect(
                         image: "badge-alt-1",
                         label: _badgeSoon,
-                        isSelected: false, style: style,),
+                        isSelected: false),
                     UserAccountViewBadgesSelect(
                         image: "badge-alt-2",
                         label: _badgeSoon,
-                        isSelected: false, style: style,),
+                        isSelected: false),
                     UserAccountViewBadgesSelect(
                         image: "badge-alt-3",
                         label: _badgeSoon,
-                        isSelected: false, style: style,),
+                        isSelected: false),
                   ])),
           Padding(
-              padding: EdgeInsets.only(top: style.size(1.25*8.12)),
+              padding: EdgeInsets.only(top: SizeProvider.instance.width(1.25*8.12)),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
+                children: const [
                   UserAccountViewBadgesSelect(
                       image: "badge-alt-4",
                       label: _badgeSoon,
-                      isSelected: false, style: style),
+                      isSelected: false, ),
                   UserAccountViewBadgesSelect(
                       image: "badge-alt-5",
                       label: _badgeSoon,
-                      isSelected: false, style: style),
+                      isSelected: false, ),
                   UserAccountViewBadgesSelect(
                       image: "badge-alt-6",
                       label: _badgeSoon,
-                      isSelected: false, style: style),
+                      isSelected: false, ),
                   UserAccountViewBadgesSelect(
                       image: "badge-alt-7",
                       label: _badgeSoon,
-                      isSelected: false, style: style),
+                      isSelected: false, ),
                 ],
               ))
         ],

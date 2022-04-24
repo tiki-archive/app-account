@@ -11,18 +11,22 @@ dependencies:
   flutter:
     sdk: flutter
   httpp:
-    git: https://github.com/tiki/httpp
-    ref: 0.0.3
+    git:
+      url: https://github.com/tiki/httpp
+      ref: 0.0.3
   provider: ^6.0.2
   logging: ^1.0.2
   package_info: ^2.0.2
   share_plus: ^3.1.0
   qr_flutter: ^4.0.0
-  zendesk_flutter:
+  upvoty:
     git:
-      url: https://github.com/tiki/zendesk_flutter
-      ref: 0.0.2
-
+      url: https://github.com/tiki/upvoty
+      ref: 0.0.8
+#  zendesk_flutter:
+#    git:
+#      url: https://github.com/tiki/zendesk_flutter
+#      ref: 0.0.2
 
 dev_dependencies:
   flutter_test:

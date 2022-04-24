@@ -1,15 +1,13 @@
-# user_account
+# User Account
+User account bottom sheet widget for TIKI app.
 
-User account SDK for TIKI
+## How to Use
+1. Build the UserAccount object.
+2. Call the `open(context)` method to show the bottomsheet modal.
 
-## Getting Started
+## How to contribute
+Thank you for contributing with the data revolution!    
+All the information about contribution can be found in [CONTRIBUTING](https://github.com/tiki/app/CONTRIBUTING.md)
 
-This project is a starting point for a Flutter
-[plug-in package](https://flutter.dev/developing-packages/),
-a specialized package that includes platform-specific implementation code for
-Android and/or iOS.
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-
+## License
+MIT license

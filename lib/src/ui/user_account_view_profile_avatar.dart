@@ -10,7 +10,7 @@ class UserAccountViewProfileAvatar extends StatelessWidget {
   static const double _labelWidth = 26.5;
 
   final String label;
-  final String avatar;
+  final Image avatar;
 
   
   const UserAccountViewProfileAvatar(
@@ -21,16 +21,14 @@ class UserAccountViewProfileAvatar extends StatelessWidget {
     return Stack(
       alignment: AlignmentDirectional.bottomCenter,
       children: [
-        Image.asset('res/images/' + avatar + '.png',
+       SizedBox(
           height: SizeProvider.instance.width(10*8.12),
-          fit: BoxFit.fitHeight,
-          package: 'user_account'
+          child: avatar
         ),
         Stack(alignment: AlignmentDirectional.center, children: [
-          Image.asset('res/images/badge-account.png',
+         SizedBox(
             width: SizeProvider.instance.width(_labelWidth*3.75),
-            fit: BoxFit.fitWidth,
-            package: 'user_account'
+            child: ImgProvider.badgeAccount
           ),
           SizedBox(
               width: SizeProvider.instance.width(_labelWidth*3.75),
@@ -46,11 +44,9 @@ class UserAccountViewProfileAvatar extends StatelessWidget {
                   ),
                   Padding(
                       padding: EdgeInsets.only(left: SizeProvider.instance.width(1*3.75)),
-                      child: Image.asset('res/images/icon-star.png',
-                        height: SizeProvider.instance.text(8),
-                        fit: BoxFit.fitHeight,
-                        package: 'user_account'
-                      )),
+                      child: Icon(IconProvider.star,
+                        size: SizeProvider.instance.text(8)),
+                      ),
                 ],
               ))
         ])

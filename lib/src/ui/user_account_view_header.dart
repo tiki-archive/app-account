@@ -28,10 +28,7 @@ class UserAccountViewHeader extends StatelessWidget {
                   height: SizeProvider.instance.width(3.75*_paddingVert * 3),
                   padding: EdgeInsets.only(right: SizeProvider.instance.width(3.75*_paddingHoriz)),
                   child: Center(
-                      child: Image.asset('res/images/icon-x.png',
-                    width: SizeProvider.instance.text(12),
-                    height: SizeProvider.instance.text(12),
-                    package:'user_account'),
+                      child: Icon(IconProvider.close, size: SizeProvider.instance.text(12))
                   )))),
       Container(
           alignment: Alignment.center,

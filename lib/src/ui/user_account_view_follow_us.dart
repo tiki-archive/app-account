@@ -29,7 +29,7 @@ class UserAccountViewFollowUs extends StatelessWidget {
     return TikiCard(
       const TikiCardViewTitle(_title),
       const TikiCardViewText(_text),
-      TikiCardViewFigure(Image.asset("res/images/tiki-pool.png", package: "user_account")),
+      TikiCardViewFigure(ImgProvider.tikiPool),
       cta: TikiCardViewCtaGrid([
         Expanded(
             child: GestureDetector(
@@ -41,7 +41,7 @@ class UserAccountViewFollowUs extends StatelessWidget {
                         right: SizeProvider.instance.width(_btnPaddingHorizontal*3.75),
                         bottom: SizeProvider.instance.width(_btnPaddingVertical*8.12)),
                     child:
-                        Image.asset("res/images/facebook-button.png", package: "user_account", height: SizeProvider.instance.width(_btnHeight*8.12))))),
+                        SizedBox(child: ImgProvider.facebookButton, height: SizeProvider.instance.width(_btnHeight*8.12))))),
         Expanded(
             child: GestureDetector(
                 onTap: () => TikiCardController.launchUrl(_twitterUrl),
@@ -52,7 +52,7 @@ class UserAccountViewFollowUs extends StatelessWidget {
                         right: SizeProvider.instance.width(3 * _btnPaddingHorizontal*3.75),
                         bottom: SizeProvider.instance.width(_btnPaddingVertical*8.12)),
                     child:
-                        Image.asset("res/images/twitter-button.png", package: "user_account", height: SizeProvider.instance.width(_btnHeight*8.12))))),
+                        SizedBox(child:ImgProvider.telegramLogo, height: SizeProvider.instance.width(_btnHeight*8.12))))),
         Expanded(
             child: GestureDetector(
                 onTap: () => TikiCardController.launchUrl(_instagramUrl),
@@ -62,7 +62,7 @@ class UserAccountViewFollowUs extends StatelessWidget {
                         top: SizeProvider.instance.width(_btnPaddingVertical*8.12),
                         right: SizeProvider.instance.width(_btnPaddingHorizontal*3.75),
                         bottom: SizeProvider.instance.width(4 * _btnPaddingVertical*8.12)),
-                    child: Image.asset("res/images/instagram-button.png", package: "user_account",
+                    child: SizedBox(child: ImgProvider.signalLogo,
                         height: SizeProvider.instance.width(_btnHeight*8.12))))),
         Expanded(
             child: GestureDetector(
@@ -74,7 +74,8 @@ class UserAccountViewFollowUs extends StatelessWidget {
                         right: SizeProvider.instance.width(3 * _btnPaddingHorizontal*3.75),
                         bottom: SizeProvider.instance.width(4 * _btnPaddingVertical*8.12)),
                     child:
-                        Image.asset("res/images/tiktok-button.png", package: "user_account", height: SizeProvider.instance.width(_btnHeight*8.12))))),
+                    SizedBox(child: ImgProvider.tiktokButton,
+                        height: SizeProvider.instance.width(_btnHeight*8.12)))))
       ]),
     );
   }

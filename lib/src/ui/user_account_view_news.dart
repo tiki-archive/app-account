@@ -25,7 +25,7 @@ class UserAccountViewNews extends StatelessWidget {
         child: TikiCard(
           const TikiCardViewTitle(_title),
           const TikiCardViewText(_text),
-          TikiCardViewFigure(Image.asset("res/images/tiki-news.png", package: "user_account")),
+          TikiCardViewFigure(ImgProvider.tikiNews),
           cta: TikiCardViewCtaInline(
               Text(_cta,
                   style: TextStyle(

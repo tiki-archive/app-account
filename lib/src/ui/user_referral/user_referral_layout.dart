@@ -3,9 +3,8 @@
  * MIT license. See LICENSE file in root directory.
  */
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:style/style.dart';
 
-import '../../user_account_service.dart';
 import 'user_referral_view_code.dart';
 import 'user_referral_view_count.dart';
 import 'user_referral_view_text.dart';
@@ -16,7 +15,6 @@ class UserReferralLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    UserAccountService service = Provider.of<UserAccountService>(context);
     return Column(children: [
       const UserReferralViewText(),
       Container(

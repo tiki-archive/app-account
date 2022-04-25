@@ -31,7 +31,7 @@ class UserAccountViewLogout extends StatelessWidget {
                     fontSize: SizeProvider.instance.text(15))),
             Container(
                 margin: EdgeInsets.only(left: SizeProvider.instance.width(3*3.75)),
-                child: Image.asset("res/images/icon-logout.png", package: "user_account", height: SizeProvider.instance.text(15)))
+                child: Icon(IconProvider.logout, size:SizeProvider.instance.text(15)))
           ],
         ));
   }

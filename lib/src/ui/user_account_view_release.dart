@@ -24,7 +24,7 @@ class UserAccountViewRelease extends StatelessWidget {
         child: TikiCard(
           const TikiCardViewTitle(_title),
           const TikiCardViewText(_text),
-          TikiCardViewFigure(Image.asset("res/images/email-see.png", package: "user_account")),
+          TikiCardViewFigure(ImgProvider.emailSee),
           cta: TikiCardViewCtaInline(
               Text(_cta,
                   style: TextStyle(

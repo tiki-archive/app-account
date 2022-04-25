@@ -5,6 +5,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:style/style.dart';
 
 import '../../user_account_service.dart';
 
@@ -28,18 +29,18 @@ class UserReferralViewCode extends StatelessWidget {
           Row(mainAxisSize: MainAxisSize.min, children: [
             Text(_text,
                 style: TextStyle(
-                    fontSize: service.SizeProvider.instance.text(_fontSize),
+                    fontSize: SizeProvider.instance.text(_fontSize),
                     fontWeight: FontWeight.bold,
                     color: const Color(0xFF8D8D8D))),
             Container(
                 margin: EdgeInsets.all(SizeProvider.instance.width(8)),
                 child: Text(service.model.code,
                     style: TextStyle(
-                        fontSize: service.SizeProvider.instance.text(_fontSize),
+                        fontSize: SizeProvider.instance.text(_fontSize),
                         fontWeight: FontWeight.bold,
                         color: const Color(0xFF00133F))))
           ]),
-          Image.asset("res/images/icon-copy.png", height: service.SizeProvider.instance.text(_fontSize), package: 'user_account'),
+          Icon(IconProvider.content_copy, size: SizeProvider.instance.text(_fontSize)),
         ]));
   }
 }

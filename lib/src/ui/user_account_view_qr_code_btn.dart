@@ -25,13 +25,13 @@ class UserAccountViewQrCodeBtn extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
-                  Image.asset("res/images/save-qr-icon.png", package: "user_account", width: SizeProvider.instance.width(4.5*8.12)),
+                  Icon(IconProvider.qrcode, size: SizeProvider.instance.width(4.5*8.12)),
                   Padding(padding: EdgeInsets.only(right: SizeProvider.instance.width(2*3.75))),
                   Expanded(
                       child: Text(_title,
                           style: TextStyle(
                               fontSize: SizeProvider.instance.text(12), fontWeight: FontWeight.bold))),
-                  Image.asset("res/images/icon-forward.png", package: "user_account", width: SizeProvider.instance.width(4.5*8.12))
+                Icon(IconProvider.arrow_forward, size: SizeProvider.instance.width(4.5*8.12)),
                 ])));
   }
 }

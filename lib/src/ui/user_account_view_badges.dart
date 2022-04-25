@@ -44,21 +44,21 @@ class UserAccountViewBadges extends StatelessWidget {
               child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
+                  children: [
                     UserAccountViewBadgesSelect(
-                        image: "badge-beta",
+                        image: ImgProvider.badgeAccount,
                         label: _badgeBeta,
                         isSelected: true),
                     UserAccountViewBadgesSelect(
-                        image: "badge-alt-1",
+                        image: ImgProvider.badgeAlt1Inactive,
                         label: _badgeSoon,
                         isSelected: false),
                     UserAccountViewBadgesSelect(
-                        image: "badge-alt-2",
+                        image: ImgProvider.badgeAlt2Inactive,
                         label: _badgeSoon,
                         isSelected: false),
                     UserAccountViewBadgesSelect(
-                        image: "badge-alt-3",
+                        image: ImgProvider.badgeAlt3Inactive,
                         label: _badgeSoon,
                         isSelected: false),
                   ])),
@@ -67,21 +67,21 @@ class UserAccountViewBadges extends StatelessWidget {
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
+                children: [
                   UserAccountViewBadgesSelect(
-                      image: "badge-alt-4",
+                      image: ImgProvider.badgeAlt4Inactive,
                       label: _badgeSoon,
                       isSelected: false, ),
                   UserAccountViewBadgesSelect(
-                      image: "badge-alt-5",
+                      image: ImgProvider.badgeAlt5Inactive,
                       label: _badgeSoon,
                       isSelected: false, ),
                   UserAccountViewBadgesSelect(
-                      image: "badge-alt-6",
+                      image: ImgProvider.badgeAlt6Inactive,
                       label: _badgeSoon,
                       isSelected: false, ),
                   UserAccountViewBadgesSelect(
-                      image: "badge-alt-7",
+                      image: ImgProvider.badgeAlt7Inactive,
                       label: _badgeSoon,
                       isSelected: false, ),
                 ],

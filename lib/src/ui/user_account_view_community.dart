@@ -34,7 +34,7 @@ class UserAccountViewCommunity extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TikiCard(const TikiCardViewTitle(_title), const TikiCardViewText(_text),
-        TikiCardViewFigure(Image.asset("res/images/tiki-and-pals.png", package: "user_account")),
+        TikiCardViewFigure(ImgProvider.tikiAndPals),
         cta: TikiCardViewCtaRow([
           Expanded(
               child: GestureDetector(
@@ -52,7 +52,7 @@ class UserAccountViewCommunity extends StatelessWidget {
                                 padding: EdgeInsets.only(
                                     right: SizeProvider.instance.width(_btnIconPaddingRight*3.75)),
                                 height: SizeProvider.instance.width(_btnIconHeight*8.12),
-                                child: Image.asset("res/images/discord-logo.png", package: "user_account")),
+                                child: ImgProvider.discordLogo),
                             Text(_discord,
                                 style: TextStyle(
                                     fontSize: SizeProvider.instance.text(_btnTextFontSize),
@@ -73,7 +73,7 @@ class UserAccountViewCommunity extends StatelessWidget {
                               padding: EdgeInsets.only(
                                   right: SizeProvider.instance.width(_btnIconPaddingRight*3.75)),
                               height: SizeProvider.instance.width(_btnIconHeight*8.12),
-                              child: Image.asset("res/images/signal-logo.png", package: "user_account"),
+                              child: ImgProvider.signalLogo,
                             ),
                             Text(_signal,
                                 style: TextStyle(
@@ -98,7 +98,7 @@ class UserAccountViewCommunity extends StatelessWidget {
                                 padding: EdgeInsets.only(
                                     right: SizeProvider.instance.width(_btnIconPaddingRight*3.75)),
                                 height: SizeProvider.instance.width(_btnIconHeight*8.12),
-                                child: Image.asset("res/images/telegram-logo.png", package: "user_account")),
+                                child: ImgProvider.telegramLogo),
                             Text(_telegram,
                                 style: TextStyle(
                                     fontSize: SizeProvider.instance.text(_btnTextFontSize),

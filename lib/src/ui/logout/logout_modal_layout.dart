@@ -5,6 +5,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:style/style.dart';
 import '../../user_account_service.dart';
 import 'logout_modal_view_header.dart';
 
@@ -18,14 +19,14 @@ class LogoutModalLayout extends StatelessWidget {
     return SizedBox(
         height: SizeProvider.instance.width(285),
         child: Column(mainAxisSize: MainAxisSize.min, children: [
-          LogoutModalViewHeader(style: service.style),
+          const LogoutModalViewHeader(),
           Padding(padding: EdgeInsets.only(top: SizeProvider.instance.width(24))),
           Expanded(
               child: Column(children: [
             Text("Are you sure you want to log out?",
                 style: TextStyle(
                     color: const Color(0xFF00133F),
-                    fontSize: service.SizeProvider.instance.text(14),
+                    fontSize: SizeProvider.instance.text(14),
                     fontWeight: FontWeight.w800)),
             Padding(padding: EdgeInsets.only(top: SizeProvider.instance.width(12))),
             TextButton(
@@ -38,7 +39,7 @@ class LogoutModalLayout extends StatelessWidget {
               child: Text("Log out",
                   style: TextStyle(
                       color: const Color(0xFFFF521C),
-                      fontSize: service.SizeProvider.instance.text(14),
+                      fontSize: SizeProvider.instance.text(14),
                       fontWeight: FontWeight.bold)),
               onPressed: () => service.controller.logout(context),
             ),
@@ -53,7 +54,7 @@ class LogoutModalLayout extends StatelessWidget {
               ),
               child: Text("Cancel",
                   style:
-                      TextStyle(fontSize: service.SizeProvider.instance.text(14), fontWeight: FontWeight.bold)),
+                      TextStyle(fontSize: SizeProvider.instance.text(14), fontWeight: FontWeight.bold)),
               onPressed: () => Navigator.of(context).pop(),
             )
           ]))

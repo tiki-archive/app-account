@@ -4,8 +4,8 @@
  */
 
 import 'package:flutter/material.dart';
+import 'package:style/style.dart';
 
-import '../../user_account_style.dart';
 
 class LogoutModalViewHeader extends StatelessWidget {
   static const double _paddingVert = 20;
@@ -23,7 +23,7 @@ class LogoutModalViewHeader extends StatelessWidget {
             top: SizeProvider.instance.width(_paddingVert),
             bottom: SizeProvider.instance.width(_paddingVert),
           ),
-          child: Image.asset('res/images/modal-top.png', package: 'user_account'))
-    ]);
+          child: ImgProvider.modalTop
+      )]);
   }
 }

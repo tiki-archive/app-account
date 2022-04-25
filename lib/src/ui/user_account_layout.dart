@@ -35,46 +35,46 @@ class UserAccountLayout extends StatelessWidget {
     return SizedBox(
         height: SizeProvider.instance.width(85*8.12),
         child: Column(mainAxisSize: MainAxisSize.min, children: [
-          UserAccountViewHeader(),
+          const UserAccountViewHeader(),
           Expanded(
               child: SingleChildScrollView(
                   child: Padding(
                       padding:
                           EdgeInsets.only(left: SizeProvider.instance.width(6*3.75), right: SizeProvider.instance.width(6*3.75), bottom: SizeProvider.instance.width(5*8.12)),
                       child: Column(mainAxisSize: MainAxisSize.min, children: [
-                        UserAccountViewProfile(),
+                        const UserAccountViewProfile(),
                         Container(
                             margin: EdgeInsets.only(top: SizeProvider.instance.width(4*8.12)),
-                            child: UserAccountViewRefer()),
+                            child: const UserAccountViewRefer()),
                         Container(
                             margin: EdgeInsets.only(top: SizeProvider.instance.width(_cardMarginTop*8.12)),
-                            child: UserAccountViewRelease()),
+                            child: const UserAccountViewRelease()),
                         Container(
                             margin: EdgeInsets.only(top: SizeProvider.instance.width(_cardMarginTop*8.12)),
-                            child: UserAccountViewNews()),
+                            child: const UserAccountViewNews()),
                         Container(
                             margin: EdgeInsets.only(top: SizeProvider.instance.width(_cardMarginTop*8.12)),
-                            child: UserAccountViewCommunity()),
+                            child: const UserAccountViewCommunity()),
                         Container(
                             margin: EdgeInsets.only(top: SizeProvider.instance.width(_cardMarginTop*8.12)),
-                            child: UserAccountViewFollowUs()),
+                            child: const UserAccountViewFollowUs()),
                         Container(
                             margin: EdgeInsets.only(top: SizeProvider.instance.width(_cardMarginTop*8.12)),
-                            child: UserAccountViewBadges()),
+                            child: const UserAccountViewBadges()),
                         Container(
                             margin: EdgeInsets.only(top: SizeProvider.instance.width(_cardMarginTop*8.12)),
                             child: service.model.showQrCode
-                                ? UserAccountViewQrCodeShow()
-                                : UserAccountViewQrCodeBtn()),
+                                ? const UserAccountViewQrCodeShow()
+                                : const UserAccountViewQrCodeBtn()),
                         Container(
                             margin: EdgeInsets.only(top: SizeProvider.instance.width(_cardMarginTop*8.12)),
                             child: const UserAccountViewSupport()),
                         Container(
                             margin: EdgeInsets.only(top: SizeProvider.instance.width(1.5*8.12)),
-                            child: UserAccountViewVersion()),
+                            child: const UserAccountViewVersion()),
                         Container(
                             margin: EdgeInsets.only(top: SizeProvider.instance.width(3*8.12)),
-                            child: UserAccountViewLogout()),
+                            child: const UserAccountViewLogout()),
                       ]))))
         ]));
   }

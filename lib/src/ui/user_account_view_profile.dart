@@ -8,7 +8,7 @@ import 'package:style/style.dart';
 import 'user_account_view_profile_avatar.dart';
 
 class UserAccountViewProfile extends StatelessWidget {
-  static const String _avatarImage = "badge-beta-avatar";
+
   static const String _avatarLabel = "BETA TESTER";
   static const String _member = "TIKI tribe member";
 
@@ -19,8 +19,8 @@ class UserAccountViewProfile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const UserAccountViewProfileAvatar(
-          avatar: _avatarImage,
+        UserAccountViewProfileAvatar(
+          avatar: ImgProvider.badgeBetaActive,
           label: _avatarLabel
         ),
         Padding(
@@ -29,7 +29,7 @@ class UserAccountViewProfile extends StatelessWidget {
               _member,
               style: TextStyle(
                   color: const Color(0xFF00133F),
-                  fontFamily: "Koara",
+                  fontFamily: TextProvider.familyKoara, package: 'style',
                   fontWeight: FontWeight.bold,
                   fontSize: SizeProvider.instance.text(20)),
             ))

@@ -8,7 +8,7 @@ import 'package:style/style.dart';
 
 class UserAccountViewBadgesSelect extends StatelessWidget {
   final bool isSelected;
-  final String image;
+  final Image image;
   final String label;
 
 
@@ -27,7 +27,7 @@ class UserAccountViewBadgesSelect extends StatelessWidget {
           label,
           textAlign: TextAlign.center,
           style: TextStyle(
-              fontFamily: "Koara",
+              fontFamily: TextProvider.familyKoara, package: 'style',
               fontWeight: FontWeight.bold,
               fontSize: SizeProvider.instance.text(10),
               color: isSelected ? const Color(0xFF00133F) : const Color(0xFF8D8D8D)),
@@ -47,12 +47,9 @@ class UserAccountViewBadgesSelect extends StatelessWidget {
             child: Stack(
               alignment: AlignmentDirectional.topStart,
               children: [
-                Image.asset(isSelected
-                      ? 'res/images/' + image + '-active.png'
-                      : 'res/images/' + image + '-inactive.png',
-                  package: 'user_account',
+                  SizedBox(
                   width: SizeProvider.instance.width(15*3.75),
-                  fit: BoxFit.fitWidth,
+                  child: image
                 ),
               ],
             ))

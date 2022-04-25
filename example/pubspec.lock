@@ -642,12 +642,10 @@ packages:
   zendesk_flutter:
     dependency: transitive
     description:
-      path: "."
-      ref: "0.0.2"
-      resolved-ref: "951693da1c62bf57d7173b446635d5f9b3567855"
-      url: "https://github.com/tiki/zendesk_flutter"
-    source: git
-    version: "0.0.1+1"
+      path: "../../zendesk_flutter"
+      relative: true
+    source: path
+    version: "0.0.2"
 sdks:
   dart: ">=2.16.2 <3.0.0"
   flutter: ">=2.10.0"

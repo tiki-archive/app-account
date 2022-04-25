@@ -22,9 +22,7 @@ dependencies:
   style:
     path: ../style
   zendesk_flutter:
-    git:
-      url: https://github.com/tiki/zendesk_flutter
-      ref: 0.0.2
+    path: ../zendesk_flutter
 
 
 dev_dependencies:

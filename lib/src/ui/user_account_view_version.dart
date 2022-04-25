@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:package_info/package_info.dart';
+import 'package:style/style.dart';
 
-import '../user_account_style.dart';
 
 class UserAccountViewVersion extends StatelessWidget {
-  final UserAccountStyle style;
 
-  const UserAccountViewVersion({Key? key, required this.style}) : super(key: key);
+  const UserAccountViewVersion({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<PackageInfo>(
@@ -18,7 +17,7 @@ class UserAccountViewVersion extends StatelessWidget {
                       ? " | Release " + snapshot.data!.version
                       : ""),
               style: TextStyle(
-                  fontSize: style.text(11),
+                  fontSize: SizeProvider.instance.text(11),
                   fontWeight: FontWeight.w600,
                   color: const Color(0xFF797979)));
         });

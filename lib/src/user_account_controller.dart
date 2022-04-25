@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:share_plus/share_plus.dart';
-// import 'package:zendesk_flutter/src/zendesk_flutter_style.dart';
-// import 'package:zendesk_flutter/zendesk_flutter.dart';
+import 'package:zendesk_flutter/zendesk_flutter.dart';
 
 import 'user_account_service.dart';
 
@@ -31,15 +30,7 @@ class UserAccountController {
 
   void goToSupport(BuildContext context) {
     Navigator.of(context).pop();
-    // ZendeskFlutterStyle style = ZendeskFlutterStyle(
-    //     cardBackground: Colors.white,
-    //     modalNavColor: const Color(0xFFF0F0F0),
-    //     textColor: const Color(0xFF8D8D8D),
-    //     accentColor: const Color(0xFF1C0000),
-    //     fontFamily: 'NunitoSans',
-    //     titleFont: 'Koara',
-    //     subtitleFont: 'NunitoSans');
-    // ZendeskFlutter(style: style).show(context);
+    ZendeskFlutter().show(context);
   }
 
   void showQrCode(BuildContext context) {

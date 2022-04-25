@@ -4,8 +4,7 @@
  */
 
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import '../../user_account_service.dart';
+import 'package:style/style.dart';
 
 class UserReferralViewText extends StatelessWidget {
   static const String _textL1 = "Share your TIKI code and get";
@@ -16,14 +15,13 @@ class UserReferralViewText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    UserAccountService service = Provider.of<UserAccountService>(context);
     return Column(
       children: [
         Text(
           _textL1,
           textAlign: TextAlign.center,
           style: TextStyle(
-              fontSize: service.style.text(_fontSize),
+              fontSize: SizeProvider.instance.text(_fontSize),
               fontWeight: FontWeight.w600,
               color: const Color(0xFF00133F)),
         ),
@@ -31,7 +29,7 @@ class UserReferralViewText extends StatelessWidget {
           _textL2,
           textAlign: TextAlign.center,
           style: TextStyle(
-              fontSize: service.style.text(_fontSize),
+              fontSize: SizeProvider.instance.text(_fontSize),
               fontWeight: FontWeight.w800,
               color: const Color(0xFF00133F)),
         )

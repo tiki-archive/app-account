@@ -9,7 +9,6 @@ class UserAccountViewSupport extends StatelessWidget {
 
   const UserAccountViewSupport({Key? key}) : super(key: key);
 
-
   @override
   Widget build(BuildContext context) {
     UserAccountService service =

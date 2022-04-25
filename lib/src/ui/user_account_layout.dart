@@ -6,7 +6,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:style/style.dart';
+import 'package:upvoty/upvoty.dart';
 
+import '../../user_account.dart';
 import '../user_account_service.dart';
 
 import 'user_account_view_badges.dart';
@@ -25,7 +27,17 @@ import 'user_account_view_version.dart';
 
 class UserAccountLayout extends StatelessWidget {
   static const num _cardMarginTop = 2.25;
-  
+
+  static UpvotyStyle style = UpvotyStyle();
+  static Upvoty upvoty = Upvoty(style: style, pressBack: (context) {
+    Navigator.of(context).pop();
+    UserAccount(
+        referalCode: "\$0000T",
+        logout: () => print('logout'),
+        combinedKeys: 'teste')
+        .open(context);
+  });
+
   const UserAccountLayout({Key? key}) : super(key: key);
 
   @override
@@ -70,8 +82,14 @@ class UserAccountLayout extends StatelessWidget {
                             margin: EdgeInsets.only(top: SizeProvider.instance.width(_cardMarginTop*8.12)),
                             child: const UserAccountViewSupport()),
                         Container(
-                            margin: EdgeInsets.only(top: SizeProvider.instance.width(1.5*8.12)),
-                            child: const UserAccountViewVersion()),
+                            margin: EdgeInsets.only(top: style.size(_cardMarginTop*8.12)),
+                            child: upvoty.buttonSuggestions()),
+                        Container(
+                            margin: EdgeInsets.only(top: style.size(_cardMarginTop*8.12)),
+                            child: upvoty.buttonBugs()),
+                        Container(
+                            margin: EdgeInsets.only(top: style.size(1.5*8.12)),
+                            child: UserAccountViewVersion(style:style)),
                         Container(
                             margin: EdgeInsets.only(top: SizeProvider.instance.width(3*8.12)),
                             child: const UserAccountViewLogout()),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:style/style.dart';
+import 'package:tiki_style/tiki_style.dart';
 
 import '../user_account_service.dart';
 
@@ -31,7 +31,7 @@ class UserAccountViewQrCodeBtn extends StatelessWidget {
                       child: Text(_title,
                           style: TextStyle(
                               fontSize: SizeProvider.instance.text(12), fontWeight: FontWeight.bold))),
-                Icon(IconProvider.arrow_forward, size: SizeProvider.instance.width(4.5*8.12)),
+                Icon(IconProvider.arrow_right, size: SizeProvider.instance.width(4.5*8.12)),
                 ])));
   }
 }

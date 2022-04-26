@@ -5,7 +5,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:style/style.dart';
+import 'package:tiki_style/tiki_style.dart';
 
 import '../../user_account_service.dart';
 
@@ -40,7 +40,7 @@ class UserReferralViewCode extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                         color: const Color(0xFF00133F))))
           ]),
-          Icon(IconProvider.content_copy, size: SizeProvider.instance.text(_fontSize)),
+          Icon(IconProvider.copy, size: SizeProvider.instance.text(_fontSize)),
         ]));
   }
 }

@@ -5,7 +5,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:style/style.dart';
+import 'package:tiki_style/tiki_style.dart';
 import 'package:upvoty/upvoty.dart';
 
 import '../../user_account.dart';
@@ -89,7 +89,7 @@ class UserAccountLayout extends StatelessWidget {
                             child: upvoty.buttonBugs()),
                         Container(
                             margin: EdgeInsets.only(top: style.size(1.5*8.12)),
-                            child: UserAccountViewVersion(style:style)),
+                            child: const UserAccountViewVersion()),
                         Container(
                             margin: EdgeInsets.only(top: SizeProvider.instance.width(3*8.12)),
                             child: const UserAccountViewLogout()),

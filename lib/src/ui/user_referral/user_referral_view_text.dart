@@ -4,7 +4,7 @@
  */
 
 import 'package:flutter/material.dart';
-import 'package:style/style.dart';
+import 'package:tiki_style/tiki_style.dart';
 
 class UserReferralViewText extends StatelessWidget {
   static const String _textL1 = "Share your TIKI code and get";

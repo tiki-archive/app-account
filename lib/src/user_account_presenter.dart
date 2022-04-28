@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:style/style.dart';
+import 'package:tiki_style/tiki_style.dart';
 
 import 'ui/logout/logout_modal_layout.dart';
 import 'ui/user_account_layout.dart';

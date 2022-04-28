@@ -4,7 +4,7 @@
  */
 
 import 'package:flutter/material.dart';
-import 'package:style/style.dart';
+import 'package:tiki_style/tiki_style.dart';
 
 
 class UserAccountViewHeader extends StatelessWidget {
@@ -28,7 +28,7 @@ class UserAccountViewHeader extends StatelessWidget {
                   height: SizeProvider.instance.width(3.75*_paddingVert * 3),
                   padding: EdgeInsets.only(right: SizeProvider.instance.width(3.75*_paddingHoriz)),
                   child: Center(
-                      child: Icon(IconProvider.close, size: SizeProvider.instance.text(12))
+                      child: Icon(IconProvider.x, size: SizeProvider.instance.text(12))
                   )))),
       Container(
           alignment: Alignment.center,

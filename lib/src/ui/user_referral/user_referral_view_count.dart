@@ -5,6 +5,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:tiki_style/tiki_style.dart';
 
 import '../../user_account_service.dart';
 
@@ -19,11 +20,12 @@ class UserReferralViewCount extends StatelessWidget {
     UserAccountService service = Provider.of<UserAccountService>(context);
     return Row(mainAxisSize: MainAxisSize.min, children: [
       Container(
-          margin: EdgeInsets.only(right: service.style.size(8)),
-          child: Image.asset("res/images/ref-user.png", height: service.style.text(_fontSize), package: 'user_account')),
+          margin: EdgeInsets.only(right: SizeProvider.instance.width(8)),
+          child: Icon(IconProvider.person, size: SizeProvider.instance.text(_fontSize), color: ColorProvider.green),
+      ),
       Text(service.model.referCount.toString() + _text,
           style: TextStyle(
-              fontSize: service.style.text(_fontSize),
+              fontSize: SizeProvider.instance.text(_fontSize),
               fontWeight: FontWeight.w600,
               color: const Color(0xFF00B272)))
     ]);

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:tiki_style/tiki_style.dart';
 
-import '../user_account_style.dart';
+
 import 'widgets/tiki_card/tiki_card.dart';
 import 'widgets/tiki_card/tiki_card_controller.dart';
 import 'widgets/tiki_card/tiki_card_view_cta_row.dart';
@@ -12,7 +13,7 @@ class UserAccountViewCommunity extends StatelessWidget {
   static const double _btnHeight = 5;
   static const double _btnIconPaddingRight = 2;
   static const double _btnIconHeight = 1.5;
-  static const double _btnTextFontSize = 10;
+  static const double _btnTextFontSize = 12;
   static const String _title = "TIKI tribe";
   static const String _text =
       "Join our community of \nTIKI-nites from around \nthe globe.";
@@ -26,20 +27,20 @@ class UserAccountViewCommunity extends StatelessWidget {
   static const String _telegram = "Telegram";
   static const String _telegramLink = "https://t.me/mytikiapp";
   static const Color _telegramColor = Color(0xFF0088CC);
-  final UserAccountStyle style;
 
-  const UserAccountViewCommunity({Key? key, required this.style}) : super(key: key);
+
+  const UserAccountViewCommunity({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return TikiCard(const TikiCardViewTitle(_title), const TikiCardViewText(_text),
-        TikiCardViewFigure(Image.asset("res/images/tiki-and-pals.png", package: "user_account")),
+        TikiCardViewFigure(ImgProvider.tikiAndPals),
         cta: TikiCardViewCtaRow([
           Expanded(
               child: GestureDetector(
                   onTap: () => TikiCardController.launchUrl(_discordLink),
                   child: Container(
-                      height: style.size(_btnHeight*8.12),
+                      height: SizeProvider.instance.width(_btnHeight*8.12),
                       decoration: const BoxDecoration(
                           color: _discordColor,
                           borderRadius: BorderRadius.only(
@@ -49,12 +50,12 @@ class UserAccountViewCommunity extends StatelessWidget {
                           children: [
                             Container(
                                 padding: EdgeInsets.only(
-                                    right: style.size(_btnIconPaddingRight*3.75)),
-                                height: style.size(_btnIconHeight*8.12),
-                                child: Image.asset("res/images/discord-logo.png", package: "user_account")),
+                                    right: SizeProvider.instance.width(_btnIconPaddingRight*3.75)),
+                                height: SizeProvider.instance.width(_btnIconHeight*8.12),
+                                child: ImgProvider.discordLogo),
                             Text(_discord,
                                 style: TextStyle(
-                                    fontSize: style.text(_btnTextFontSize),
+                                    fontSize: SizeProvider.instance.text(_btnTextFontSize),
                                     color: Colors.white,
                                     fontWeight: FontWeight.bold))
                           ])))),
@@ -63,20 +64,20 @@ class UserAccountViewCommunity extends StatelessWidget {
               child: GestureDetector(
                   onTap: () => TikiCardController.launchUrl(_signalLink),
                   child: Container(
-                      height: style.size(_btnHeight*8.12),
+                      height: SizeProvider.instance.width(_btnHeight*8.12),
                       color: _signalColor,
                       child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Container(
                               padding: EdgeInsets.only(
-                                  right: style.size(_btnIconPaddingRight*3.75)),
-                              height: style.size(_btnIconHeight*8.12),
-                              child: Image.asset("res/images/signal-logo.png", package: "user_account"),
+                                  right: SizeProvider.instance.width(_btnIconPaddingRight*3.75)),
+                              height: SizeProvider.instance.width(_btnIconHeight*8.12),
+                              child: ImgProvider.signalLogo,
                             ),
                             Text(_signal,
                                 style: TextStyle(
-                                    fontSize: style.text(_btnTextFontSize),
+                                    fontSize: SizeProvider.instance.text(_btnTextFontSize),
                                     color: Colors.white,
                                     fontWeight: FontWeight.bold))
                           ])))),
@@ -89,18 +90,18 @@ class UserAccountViewCommunity extends StatelessWidget {
                           borderRadius: BorderRadius.only(
                               bottomRight: Radius.circular(24)),
                           color: _telegramColor),
-                      height: style.size(_btnHeight*8.12),
+                      height: SizeProvider.instance.width(_btnHeight*8.12),
                       child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Container(
                                 padding: EdgeInsets.only(
-                                    right: style.size(_btnIconPaddingRight*3.75)),
-                                height: style.size(_btnIconHeight*8.12),
-                                child: Image.asset("res/images/telegram-logo.png", package: "user_account")),
+                                    right: SizeProvider.instance.width(_btnIconPaddingRight*3.75)),
+                                height: SizeProvider.instance.width(_btnIconHeight*8.12),
+                                child: ImgProvider.telegramLogo),
                             Text(_telegram,
                                 style: TextStyle(
-                                    fontSize: style.text(_btnTextFontSize),
+                                    fontSize: SizeProvider.instance.text(_btnTextFontSize),
                                     color: Colors.white,
                                     fontWeight: FontWeight.bold))
                           ])))),

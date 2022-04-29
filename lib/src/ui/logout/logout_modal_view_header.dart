@@ -4,15 +4,15 @@
  */
 
 import 'package:flutter/material.dart';
+import 'package:tiki_style/tiki_style.dart';
 
-import '../../user_account_style.dart';
 
 class LogoutModalViewHeader extends StatelessWidget {
   static const double _paddingVert = 20;
 
-  final UserAccountStyle style;
 
-  const LogoutModalViewHeader({Key? key, required this.style}) : super(key: key);
+
+  const LogoutModalViewHeader({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,10 +20,10 @@ class LogoutModalViewHeader extends StatelessWidget {
       Container(
           alignment: Alignment.center,
           padding: EdgeInsets.only(
-            top: style.size(_paddingVert),
-            bottom: style.size(_paddingVert),
+            top: SizeProvider.instance.width(_paddingVert),
+            bottom: SizeProvider.instance.width(_paddingVert),
           ),
-          child: Image.asset('res/images/modal-top.png', package: 'user_account'))
-    ]);
+          child: ImgProvider.modalTop
+      )]);
   }
 }

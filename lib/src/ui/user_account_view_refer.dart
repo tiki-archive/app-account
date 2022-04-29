@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import '../user_account_style.dart';
+import 'package:tiki_style/tiki_style.dart';
+
 import 'user_account_view_refer_share.dart';
 import 'user_referral/user_referral_layout.dart';
 
 class UserAccountViewRefer extends StatelessWidget {
 
-  final UserAccountStyle style;
-
-  const UserAccountViewRefer({Key? key, required this.style}) : super(key: key);
+  const UserAccountViewRefer({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,15 +21,15 @@ class UserAccountViewRefer extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
               // Container(
-              //   margin: EdgeInsets.only(top: style.size(10*8.12)),
-              //   child: UserAccountViewReferCount(style: style),
+              //   margin: EdgeInsets.only(top: SizeProvider.instance.width(10*8.12)),
+              //   child: UserAccountViewReferCount(),
               // ),
               Container(
-                  margin: EdgeInsets.only(top: style.size(3.5*8.12)),
+                  margin: EdgeInsets.only(top: SizeProvider.instance.width(3.5*8.12)),
                   child: const UserReferralLayout()),
               Container(
                   margin: EdgeInsets.only(
-                      top: style.size(4.5*8.12), bottom: style.size(5.5*8.12), left: style.size(13*3.75), right: style.size(13*3.75)),
+                      top: SizeProvider.instance.width(16), bottom: SizeProvider.instance.width(16), left: SizeProvider.instance.width(50), right: SizeProvider.instance.width(50)),
                   alignment: Alignment.topCenter,
                   child: const UserAccountViewReferShare()),
             ]));

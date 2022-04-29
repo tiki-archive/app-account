@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:user_account/user_account.dart';
+import 'package:tiki_user_account/tiki_user_account.dart';
 
 void main() {
   runApp(const MyApp());
@@ -23,9 +23,9 @@ class _MyAppState extends State<MyApp> {
         body: Center(
           child: LayoutBuilder(
               builder: (context, _) => ElevatedButton(
-                  onPressed: () => UserAccount(
+                  onPressed: () => TikiUserAccount(
                           referalCode: "\$0000T",
-                          logout: () => print('logout'),
+                          logout: () => Navigator.of(context).pop(),
                           combinedKeys: 'teste')
                       .open(context),
                   child: const Text('Open modal'))),

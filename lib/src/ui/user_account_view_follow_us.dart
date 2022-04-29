@@ -52,7 +52,7 @@ class UserAccountViewFollowUs extends StatelessWidget {
                         right: SizeProvider.instance.width(3 * _btnPaddingHorizontal*3.75),
                         bottom: SizeProvider.instance.width(_btnPaddingVertical*8.12)),
                     child:
-                        SizedBox(child:ImgProvider.telegramLogo, height: SizeProvider.instance.width(_btnHeight*8.12))))),
+                        SizedBox(child:ImgProvider.twitterButton, height: SizeProvider.instance.width(_btnHeight*8.12))))),
         Expanded(
             child: GestureDetector(
                 onTap: () => TikiCardController.launchUrl(_instagramUrl),
@@ -62,7 +62,7 @@ class UserAccountViewFollowUs extends StatelessWidget {
                         top: SizeProvider.instance.width(_btnPaddingVertical*8.12),
                         right: SizeProvider.instance.width(_btnPaddingHorizontal*3.75),
                         bottom: SizeProvider.instance.width(4 * _btnPaddingVertical*8.12)),
-                    child: SizedBox(child: ImgProvider.signalLogo,
+                    child: SizedBox(child: ImgProvider.instagramButton,
                         height: SizeProvider.instance.width(_btnHeight*8.12))))),
         Expanded(
             child: GestureDetector(

@@ -18,7 +18,8 @@ dependencies:
   qr_flutter: ^4.0.0
   tiki_style: ^0.0.10
   zendesk_flutter: ^0.0.3
-  tiki_upvoty: ^0.0.11
+  tiki_upvoty:
+    path: ../upvoty
 
 dev_dependencies:
   flutter_test:

@@ -26,7 +26,7 @@ class UserAccountViewReferCount extends StatelessWidget {
           style: TextStyle(
               color: const Color(0xFFB5006C),
               fontFamily: TextProvider.familyKoara,
-              package: 'style',
+              package: 'tiki_style',
               fontWeight: FontWeight.bold,
               height: 0,
               fontSize: SizeProvider.instance.text(63))),

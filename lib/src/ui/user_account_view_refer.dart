@@ -29,7 +29,7 @@ class UserAccountViewRefer extends StatelessWidget {
                   child: const UserReferralLayout()),
               Container(
                   margin: EdgeInsets.only(
-                      top: SizeProvider.instance.width(4.5*8.12), bottom: SizeProvider.instance.width(5.5*8.12), left: SizeProvider.instance.width(13*3.75), right: SizeProvider.instance.width(13*3.75)),
+                      top: SizeProvider.instance.width(16), bottom: SizeProvider.instance.width(16), left: SizeProvider.instance.width(50), right: SizeProvider.instance.width(50)),
                   alignment: Alignment.topCenter,
                   child: const UserAccountViewReferShare()),
             ]));

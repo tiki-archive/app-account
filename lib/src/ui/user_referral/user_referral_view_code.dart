@@ -11,7 +11,7 @@ import '../../user_account_service.dart';
 
 class UserReferralViewCode extends StatelessWidget {
   static const String _text = "YOUR CODE:";
-  static const double _fontSize = 12;
+  static const double _fontSize = 14;
 
   const UserReferralViewCode({Key? key}) : super(key: key);
 
@@ -22,16 +22,16 @@ class UserReferralViewCode extends StatelessWidget {
         onPressed: () async => service.controller.copyLink(context),
         style: OutlinedButton.styleFrom(
             side: const BorderSide(color: Color(0xFFAFAFAF)),
-            primary: const Color(0xFF8D8D8D),
+            primary: ColorProvider.greyThree,
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.all(Radius.circular(SizeProvider.instance.width(8))))),
-        child: Row(mainAxisSize: MainAxisSize.min, children: [
+        child: Padding(padding: EdgeInsets.all(SizeProvider.instance.size(4)), child: Row(mainAxisSize: MainAxisSize.min, children: [
           Row(mainAxisSize: MainAxisSize.min, children: [
             Text(_text,
                 style: TextStyle(
                     fontSize: SizeProvider.instance.text(_fontSize),
                     fontWeight: FontWeight.bold,
-                    color: const Color(0xFF8D8D8D))),
+                    color: ColorProvider.greyFour)),
             Container(
                 margin: EdgeInsets.all(SizeProvider.instance.width(8)),
                 child: Text(service.model.code,
@@ -40,7 +40,7 @@ class UserReferralViewCode extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                         color: const Color(0xFF00133F))))
           ]),
-          Icon(IconProvider.copy, size: SizeProvider.instance.text(_fontSize)),
-        ]));
+          Icon(IconProvider.copy, size: SizeProvider.instance.text(_fontSize), color: ColorProvider.greyFour),
+        ])));
   }
 }

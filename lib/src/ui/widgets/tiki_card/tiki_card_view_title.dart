@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tiki_style/tiki_style.dart';
 
 class TikiCardViewTitle extends StatelessWidget {
   final String? title;
@@ -11,7 +12,7 @@ class TikiCardViewTitle extends StatelessWidget {
     return Text(title ?? "",
         style: TextStyle(
             color: textColor ?? const Color(0xFF27002E),
-            fontSize: 14,
+            fontSize: SizeProvider.instance.text(18),
             fontWeight: FontWeight.w800));
   }
 }

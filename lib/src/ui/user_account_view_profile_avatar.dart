@@ -22,12 +22,13 @@ class UserAccountViewProfileAvatar extends StatelessWidget {
       alignment: AlignmentDirectional.bottomCenter,
       children: [
        SizedBox(
-          height: SizeProvider.instance.width(10*8.12),
-          child: avatar
+          height: SizeProvider.instance.height(95),
+          width: SizeProvider.instance.width(95),
+          child: FittedBox( child: avatar, fit: BoxFit.fill)
         ),
         Stack(alignment: AlignmentDirectional.center, children: [
          SizedBox(
-            width: SizeProvider.instance.width(_labelWidth*3.75),
+            width: SizeProvider.instance.width(115),
             child: ImgProvider.badgeAccount
           ),
           SizedBox(
@@ -40,12 +41,13 @@ class UserAccountViewProfileAvatar extends StatelessWidget {
                     style: TextStyle(
                         fontWeight: FontWeight.w800,
                         color: Colors.white,
-                        fontSize: SizeProvider.instance.text(8)),
+                        fontSize: SizeProvider.instance.text(11)),
                   ),
                   Padding(
                       padding: EdgeInsets.only(left: SizeProvider.instance.width(1*3.75)),
                       child: Icon(IconProvider.star,
-                        size: SizeProvider.instance.text(8)),
+                        size: SizeProvider.instance.text(11),
+                        color: Colors.white),
                       ),
                 ],
               ))

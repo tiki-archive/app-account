@@ -39,7 +39,7 @@ class UserAccountViewHeader extends StatelessWidget {
               style: TextStyle(
                   color: const Color(0xFF27002E),
                   fontWeight: FontWeight.w800,
-                  fontSize: SizeProvider.instance.text(12)))),
+                  fontSize: SizeProvider.instance.text(16)))),
     ]);
   }
 }

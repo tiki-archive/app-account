@@ -9,7 +9,7 @@ import 'package:tiki_style/tiki_style.dart';
 class UserReferralViewText extends StatelessWidget {
   static const String _textL1 = "Share your TIKI code and get";
   static const String _textL2 = "\$5 for every 10 people who join.";
-  static const double _fontSize = 11;
+  static const double _fontSize = 14;
 
   const UserReferralViewText({Key? key}) : super(key: key);
 

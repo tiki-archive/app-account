@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:tiki_style/tiki_style.dart';
 
 import 'service.dart';
-import 'view_logout_btn.dart';
+import 'ui/modal.dart';
 
 class LogoutPresenter {
   final LogoutService service;
@@ -20,6 +20,6 @@ class LogoutPresenter {
             borderRadius: BorderRadius.vertical(
                 top: Radius.circular(SizeProvider.instance.width(26)))),
         builder: (BuildContext context) => ChangeNotifierProvider<LogoutService>.value(
-            value: service, child: const ViewLogoutModal()));
+            value: service, child: const LogoutUiModal()));
   }
 }

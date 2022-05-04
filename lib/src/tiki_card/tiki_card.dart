@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
-import 'tiki_card_view_cta.dart';
-import 'tiki_card_view_cta_inline.dart';
-import 'tiki_card_view_figure.dart';
-import 'tiki_card_view_text.dart';
-import 'tiki_card_view_title.dart';
+import 'ui/cta.dart';
+import 'ui/cta_inline.dart';
+import 'ui/figure.dart';
+import 'ui/text.dart';
+import 'ui/title.dart';
 
 class TikiCard extends StatelessWidget {
-  final TikiCardViewTitle title;
-  final TikiCardViewText text;
-  final TikiCardViewFigure figure;
-  final TikiCardViewCta? cta;
+  final TikiCardUiTitle title;
+  final TikiCardUiText text;
+  final TikiCardUiFigure figure;
+  final TikiCardUiCta? cta;
   final Color bgColor;
 
   const TikiCard(this.title, this.text, this.figure,
@@ -57,14 +57,14 @@ class TikiCard extends StatelessWidget {
   }
 
   getPadding() {
-    if (cta == null || cta is TikiCardViewCtaInline) {
+    if (cta == null || cta is TikiCardUiCtaInline) {
       return const EdgeInsets.only(top: 16, left: 18, right: 18, bottom: 8);
     }
     return const EdgeInsets.only(top: 24, left: 0, right: 0, bottom: 0);
   }
 
   getColumnPadding() {
-    if (cta == null || cta is TikiCardViewCtaInline) {
+    if (cta == null || cta is TikiCardUiCtaInline) {
       return const EdgeInsets.all(0);
     }
     return const EdgeInsets.symmetric(horizontal: 20);

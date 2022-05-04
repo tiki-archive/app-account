@@ -7,13 +7,13 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tiki_style/tiki_style.dart';
 
-import 'service.dart';
+import '../service.dart';
 
-class ViewLogoutBtn extends StatelessWidget {
+class LogoutUiBtn extends StatelessWidget {
   static const String _text = "Log out";
 
 
-  const ViewLogoutBtn({Key? key}) : super(key: key);
+  const LogoutUiBtn({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

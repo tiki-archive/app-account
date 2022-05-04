@@ -12,7 +12,6 @@ import '../service.dart';
 class LogoutUiBtn extends StatelessWidget {
   static const String _text = "Log out";
 
-
   const LogoutUiBtn({Key? key}) : super(key: key);
 
   @override

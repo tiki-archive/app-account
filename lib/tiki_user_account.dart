@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:httpp/httpp.dart';
 
-import 'src/user_account_service.dart';
+import 'src/user_account/service.dart';
 
 class TikiUserAccount {
   final UserAccountService _service;
@@ -14,8 +14,7 @@ class TikiUserAccount {
       required String combinedKeys})
       : _service = UserAccountService(
             httppClient: httppClient ?? Httpp().client(),
-            referalCode: referalCode,
-            logout: logout,
+            logoutCallback: logout,
             combinedKeys: combinedKeys);
 
   open(BuildContext context) {

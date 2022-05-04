@@ -8,7 +8,6 @@ import 'package:provider/provider.dart';
 import 'package:tiki_style/tiki_style.dart';
 import 'package:tiki_upvoty/tiki_upvoty.dart';
 
-import '../../sign_up/ui/view_refer.dart';
 import '../service.dart';
 import 'badges.dart';
 import 'community.dart';
@@ -20,32 +19,6 @@ import 'qr_code_btn.dart';
 import 'qr_code_show.dart';
 import 'release.dart';
 import 'support.dart';
-import 'user_account_service.dart';
-
-import 'ui/user_account_view_badges.dart';
-import 'ui/user_account_view_community.dart';
-import 'ui/user_account_view_follow_us.dart';
-import 'ui/user_account_view_header.dart';
-import 'ui/user_account_view_logout.dart';
-import 'ui/user_account_view_news.dart';
-import 'ui/user_account_view_profile.dart';
-import 'ui/user_account_view_qr_code_btn.dart';
-import 'ui/user_account_view_qr_code_show.dart';
-import 'ui/user_account_view_refer.dart';
-import 'ui/user_account_view_release.dart';
-import 'ui/user_account_view_support.dart';
-import 'ui/user_account_view_version.dart';
-import 'ui/view_badges.dart';
-import 'ui/view_community.dart';
-import 'ui/view_follow_us.dart';
-import 'ui/view_header.dart';
-import 'ui/view_news.dart';
-import 'ui/view_profile.dart';
-import 'ui/view_qr_code_btn.dart';
-import 'ui/view_qr_code_show.dart';
-import 'ui/view_release.dart';
-import 'ui/view_support.dart';
-import 'ui/view_version.dart';
 import 'version.dart';
 
 class UserAccountLayout extends StatelessWidget {

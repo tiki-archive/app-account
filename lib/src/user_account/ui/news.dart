@@ -1,14 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tiki_style/tiki_style.dart';
 
-
 import '../../tiki_card/tiki_card.dart';
-import 'ui/widgets/tiki_card/card.dart';
-import 'ui/widgets/tiki_card/tiki_card_controller.dart';
-import 'ui/widgets/tiki_card/tiki_card_view_cta_inline.dart';
-import 'ui/widgets/tiki_card/tiki_card_view_figure.dart';
-import 'ui/widgets/tiki_card/tiki_card_view_text.dart';
-import 'ui/widgets/tiki_card/tiki_card_view_title.dart';
 
 class UserAccountUiNews extends StatelessWidget {
   static const String _title = "Latest news";

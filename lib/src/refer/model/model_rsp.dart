@@ -6,17 +6,17 @@
 import 'model_rsp_message.dart';
 import 'model_rsp_page.dart';
 
-class SignUpModelRsp<T> {
+class ReferModelRsp<T> {
   String? status;
   int? code;
   dynamic data;
-  SignUpModelRspPage? page;
-  late List<SignUpModelRspMessage> messages;
+  ReferModelRspPage? page;
+  late List<ReferModelRspMessage> messages;
 
-  SignUpModelRsp(
+  ReferModelRsp(
       {this.status, this.code, this.data, this.page, this.messages = const []});
 
-  SignUpModelRsp.fromJson(Map<String, dynamic>? json,
+  ReferModelRsp.fromJson(Map<String, dynamic>? json,
       T Function(Map<String, dynamic>? json) fromJson) {
     if (json != null) {
       status = json['status'];
@@ -29,12 +29,12 @@ class SignUpModelRsp<T> {
       }
 
       if (json['page'] != null) {
-        page = SignUpModelRspPage().fromJson(json['page']);
+        page = ReferModelRspPage().fromJson(json['page']);
       }
 
       if (json['messages'] != null) {
         messages = (json['messages'] as List)
-            .map((e) => SignUpModelRspMessage.fromJson(e))
+            .map((e) => ReferModelRspMessage.fromJson(e))
             .toList();
       }
     }

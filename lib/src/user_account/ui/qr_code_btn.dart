@@ -3,8 +3,6 @@ import 'package:provider/provider.dart';
 import 'package:tiki_style/tiki_style.dart';
 
 import '../service.dart';
-import 'user_account_service.dart';
-
 
 class UserAccountUiQrCodeBtn extends StatelessWidget {
   static const String _title = "Show QR Code";

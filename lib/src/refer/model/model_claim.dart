@@ -3,13 +3,13 @@
  * MIT license. See LICENSE file in root directory.
  */
 
-class SignUpModelClaim {
+class ReferModelClaim {
   String? code;
   String? address;
 
-  SignUpModelClaim({this.code, this.address});
+  ReferModelClaim({this.code, this.address});
 
-  SignUpModelClaim.fromJson(Map<String, dynamic>? json) {
+  ReferModelClaim.fromJson(Map<String, dynamic>? json) {
     if (json != null) {
       code = json['code'];
       address = json['address'];

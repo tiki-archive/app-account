@@ -6,13 +6,11 @@ import 'package:flutter/material.dart';
 import 'package:tiki_style/tiki_style.dart';
 
 import 'profile_avatar.dart';
-import 'ui/user_account_view_profile_avatar.dart';
 
 class UserAccountUiProfile extends StatelessWidget {
 
   static const String _avatarLabel = "BETA TESTER";
   static const String _member = "TIKI tribe member";
-
 
   const UserAccountUiProfile({Key? key}) : super(key: key);
 

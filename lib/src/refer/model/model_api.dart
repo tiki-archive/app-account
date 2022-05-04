@@ -3,14 +3,14 @@
  * MIT license. See LICENSE file in root directory.
  */
 
-class SignUpModelApi<T> {
+class ReferModelApi<T> {
   String? status;
   int? code;
   dynamic data;
 
-  SignUpModelApi({this.status, this.code, this.data});
+  ReferModelApi({this.status, this.code, this.data});
 
-  SignUpModelApi.fromJson(Map<String, dynamic>? json,
+  ReferModelApi.fromJson(Map<String, dynamic>? json,
       T Function(Map<String, dynamic>? json) fromJson) {
     if (json != null) {
       status = json['status'];

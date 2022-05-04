@@ -3,13 +3,13 @@
  * MIT license. See LICENSE file in root directory.
  */
 
-class SignUpModelRspMessage {
+class ReferModelRspMessage {
   int? code;
   String? status;
   String? message;
   Map<String, String>? properties;
 
-  SignUpModelRspMessage.fromJson(Map<String, dynamic>? json) {
+  ReferModelRspMessage.fromJson(Map<String, dynamic>? json) {
     if (json != null) {
       code = json['code'];
       status = json['status'];

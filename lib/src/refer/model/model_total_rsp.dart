@@ -1,9 +1,9 @@
-class SignUpModelTotalRsp {
+class ReferModelTotalRsp {
   int? total;
 
-  SignUpModelTotalRsp({this.total});
+  ReferModelTotalRsp({this.total});
 
-  SignUpModelTotalRsp.fromJson(Map<String, dynamic>? json) {
+  ReferModelTotalRsp.fromJson(Map<String, dynamic>? json) {
     if (json != null) {
       total = json['total'];
     }

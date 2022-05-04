@@ -3,16 +3,16 @@
  * MIT license. See LICENSE file in root directory.
  */
 
-class SignUpModelRspPage {
+class ReferModelRspPage {
   int? size;
   int? totalElements;
   int? totalPages;
   int? page;
 
-  SignUpModelRspPage(
+  ReferModelRspPage(
       {this.size, this.totalElements, this.totalPages, this.page});
 
-  SignUpModelRspPage fromJson(Map<String, dynamic>? json) {
+  ReferModelRspPage fromJson(Map<String, dynamic>? json) {
     if (json != null) {
       size = json['size'];
       totalElements = json['totalElements'];

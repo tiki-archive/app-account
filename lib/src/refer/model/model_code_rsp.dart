@@ -3,12 +3,12 @@
  * MIT license. See LICENSE file in root directory.
  */
 
-class SignUpModelCodeRsp {
+class ReferModelCodeRsp {
   String? code;
 
-  SignUpModelCodeRsp({this.code});
+  ReferModelCodeRsp({this.code});
 
-  SignUpModelCodeRsp.fromJson(Map<String, dynamic>? json) {
+  ReferModelCodeRsp.fromJson(Map<String, dynamic>? json) {
     if (json != null) {
       code = json['code'];
     }

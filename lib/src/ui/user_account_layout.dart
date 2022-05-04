@@ -6,9 +6,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tiki_style/tiki_style.dart';
-import 'package:upvoty/upvoty.dart';
+import 'package:tiki_upvoty/tiki_upvoty.dart';
 
-import '../../user_account.dart';
 import '../user_account_service.dart';
 
 import 'user_account_view_badges.dart';
@@ -28,22 +27,16 @@ import 'user_account_view_version.dart';
 class UserAccountLayout extends StatelessWidget {
   static const num _cardMarginTop = 2.25;
 
-  static UpvotyStyle style = UpvotyStyle();
-  static Upvoty upvoty = Upvoty(style: style, pressBack: (context) {
-    Navigator.of(context).pop();
-    UserAccount(
-        referalCode: "\$0000T",
-        logout: () => print('logout'),
-        combinedKeys: 'teste')
-        .open(context);
-  });
-
   const UserAccountLayout({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     UserAccountService service =
         Provider.of<UserAccountService>(context);
+    TikiUpvoty upvoty = TikiUpvoty(pressBack: (context) {
+      Navigator.of(context).pop();
+      service.presenter.showModal(context);
+    });
     return SizedBox(
         height: SizeProvider.instance.width(85*8.12),
         child: Column(mainAxisSize: MainAxisSize.min, children: [
@@ -82,13 +75,13 @@ class UserAccountLayout extends StatelessWidget {
                             margin: EdgeInsets.only(top: SizeProvider.instance.width(_cardMarginTop*8.12)),
                             child: const UserAccountViewSupport()),
                         Container(
-                            margin: EdgeInsets.only(top: style.size(_cardMarginTop*8.12)),
+                            margin: EdgeInsets.only(top: SizeProvider.instance.size(_cardMarginTop*8.12)),
                             child: upvoty.buttonSuggestions()),
                         Container(
-                            margin: EdgeInsets.only(top: style.size(_cardMarginTop*8.12)),
+                            margin: EdgeInsets.only(top: SizeProvider.instance.size(_cardMarginTop*8.12)),
                             child: upvoty.buttonBugs()),
                         Container(
-                            margin: EdgeInsets.only(top: style.size(1.5*8.12)),
+                            margin: EdgeInsets.only(top: SizeProvider.instance.size(1.5*8.12)),
                             child: const UserAccountViewVersion()),
                         Container(
                             margin: EdgeInsets.only(top: SizeProvider.instance.width(3*8.12)),

@@ -32,21 +32,21 @@ class UserAccountViewBadges extends StatelessWidget {
                 fontSize: SizeProvider.instance.text(14)),
           ),
           Padding(
-              padding: EdgeInsets.only(top: SizeProvider.instance.width(1.25*8.12)),
+              padding: EdgeInsets.only(top: SizeProvider.instance.width(12)),
               child: Text(_text,
                   textAlign: TextAlign.center,
                   style: TextStyle(
                       fontWeight: FontWeight.w600,
                       color: const Color(0xFF00133F),
-                      fontSize: SizeProvider.instance.text(11)))),
+                      fontSize: SizeProvider.instance.text(12)))),
           Padding(
-              padding: EdgeInsets.only(top: SizeProvider.instance.width(3*8.12)),
+              padding: EdgeInsets.only(top: SizeProvider.instance.width(24)),
               child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     UserAccountViewBadgesSelect(
-                        image: ImgProvider.badgeAccount,
+                        image: ImgProvider.badgeBetaActive,
                         label: _badgeBeta,
                         isSelected: true),
                     UserAccountViewBadgesSelect(
@@ -63,7 +63,7 @@ class UserAccountViewBadges extends StatelessWidget {
                         isSelected: false),
                   ])),
           Padding(
-              padding: EdgeInsets.only(top: SizeProvider.instance.width(1.25*8.12)),
+              padding: EdgeInsets.only(top: SizeProvider.instance.width(12)),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,

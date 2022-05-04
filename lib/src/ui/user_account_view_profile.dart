@@ -19,19 +19,22 @@ class UserAccountViewProfile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        UserAccountViewProfileAvatar(
-          avatar: ImgProvider.badgeBetaActive,
+    Padding(
+    padding: EdgeInsets.only(top: SizeProvider.instance.height(20))),
+
+    UserAccountViewProfileAvatar(
+          avatar: ImgProvider.badgeBetaAvatar,
           label: _avatarLabel
         ),
         Padding(
-            padding: EdgeInsets.only(top: SizeProvider.instance.width(4*8.12)),
+            padding: EdgeInsets.only(top: SizeProvider.instance.height(4*8.12)),
             child: Text(
               _member,
               style: TextStyle(
                   color: const Color(0xFF00133F),
-                  fontFamily: TextProvider.familyKoara, package: 'style',
+                  fontFamily: TextProvider.familyKoara, package: 'tiki_style',
                   fontWeight: FontWeight.bold,
-                  fontSize: SizeProvider.instance.text(20)),
+                  fontSize: SizeProvider.instance.text(28)),
             ))
       ],
     );

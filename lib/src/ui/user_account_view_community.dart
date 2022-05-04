@@ -13,7 +13,7 @@ class UserAccountViewCommunity extends StatelessWidget {
   static const double _btnHeight = 5;
   static const double _btnIconPaddingRight = 2;
   static const double _btnIconHeight = 1.5;
-  static const double _btnTextFontSize = 10;
+  static const double _btnTextFontSize = 12;
   static const String _title = "TIKI tribe";
   static const String _text =
       "Join our community of \nTIKI-nites from around \nthe globe.";

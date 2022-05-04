@@ -27,10 +27,10 @@ class UserAccountViewBadgesSelect extends StatelessWidget {
           label,
           textAlign: TextAlign.center,
           style: TextStyle(
-              fontFamily: TextProvider.familyKoara, package: 'style',
+              fontFamily: TextProvider.familyKoara, package: 'tiki_style',
               fontWeight: FontWeight.bold,
-              fontSize: SizeProvider.instance.text(10),
-              color: isSelected ? const Color(0xFF00133F) : const Color(0xFF8D8D8D)),
+              fontSize: SizeProvider.instance.text(11),
+              color: isSelected ? const Color(0xFF00133F) : ColorProvider.greyFour),
         ),
         Container(
             decoration: BoxDecoration(

@@ -3,10 +3,10 @@ import 'package:httpp/httpp.dart';
 
 import 'src/user_account_service.dart';
 
-class UserAccount {
+class TikiUserAccount {
   final UserAccountService _service;
 
-  UserAccount(
+  TikiUserAccount(
       {
       HttppClient? httppClient,
       required String referalCode,

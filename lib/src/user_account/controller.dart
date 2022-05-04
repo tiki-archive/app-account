@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:share_plus/share_plus.dart';
 import 'package:zendesk_flutter/zendesk_flutter.dart';
 
 import 'service.dart';

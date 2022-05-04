@@ -6,11 +6,10 @@
 import 'package:httpp/httpp.dart';
 import 'package:logging/logging.dart';
 
-import 'model/model_api.dart';
-import 'model/model_claim.dart';
-import 'model/model_code_rsp.dart';
-import 'model/model_rsp.dart';
-import 'model/model_total_rsp.dart';
+import 'model/claim.dart';
+import 'model/code_rsp.dart';
+import 'model/rsp.dart';
+import 'model/total_rsp.dart';
 
 class ReferRepository {
   final Logger _log = Logger('ApiShortCodeRepository');
@@ -20,8 +19,6 @@ class ReferRepository {
   static const String _domain = 'signup.mytiki.com';
 
   final HttppClient _client;
-
-  var refresh;
 
   ReferRepository(client) :
       _client = client;
@@ -64,7 +61,7 @@ class ReferRepository {
               },
               onError: onError));
 
-  Future<void> getTotal(String code, HttppClient httppClient,
+  Future<void> getTotal(String code,
       Function? onSuccess, Function? onError) async {
     var query = {"referrer": code};
     HttppRequest request = HttppRequest(
@@ -82,7 +79,7 @@ class ReferRepository {
         },
         onError: (error) async =>
         onError != null ? onError(error) : throw error);
-    httppClient.request(request);
+    _client.request(request);
   }
 
   Future<void> _post(
@@ -143,18 +140,20 @@ class ReferRepository {
   Future<T> _auth<T>(String accessToken, Function(Object)? onError,
       Future<T> Function(String, Future<void> Function(Object)) request) async {
     return request(accessToken, (error) async {
-      if (error is ReferModelCodeRsp && error.code == '401' && refresh != null) {
-        await refresh!((token) async {
-          if (token != null) {
-            await request(
-                token,
-                    (error) async =>
-                onError != null ? onError(error) : throw error);
-          }
-        });
+      if (error is ReferModelCodeRsp && error.code == '401') {
+        await _refresh((token) async =>
+                    await request(
+                        token,
+                            (error) async =>
+                        onError != null ? onError(error) : throw error)
+        );
       } else {
         onError != null ? onError(error) : throw error;
       }
     });
+  }
+
+  Future<void> _refresh(Function onResult) async {
+
   }
 }

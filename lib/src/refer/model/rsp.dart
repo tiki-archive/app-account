@@ -3,8 +3,8 @@
  * MIT license. See LICENSE file in root directory.
  */
 
-import 'model_rsp_message.dart';
-import 'model_rsp_page.dart';
+import 'rsp_message.dart';
+import 'rsp_page.dart';
 
 class ReferModelRsp<T> {
   String? status;

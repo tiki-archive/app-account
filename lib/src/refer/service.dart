@@ -9,25 +9,23 @@ import 'package:logging/logging.dart';
 
 import 'controller.dart';
 import 'model/model.dart';
-import 'model/model_claim.dart';
-import 'model/model_code_rsp.dart';
-import 'model/model_rsp.dart';
+import 'presenter.dart';
 import 'repository.dart';
 
 class ReferService extends ChangeNotifier {
   final Logger _log = Logger('ReferService');
-  
-  final HttppClient _client;
-  final Future<void> Function(void Function(String?)? onSuccess)? refresh;
+
   final ReferRepository _repository;
   final ReferModel _model;
   final ReferController controller;
+  late final ReferPresenter presenter;
 
-  ReferService({Httpp? httpp, this.refresh})
-      : _client = httpp?.client() ?? Httpp().client(),
-        _model = ReferModel(),
-        controller = ReferController(),
-        _repository = ReferRepository();
+  ReferService({Httpp? httpp, required String accessToken, required String address})
+      : _model = ReferModel(accessToken, address),
+        _repository = ReferRepository(httpp?.client() ?? Httpp().client()),
+        controller = ReferController() {
+    presenter = ReferPresenter(this);
+  }
 
   String get referCode => _model.referCode ?? _getReferCode();
 
@@ -40,15 +38,15 @@ class ReferService extends ChangeNotifier {
 
   String _getReferCode() {
     _repository.getCode(
-        accessToken: accessToken, address: address,
+        accessToken: _model.accessToken, address: _model.address);
     return '';
   }
 
   Future<void> _updateReferCount() async {
     if(_model.referCode == null){
-      await  _repository.getCode(accessToken: accessToken, address: address);
+      await  _repository.getCode(accessToken: _model.accessToken, address: _model.address);
     }
-    _repository.total(_model.referCode!, _client, (total) {
+    _repository.getTotal(_model.referCode!, (total) {
       _model.referCount = total;
       notifyListeners();
     }, (error) => _log.warning(error));

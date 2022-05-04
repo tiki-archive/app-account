@@ -34,7 +34,7 @@ class ReferUiCode extends StatelessWidget {
                     color: ColorProvider.greyFour)),
             Container(
                 margin: EdgeInsets.all(SizeProvider.instance.width(8)),
-                child: Text(service.code,
+                child: Text(service.referCode,
                     style: TextStyle(
                         fontSize: SizeProvider.instance.text(_fontSize),
                         fontWeight: FontWeight.bold,

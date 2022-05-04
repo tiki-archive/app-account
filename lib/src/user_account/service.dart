@@ -1,19 +1,19 @@
 import 'package:flutter/cupertino.dart';
 import 'package:httpp/httpp.dart';
-import 'package:logging/logging.dart';
 
 import '../logout/service.dart';
+import '../refer/service.dart';
 import 'controller.dart';
 import 'model.dart';
 import 'presenter.dart';
 
 class UserAccountService extends ChangeNotifier {
-  final Logger _log = Logger('UserAccountService');
 
   late final UserAccountPresenter presenter;
   late final UserAccountModel model;
   late final UserAccountController controller;
   late final LogoutService logout;
+  late final ReferService refer;
 
   final HttppClient httppClient;
 

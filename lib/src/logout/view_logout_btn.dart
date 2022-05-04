@@ -6,20 +6,20 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tiki_style/tiki_style.dart';
-import '../user_account/user_account_service.dart';
 
+import 'service.dart';
 
-class UserAccountViewLogout extends StatelessWidget {
+class ViewLogoutBtn extends StatelessWidget {
   static const String _text = "Log out";
 
 
-  const UserAccountViewLogout({Key? key}) : super(key: key);
+  const ViewLogoutBtn({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    var service = Provider.of<UserAccountService>(context);
+    var service = Provider.of<LogoutService>(context);
     return TextButton(
-        onPressed: () => service.controller.onLogout(context),
+        onPressed: () => service.controller.openLogout(context),
         child: Row(
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,

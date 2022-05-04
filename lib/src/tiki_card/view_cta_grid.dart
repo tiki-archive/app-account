@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'tiki_card_view_cta.dart';
+import 'view_cta.dart';
 
 class TikiCardViewCtaGrid extends TikiCardViewCta {
   final List<Widget> ctas;

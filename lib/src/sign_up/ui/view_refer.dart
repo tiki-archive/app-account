@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:tiki_style/tiki_style.dart';
 
-import '../user_account/ui/user_account_view_refer_share.dart';
-import '../user_account/ui/user_referral/user_referral_layout.dart';
+import '../../user_account/ui/user_account_view_refer_share.dart';
+import '../../user_account/ui/user_referral/user_referral_layout.dart';
 
 class UserAccountViewRefer extends StatelessWidget {
 

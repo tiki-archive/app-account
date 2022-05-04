@@ -5,9 +5,9 @@
 import 'package:flutter/material.dart';
 import 'package:tiki_style/tiki_style.dart';
 
-import '../user_referral/user_referral_view_code.dart';
-import '../user_referral/user_referral_view_count.dart';
-import '../user_referral/user_referral_view_text.dart';
+import '../../user_referral/user_referral_view_code.dart';
+import '../../user_referral/user_referral_view_count.dart';
+import '../../user_referral/user_referral_view_text.dart';
 
 class UserReferralLayout extends StatelessWidget {
 

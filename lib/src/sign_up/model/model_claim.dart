@@ -3,13 +3,13 @@
  * MIT license. See LICENSE file in root directory.
  */
 
-class ApiShortCodeModelClaim {
+class SignUpModelClaim {
   String? code;
   String? address;
 
-  ApiShortCodeModelClaim({this.code, this.address});
+  SignUpModelClaim({this.code, this.address});
 
-  ApiShortCodeModelClaim.fromJson(Map<String, dynamic>? json) {
+  SignUpModelClaim.fromJson(Map<String, dynamic>? json) {
     if (json != null) {
       code = json['code'];
       address = json['address'];

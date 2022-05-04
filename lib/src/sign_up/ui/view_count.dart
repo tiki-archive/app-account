@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tiki_style/tiki_style.dart';
 
-import '../../user_account_service.dart';
+import '../../../user_account_service.dart';
 
 class UserReferralViewCount extends StatelessWidget {
   static const double _fontSize = 13;

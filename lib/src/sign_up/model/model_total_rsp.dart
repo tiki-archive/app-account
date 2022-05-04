@@ -1,9 +1,9 @@
-class UserAccountSignUpModel {
+class SignUpModelTotalRsp {
   int? total;
 
-  UserAccountSignUpModel({this.total});
+  SignUpModelTotalRsp({this.total});
 
-  UserAccountSignUpModel.fromJson(Map<String, dynamic>? json) {
+  SignUpModelTotalRsp.fromJson(Map<String, dynamic>? json) {
     if (json != null) {
       total = json['total'];
     }

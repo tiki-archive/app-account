@@ -1,14 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:httpp/httpp.dart';
 import 'package:logging/logging.dart';
-import 'package:tiki_user_account/src/user_account/presenter.dart';
 
 import 'controller.dart';
 import 'model.dart';
-import 'model/user_account_model.dart';
-import 'user_account_controller.dart';
-import 'user_account_presenter.dart';
-import 'sign_up/user_account_signup_repository.dart';
+import 'presenter.dart';
 
 class UserAccountService extends ChangeNotifier {
   final Logger _log = Logger('UserAccountService');
@@ -16,7 +12,6 @@ class UserAccountService extends ChangeNotifier {
   late final UserAccountPresenter presenter;
   late final UserAccountModel model;
   late final UserAccountController controller;
-  late final
 
   final Function logout;
   final HttppClient httppClient;

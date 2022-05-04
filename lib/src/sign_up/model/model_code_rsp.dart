@@ -3,12 +3,12 @@
  * MIT license. See LICENSE file in root directory.
  */
 
-class ApiShortCodeModelRsp {
+class SignUpModelCodeRsp {
   String? code;
 
-  ApiShortCodeModelRsp({this.code});
+  SignUpModelCodeRsp({this.code});
 
-  ApiShortCodeModelRsp.fromJson(Map<String, dynamic>? json) {
+  SignUpModelCodeRsp.fromJson(Map<String, dynamic>? json) {
     if (json != null) {
       code = json['code'];
     }

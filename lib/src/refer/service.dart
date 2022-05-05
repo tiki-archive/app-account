@@ -18,9 +18,12 @@ import 'repository.dart';
 class ReferService extends ChangeNotifier {
   static const String _prefix = 'com.mytiki.app';
   static const String _versionPrefix = '0.0.1';
-  static const String _currentPrefix = _prefix + '.' + 'current' + '.' + _versionPrefix + '.user';
+  static const String _currentPrefix =
+      _prefix + '.' + 'current' + '.' + _versionPrefix + '.user';
+
   //static const String _userPrefix = _prefix + '.' + 'user' + '.' + _versionPrefix + '.';
-  static const String _keysPrefix = _prefix + '.' + 'keys' + '.' + _versionPrefix + '.';
+  static const String _keysPrefix =
+      _prefix + '.' + 'keys' + '.' + _versionPrefix + '.';
 
   final Logger _log = Logger('ReferService');
 
@@ -31,16 +34,16 @@ class ReferService extends ChangeNotifier {
   late final ReferController controller;
   late final ReferPresenter presenter;
 
-
   /// The [ReferService] main constructor.
-  ReferService({
-    Httpp? httpp,
-    required String accessToken,
-    required String combinedKeys,
-    required Function refreshCallback,
-    required Database database})
+  ReferService(
+      {Httpp? httpp,
+      required String accessToken,
+      required String combinedKeys,
+      required Function refreshCallback,
+      required Database database})
       : _model = ReferModel(accessToken, combinedKeys.split(".").first),
-        _repository = ReferRepository(httpp?.client() ?? Httpp().client(), refreshCallback),
+        _repository = ReferRepository(
+            httpp?.client() ?? Httpp().client(), refreshCallback),
         _database = database {
     controller = ReferController(this);
     presenter = ReferPresenter(this);
@@ -51,7 +54,7 @@ class ReferService extends ChangeNotifier {
   ///
   /// This method is just used if one needs to await the initilization of the
   /// variables. In any other scenario, the default main constructor is enough.
-  Future<ReferService> init() async{
+  Future<ReferService> init() async {
     await _updateReferCount();
     return this;
   }
@@ -70,22 +73,20 @@ class ReferService extends ChangeNotifier {
   /// [notifyListeners] is called to rebuild the UI with updated count.
   String get referCount => _model.referCount ?? _getReferCount();
 
-
   Future<void> _upgrade() async {
     Logger log = Logger('upgrade');
     String? code = await _getCodeFromDatabase();
-    if(code == null) return;
+    if (code == null) return;
     FlutterSecureStorage secureStorage = const FlutterSecureStorage();
     await _repository.claimCode(
         accessToken: _model.accessToken,
         claim: ReferModelClaim(code: code, address: _model.address),
-          onSuccess: (rsp) async {
-            await secureStorage.delete(key: _currentPrefix);
-            //await secureStorage.delete(key: _userPrefix + email);
-            await secureStorage.delete(key: _keysPrefix + _model.address);
-          },
-          onError: (error) => log.warning(error)
-    );
+        onSuccess: (rsp) async {
+          await secureStorage.delete(key: _currentPrefix);
+          //await secureStorage.delete(key: _userPrefix + email);
+          await secureStorage.delete(key: _keysPrefix + _model.address);
+        },
+        onError: (error) => log.warning(error));
   }
 
   Future<String?> _getCodeFromDatabase() async {
@@ -95,8 +96,7 @@ class ReferService extends ChangeNotifier {
     return null;
   }
 
-
-  String _getReferCount(){
+  String _getReferCount() {
     _updateReferCount();
     return '';
   }
@@ -111,7 +111,7 @@ class ReferService extends ChangeNotifier {
   }
 
   Future<void> _updateReferCount() async {
-    if(_model.referCode == null){
+    if (_model.referCode == null) {
       await _upgrade();
       await _repository.getCode(
           accessToken: _model.accessToken,

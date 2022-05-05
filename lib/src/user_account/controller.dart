@@ -18,5 +18,4 @@ class UserAccountController {
     Navigator.of(context).pop();
     ZendeskFlutter().show(context);
   }
-
 }

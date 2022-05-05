@@ -5,7 +5,8 @@ class TikiCardUiTitle extends StatelessWidget {
   final String? title;
   final Color? textColor;
 
-  const TikiCardUiTitle(this.title, {Key? key, this.textColor}) : super(key: key);
+  const TikiCardUiTitle(this.title, {Key? key, this.textColor})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {

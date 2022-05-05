@@ -4,7 +4,7 @@ import 'controller.dart';
 import 'presenter.dart';
 
 /// The service responsible for controlling the logout flow in the user account.
-class LogoutService extends ChangeNotifier{
+class LogoutService extends ChangeNotifier {
   late final LogoutController controller;
   late final LogoutPresenter presenter;
   final Function logoutCallback;

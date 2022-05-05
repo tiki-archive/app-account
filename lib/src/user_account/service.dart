@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:httpp/httpp.dart';
+import 'package:sqflite_sqlcipher/sqlite_api.dart';
 
 import '../logout/service.dart';
 import '../refer/service.dart';
@@ -9,7 +10,6 @@ import 'presenter.dart';
 
 /// The user account area service.
 class UserAccountService extends ChangeNotifier {
-
   late final UserAccountPresenter presenter;
   late final UserAccountModel model;
   late final UserAccountController controller;
@@ -17,15 +17,15 @@ class UserAccountService extends ChangeNotifier {
   late final ReferService refer;
 
   final HttppClient httppClient;
-  final String accessToken;
 
-  UserAccountService(
-      {
-      required logoutCallback,
-      required refreshCallback,
-      required this.httppClient,
-      required String combinedKeys,
-      required this.accessToken}) {
+  UserAccountService({
+    required logoutCallback,
+    required refreshCallback,
+    required String combinedKeys,
+    required Database database,
+    required String accessToken,
+    required this.httppClient,
+  }) {
     presenter = UserAccountPresenter(this);
     model = UserAccountModel();
     controller = UserAccountController(this);
@@ -33,7 +33,8 @@ class UserAccountService extends ChangeNotifier {
     refer = ReferService(
         refreshCallback: refreshCallback,
         accessToken: accessToken,
-        address: combinedKeys.split(".").first);
+        database: database,
+        combinedKeys: combinedKeys.split(".").first);
     model.qrCode = combinedKeys;
   }
 

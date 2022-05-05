@@ -20,8 +20,10 @@ class ReferUiCount extends StatelessWidget {
     ReferService service = Provider.of<ReferService>(context);
     return Row(mainAxisSize: MainAxisSize.min, children: [
       Container(
-          margin: EdgeInsets.only(right: SizeProvider.instance.width(8)),
-          child: Icon(IconProvider.person, size: SizeProvider.instance.text(_fontSize), color: ColorProvider.green),
+        margin: EdgeInsets.only(right: SizeProvider.instance.width(8)),
+        child: Icon(IconProvider.person,
+            size: SizeProvider.instance.text(_fontSize),
+            color: ColorProvider.green),
       ),
       Text(service.referCount.toString() + _text,
           style: TextStyle(

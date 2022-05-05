@@ -25,7 +25,8 @@ class LogoutPresenter {
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.vertical(
                 top: Radius.circular(SizeProvider.instance.width(26)))),
-        builder: (BuildContext context) => ChangeNotifierProvider<LogoutService>.value(
-            value: service, child: const LogoutUiModal()));
+        builder: (BuildContext context) =>
+            ChangeNotifierProvider<LogoutService>.value(
+                value: service, child: const LogoutUiModal()));
   }
 }

@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 import 'service.dart';
 
-class LogoutController{
-
+class LogoutController {
   LogoutService service;
+
   LogoutController(this.service);
 
   /// Opens the logout bottom sheet confirmation.
@@ -13,8 +13,7 @@ class LogoutController{
   }
 
   /// Calls the logout callback that was passed to [TikiUserAccount] constructor.
-  Future<void> logout(BuildContext context) async{
+  Future<void> logout(BuildContext context) async {
     service.logout();
   }
-
 }

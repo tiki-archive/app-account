@@ -6,19 +6,19 @@ import 'package:tiki_style/tiki_style.dart';
 import '../service.dart';
 
 class UserAccountUiQrCodeShow extends StatelessWidget {
-
   const UserAccountUiQrCodeShow({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    UserAccountService service =
-        Provider.of<UserAccountService>(context);
+    UserAccountService service = Provider.of<UserAccountService>(context);
     return Container(
-        padding: EdgeInsets.symmetric(vertical: SizeProvider.instance.width(1.5*8.12), horizontal: SizeProvider.instance.width(1.5*8.12)),
+        padding: EdgeInsets.symmetric(
+            vertical: SizeProvider.instance.width(1.5 * 8.12),
+            horizontal: SizeProvider.instance.width(1.5 * 8.12)),
         child: QrImage(
           data: service.model.qrCode!,
           version: QrVersions.auto,
-          size: SizeProvider.instance.width(80*3.75),
+          size: SizeProvider.instance.width(80 * 3.75),
         ));
   }
 }

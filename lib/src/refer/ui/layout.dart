@@ -10,7 +10,6 @@ import 'count.dart';
 import 'text.dart';
 
 class ReferUiLayout extends StatelessWidget {
-
   const ReferUiLayout({Key? key}) : super(key: key);
 
   @override
@@ -24,7 +23,8 @@ class ReferUiLayout extends StatelessWidget {
               right: SizeProvider.instance.width(30)),
           child: const ReferUiCode()),
       Container(
-          margin: EdgeInsets.only(top: SizeProvider.instance.width(8.12)), child: const ReferUiCount())
+          margin: EdgeInsets.only(top: SizeProvider.instance.width(8.12)),
+          child: const ReferUiCount())
     ]);
   }
 }

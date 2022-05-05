@@ -20,8 +20,13 @@ class UserAccountUiBadges extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          color: const Color(0xFFF0F0F0), borderRadius: BorderRadius.circular(24)),
-      padding: EdgeInsets.only(top: SizeProvider.instance.width(3*8.12), left: SizeProvider.instance.width(6*3.75), right: SizeProvider.instance.width(6*3.75), bottom: SizeProvider.instance.width(3*8.12)),
+          color: const Color(0xFFF0F0F0),
+          borderRadius: BorderRadius.circular(24)),
+      padding: EdgeInsets.only(
+          top: SizeProvider.instance.width(3 * 8.12),
+          left: SizeProvider.instance.width(6 * 3.75),
+          right: SizeProvider.instance.width(6 * 3.75),
+          bottom: SizeProvider.instance.width(3 * 8.12)),
       child: Column(
         children: [
           Text(
@@ -69,21 +74,25 @@ class UserAccountUiBadges extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   UserAccountUiBadgesSelect(
-                      image: ImgProvider.badgeAlt4Inactive,
-                      label: _badgeSoon,
-                      isSelected: false, ),
+                    image: ImgProvider.badgeAlt4Inactive,
+                    label: _badgeSoon,
+                    isSelected: false,
+                  ),
                   UserAccountUiBadgesSelect(
-                      image: ImgProvider.badgeAlt5Inactive,
-                      label: _badgeSoon,
-                      isSelected: false, ),
+                    image: ImgProvider.badgeAlt5Inactive,
+                    label: _badgeSoon,
+                    isSelected: false,
+                  ),
                   UserAccountUiBadgesSelect(
-                      image: ImgProvider.badgeAlt6Inactive,
-                      label: _badgeSoon,
-                      isSelected: false, ),
+                    image: ImgProvider.badgeAlt6Inactive,
+                    label: _badgeSoon,
+                    isSelected: false,
+                  ),
                   UserAccountUiBadgesSelect(
-                      image: ImgProvider.badgeAlt7Inactive,
-                      label: _badgeSoon,
-                      isSelected: false, ),
+                    image: ImgProvider.badgeAlt7Inactive,
+                    label: _badgeSoon,
+                    isSelected: false,
+                  ),
                 ],
               ))
         ],

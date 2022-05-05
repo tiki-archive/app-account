@@ -8,7 +8,9 @@ class TikiCardUiCtaInline extends TikiCardUiCta {
 
   final Function? callback;
 
-  const TikiCardUiCtaInline(this.headline, this.trailingIcon, this.callback, {Key? key}) : super(key: key);
+  const TikiCardUiCtaInline(this.headline, this.trailingIcon, this.callback,
+      {Key? key})
+      : super(key: key);
 
   @override
   Widget getCta() {

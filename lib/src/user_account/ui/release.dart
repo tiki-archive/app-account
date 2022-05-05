@@ -4,7 +4,6 @@ import 'package:tiki_style/tiki_style.dart';
 import '../../tiki_card/tiki_card.dart';
 
 class UserAccountUiRelease extends StatelessWidget {
-
   static const String _title = "Coming next";
   static const String _text = "See which companies \nemail you";
   static const String _cta = "Read More";

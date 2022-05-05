@@ -24,23 +24,28 @@ class ReferUiCode extends StatelessWidget {
             side: const BorderSide(color: Color(0xFFAFAFAF)),
             primary: ColorProvider.greyThree,
             shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.all(Radius.circular(SizeProvider.instance.width(8))))),
-        child: Padding(padding: EdgeInsets.all(SizeProvider.instance.size(4)), child: Row(mainAxisSize: MainAxisSize.min, children: [
-          Row(mainAxisSize: MainAxisSize.min, children: [
-            Text(_text,
-                style: TextStyle(
-                    fontSize: SizeProvider.instance.text(_fontSize),
-                    fontWeight: FontWeight.bold,
-                    color: ColorProvider.greyFour)),
-            Container(
-                margin: EdgeInsets.all(SizeProvider.instance.width(8)),
-                child: Text(service.referCode,
+                borderRadius: BorderRadius.all(
+                    Radius.circular(SizeProvider.instance.width(8))))),
+        child: Padding(
+            padding: EdgeInsets.all(SizeProvider.instance.size(4)),
+            child: Row(mainAxisSize: MainAxisSize.min, children: [
+              Row(mainAxisSize: MainAxisSize.min, children: [
+                Text(_text,
                     style: TextStyle(
                         fontSize: SizeProvider.instance.text(_fontSize),
                         fontWeight: FontWeight.bold,
-                        color: const Color(0xFF00133F))))
-          ]),
-          Icon(IconProvider.copy, size: SizeProvider.instance.text(_fontSize), color: ColorProvider.greyFour),
-        ])));
+                        color: ColorProvider.greyFour)),
+                Container(
+                    margin: EdgeInsets.all(SizeProvider.instance.width(8)),
+                    child: Text(service.referCode,
+                        style: TextStyle(
+                            fontSize: SizeProvider.instance.text(_fontSize),
+                            fontWeight: FontWeight.bold,
+                            color: const Color(0xFF00133F))))
+              ]),
+              Icon(IconProvider.copy,
+                  size: SizeProvider.instance.text(_fontSize),
+                  color: ColorProvider.greyFour),
+            ])));
   }
 }

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:share_plus/share_plus.dart';
+
 import 'service.dart';
 
-class ReferController{
+class ReferController {
   static const String _linkUrl = "https://mytiki.com/";
   static const String _shareBody =
       "Your data. Your decisions. Take the take power back from corporations. Together, we triumph. Join us! ";
@@ -24,9 +25,6 @@ class ReferController{
 
   /// Copy the share link to clipboard.
   Future<void> copyLink(BuildContext context) async {
-    await Clipboard.setData(
-        ClipboardData(text: _linkUrl + service.referCode));
+    await Clipboard.setData(ClipboardData(text: _linkUrl + service.referCode));
   }
-
-
 }

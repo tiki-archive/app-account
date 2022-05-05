@@ -14,7 +14,8 @@ class TikiCard extends StatelessWidget {
   final Color bgColor;
 
   const TikiCard(this.title, this.text, this.figure,
-      {Key? key, this.cta, this.bgColor = const Color(0xFFF0F0F0)}) : super(key: key);
+      {Key? key, this.cta, this.bgColor = const Color(0xFFF0F0F0)})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {

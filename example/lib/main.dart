@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sqflite_sqlcipher/sqflite.dart';
 import 'package:tiki_user_account/tiki_user_account.dart';
 
 void main() {
@@ -13,6 +14,16 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+
+  late final Database _db;
+
+  @override
+  void initState() async {
+    String databasePath = await getDatabasesPath() + '/tiki_user_account_ex.db';
+    _db = await openDatabase(databasePath);
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -24,7 +35,9 @@ class _MyAppState extends State<MyApp> {
           child: LayoutBuilder(
               builder: (context, _) => ElevatedButton(
                   onPressed: () => TikiUserAccount(
+                          refresh: () => throw "NotImplemented",
                           logout: () => Navigator.of(context).pop(),
+                          database: _db,
                           combinedKeys: 'teste',
                           accessToken: 'abc')
                       .open(context),

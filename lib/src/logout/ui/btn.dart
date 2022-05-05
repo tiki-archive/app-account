@@ -29,8 +29,11 @@ class LogoutUiBtn extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                     fontSize: SizeProvider.instance.text(15))),
             Container(
-                margin: EdgeInsets.only(left: SizeProvider.instance.width(3*3.75)),
-                child: Icon(IconProvider.logout, size:SizeProvider.instance.text(15), color: ColorProvider.tikiRed))
+                margin: EdgeInsets.only(
+                    left: SizeProvider.instance.width(3 * 3.75)),
+                child: Icon(IconProvider.logout,
+                    size: SizeProvider.instance.text(15),
+                    color: ColorProvider.tikiRed))
           ],
         ));
   }

@@ -9,6 +9,8 @@ class TikiCardUiText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(text,
-        style: TextStyle(fontSize: SizeProvider.instance.text(15), fontWeight: FontWeight.w300));
+        style: TextStyle(
+            fontSize: SizeProvider.instance.text(15),
+            fontWeight: FontWeight.w300));
   }
 }

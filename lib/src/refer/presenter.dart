@@ -10,5 +10,5 @@ class ReferPresenter {
   ReferPresenter(this.service);
 
   Widget get refer => ChangeNotifierProvider.value(
-            value: service, child: const ReferUiLayout());
+      value: service, child: const ReferUiLayout());
 }

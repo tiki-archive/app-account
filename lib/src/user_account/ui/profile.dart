@@ -8,7 +8,6 @@ import 'package:tiki_style/tiki_style.dart';
 import 'profile_avatar.dart';
 
 class UserAccountUiProfile extends StatelessWidget {
-
   static const String _avatarLabel = "BETA TESTER";
   static const String _member = "TIKI tribe member";
 
@@ -18,20 +17,19 @@ class UserAccountUiProfile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-    Padding(
-    padding: EdgeInsets.only(top: SizeProvider.instance.height(20))),
-
-    UserAccountUiProfileAvatar(
-          avatar: ImgProvider.badgeBetaAvatar,
-          label: _avatarLabel
-        ),
         Padding(
-            padding: EdgeInsets.only(top: SizeProvider.instance.height(4*8.12)),
+            padding: EdgeInsets.only(top: SizeProvider.instance.height(20))),
+        UserAccountUiProfileAvatar(
+            avatar: ImgProvider.badgeBetaAvatar, label: _avatarLabel),
+        Padding(
+            padding:
+                EdgeInsets.only(top: SizeProvider.instance.height(4 * 8.12)),
             child: Text(
               _member,
               style: TextStyle(
                   color: const Color(0xFF00133F),
-                  fontFamily: TextProvider.familyKoara, package: 'tiki_style',
+                  fontFamily: TextProvider.familyKoara,
+                  package: 'tiki_style',
                   fontWeight: FontWeight.bold,
                   fontSize: SizeProvider.instance.text(28)),
             ))

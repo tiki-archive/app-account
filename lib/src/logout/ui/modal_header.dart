@@ -8,6 +8,7 @@ import 'package:tiki_style/tiki_style.dart';
 
 class LogoutUiModalHeader extends StatelessWidget {
   static const double _paddingVert = 20;
+
   const LogoutUiModalHeader({Key? key}) : super(key: key);
 
   @override
@@ -19,7 +20,7 @@ class LogoutUiModalHeader extends StatelessWidget {
             top: SizeProvider.instance.width(_paddingVert),
             bottom: SizeProvider.instance.width(_paddingVert),
           ),
-          child: ImgProvider.modalTop
-      )]);
+          child: ImgProvider.modalTop)
+    ]);
   }
 }

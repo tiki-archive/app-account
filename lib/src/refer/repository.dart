@@ -21,20 +21,20 @@ class ReferRepository {
   final HttppClient _client;
   final Function(void Function(String?)? onComplete) _refresh;
 
-  ReferRepository(client, refresh) :
-      _refresh = refresh,
-      _client = client;
+  ReferRepository(client, refresh)
+      : _refresh = refresh,
+        _client = client;
 
   /// Get the share code from user wallet address.
   Future<void> getCode(
-      {required String accessToken,
-        required String address,
-        Function(Object)? onError,
-        Function(ReferModelCodeRsp)? onSuccess}) async =>
+          {required String accessToken,
+          required String address,
+          Function(Object)? onError,
+          Function(ReferModelCodeRsp)? onSuccess}) async =>
       _auth(
           accessToken,
           onError,
-              (token, onError) => _get(
+          (token, onError) => _get(
               client: _client,
               accessToken: token,
               address: address,
@@ -47,14 +47,14 @@ class ReferRepository {
 
   /// Claims an existing referCode to a specific wallet address.
   Future<void> claimCode(
-      {required String accessToken,
-        required ReferModelClaim claim,
-        Function(Object)? onError,
-        Function(ReferModelRsp)? onSuccess}) async =>
+          {required String accessToken,
+          required ReferModelClaim claim,
+          Function(Object)? onError,
+          Function(ReferModelRsp)? onSuccess}) async =>
       _auth(
           accessToken,
           onError,
-              (token, onError) => _post(
+          (token, onError) => _post(
               client: _client,
               accessToken: token,
               body: claim,
@@ -66,8 +66,8 @@ class ReferRepository {
               onError: onError));
 
   /// Gets the total of successful invites for that user.
-  Future<void> getTotal({required String code,
-      Function? onSuccess, Function? onError}) async {
+  Future<void> getTotal(
+      {required String code, Function? onSuccess, Function? onError}) async {
     var query = {"referrer": code};
     HttppRequest request = HttppRequest(
         uri: Uri.https(_domain, _userPath, query),
@@ -77,13 +77,13 @@ class ReferRepository {
         onSuccess: (rsp) {
           if (rsp.statusCode == 200) {
             ReferModelTotalRsp apiRsp =
-              ReferModelTotalRsp.fromJson(rsp.body?.jsonBody);
+                ReferModelTotalRsp.fromJson(rsp.body?.jsonBody);
             int? total = apiRsp.total;
             onSuccess != null && total != null ? onSuccess(total) : null;
           }
         },
         onError: (error) async =>
-        onError != null ? onError(error) : throw error);
+            onError != null ? onError(error) : throw error);
     _client.request(request);
   }
 
@@ -105,7 +105,8 @@ class ReferRepository {
                 (json) => ReferModelCodeRsp.fromJson(json)));
           }
         },
-        onResult: (rsp) => _error(onError, ReferModelRsp.fromJson(rsp.body?.jsonBody, (json) {})),
+        onResult: (rsp) => _error(
+            onError, ReferModelRsp.fromJson(rsp.body?.jsonBody, (json) {})),
         onError: onError);
     _log.finest('${request.verb.value} — ${request.uri}');
     return client.request(request);
@@ -128,7 +129,8 @@ class ReferRepository {
                 (json) => ReferModelCodeRsp.fromJson(json)));
           }
         },
-        onResult: (rsp) => _error(onError, ReferModelRsp.fromJson(rsp.body?.jsonBody, (json) {})),
+        onResult: (rsp) => _error(
+            onError, ReferModelRsp.fromJson(rsp.body?.jsonBody, (json) {})),
         onError: (error) => _error(onError, error));
     _log.finest('${request.verb.value} — ${request.uri}');
     return client.request(request);
@@ -138,9 +140,9 @@ class ReferRepository {
       Future<T> Function(String, Future<void> Function(Object)) request) async {
     return request(accessToken, (error) async {
       if (error is ReferModelCodeRsp && error.code == '401') {
-        await _refresh((token) async => token != null ?
-          await request(token, (error) async => _error(onError, error)) :
-          _error(onError, error));
+        await _refresh((token) async => token != null
+            ? await request(token, (error) async => _error(onError, error))
+            : _error(onError, error));
       } else {
         _error(onError, error);
       }

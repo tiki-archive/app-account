@@ -5,7 +5,6 @@ import 'layout.dart';
 import 'refer_share.dart';
 
 class ReferUiBox extends StatelessWidget {
-
   const ReferUiBox({Key? key}) : super(key: key);
 
   @override
@@ -21,11 +20,15 @@ class ReferUiBox extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
               Container(
-                  margin: EdgeInsets.only(top: SizeProvider.instance.width(3.5*8.12)),
+                  margin: EdgeInsets.only(
+                      top: SizeProvider.instance.width(3.5 * 8.12)),
                   child: const ReferUiLayout()),
               Container(
                   margin: EdgeInsets.only(
-                      top: SizeProvider.instance.width(16), bottom: SizeProvider.instance.width(16), left: SizeProvider.instance.width(50), right: SizeProvider.instance.width(50)),
+                      top: SizeProvider.instance.width(16),
+                      bottom: SizeProvider.instance.width(16),
+                      left: SizeProvider.instance.width(50),
+                      right: SizeProvider.instance.width(50)),
                   alignment: Alignment.topCenter,
                   child: const ReferUiShare()),
             ]));

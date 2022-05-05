@@ -24,9 +24,9 @@ class _MyAppState extends State<MyApp> {
           child: LayoutBuilder(
               builder: (context, _) => ElevatedButton(
                   onPressed: () => TikiUserAccount(
-                          referalCode: "\$0000T",
                           logout: () => Navigator.of(context).pop(),
-                          combinedKeys: 'teste')
+                          combinedKeys: 'teste',
+                          accessToken: 'abc')
                       .open(context),
                   child: const Text('Open modal'))),
         ),

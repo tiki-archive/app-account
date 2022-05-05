@@ -9,13 +9,14 @@ class TikiUserAccount {
   TikiUserAccount(
       {
       HttppClient? httppClient,
-      required String referalCode,
       required Function logout,
-      required String combinedKeys})
+      required String combinedKeys,
+      required String accessToken})
       : _service = UserAccountService(
             httppClient: httppClient ?? Httpp().client(),
             logoutCallback: logout,
-            combinedKeys: combinedKeys);
+            combinedKeys: combinedKeys,
+            accessToken: accessToken);
 
   open(BuildContext context) {
     _service.presenter.showModal(context);

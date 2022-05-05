@@ -16,16 +16,20 @@ class UserAccountService extends ChangeNotifier {
   late final ReferService refer;
 
   final HttppClient httppClient;
-
+  final String accessToken;
   UserAccountService(
       {
       required logoutCallback,
       required this.httppClient,
-      required String combinedKeys}) {
+      required String combinedKeys,
+      required this.accessToken}) {
     presenter = UserAccountPresenter(this);
     model = UserAccountModel();
     controller = UserAccountController(this);
     logout = LogoutService(logoutCallback);
+    refer = ReferService(
+        accessToken: accessToken,
+        address: combinedKeys.split(".").first);
     model.qrCode = combinedKeys;
   }
 

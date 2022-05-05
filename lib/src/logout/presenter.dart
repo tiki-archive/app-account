@@ -11,7 +11,8 @@ class LogoutPresenter {
 
   LogoutPresenter(this.service);
 
-  Widget get btn => const LogoutUiBtn();
+  Widget get btn => ChangeNotifierProvider<LogoutService>.value(
+      value: service, child: const LogoutUiBtn());
 
   Future<void> showModal(BuildContext context) {
     return showModalBottomSheet<void>(

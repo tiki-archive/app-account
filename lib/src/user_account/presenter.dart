@@ -10,6 +10,7 @@ class UserAccountPresenter {
 
   UserAccountPresenter(this.service);
 
+  /// Shows the bottom sheet modal for user account area.
   Future<void> showModal(BuildContext context) {
     return showModalBottomSheet<void>(
         context: context,

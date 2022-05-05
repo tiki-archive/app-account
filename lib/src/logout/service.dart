@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'controller.dart';
 import 'presenter.dart';
 
-/// The service responsbile for controlling the logout flow in the user account.
+/// The service responsible for controlling the logout flow in the user account.
 class LogoutService extends ChangeNotifier{
   late final LogoutController controller;
   late final LogoutPresenter presenter;
@@ -15,7 +15,7 @@ class LogoutService extends ChangeNotifier{
     presenter = LogoutPresenter(this);
   }
 
-  /// Executes the logout callback function
+  /// Executes the logout callback function.
   void logout() {
     logoutCallback();
   }

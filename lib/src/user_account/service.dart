@@ -7,6 +7,7 @@ import 'controller.dart';
 import 'model.dart';
 import 'presenter.dart';
 
+/// The user account area service.
 class UserAccountService extends ChangeNotifier {
 
   late final UserAccountPresenter presenter;
@@ -17,6 +18,7 @@ class UserAccountService extends ChangeNotifier {
 
   final HttppClient httppClient;
   final String accessToken;
+
   UserAccountService(
       {
       required logoutCallback,
@@ -33,11 +35,13 @@ class UserAccountService extends ChangeNotifier {
     model.qrCode = combinedKeys;
   }
 
+  /// Shows the QR code in the UI.
   Future<void> showQrCode() async {
     model.showQrCode = true;
     notifyListeners();
   }
 
+  /// Hides the QR code in the UI.
   void hideQrCode() {
     model.showQrCode = false;
     notifyListeners();

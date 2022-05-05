@@ -11,9 +11,11 @@ class LogoutPresenter {
 
   LogoutPresenter(this.service);
 
+  /// The account menu button to show logout bottom sheet modal confirmation.
   Widget get btn => ChangeNotifierProvider<LogoutService>.value(
       value: service, child: const LogoutUiBtn());
 
+  /// The bottom sheet modal for logout confirmation.
   Future<void> showModal(BuildContext context) {
     return showModalBottomSheet<void>(
         context: context,

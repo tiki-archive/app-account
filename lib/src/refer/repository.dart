@@ -23,6 +23,7 @@ class ReferRepository {
   ReferRepository(client) :
       _client = client;
 
+  /// Get the share code from user wallet address.
   Future<void> getCode(
       {required String accessToken,
         required String address,
@@ -42,6 +43,7 @@ class ReferRepository {
               },
               onError: onError));
 
+  /// Creates a share code from user's wallet address
   Future<void> claimCode(
       {required String accessToken,
         required ReferModelClaim claim,
@@ -61,8 +63,9 @@ class ReferRepository {
               },
               onError: onError));
 
-  Future<void> getTotal(String code,
-      Function? onSuccess, Function? onError) async {
+  /// Gets the total of successful invites for that user.
+  Future<void> getTotal({required String code,
+      Function? onSuccess, Function? onError}) async {
     var query = {"referrer": code};
     HttppRequest request = HttppRequest(
         uri: Uri.https(_domain, _userPath, query),
@@ -153,6 +156,7 @@ class ReferRepository {
     });
   }
 
+  // TODO the refresh function
   Future<void> _refresh(Function onResult) async {
 
   }

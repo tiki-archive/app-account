@@ -18,6 +18,7 @@ class TikiUserAccount {
             combinedKeys: combinedKeys,
             accessToken: accessToken);
 
+  /// Opens the user account bottom sheet.
   open(BuildContext context) {
     _service.presenter.showModal(context);
   }

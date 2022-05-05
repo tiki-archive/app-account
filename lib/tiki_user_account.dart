@@ -10,11 +10,13 @@ class TikiUserAccount {
       {
       HttppClient? httppClient,
       required Function logout,
+      required Function refresh,
       required String combinedKeys,
       required String accessToken})
       : _service = UserAccountService(
             httppClient: httppClient ?? Httpp().client(),
             logoutCallback: logout,
+            refreshCallback: refresh,
             combinedKeys: combinedKeys,
             accessToken: accessToken);
 
@@ -22,4 +24,5 @@ class TikiUserAccount {
   open(BuildContext context) {
     _service.presenter.showModal(context);
   }
+
 }

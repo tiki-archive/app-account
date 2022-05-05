@@ -22,6 +22,7 @@ class UserAccountService extends ChangeNotifier {
   UserAccountService(
       {
       required logoutCallback,
+      required refreshCallback,
       required this.httppClient,
       required String combinedKeys,
       required this.accessToken}) {
@@ -30,6 +31,7 @@ class UserAccountService extends ChangeNotifier {
     controller = UserAccountController(this);
     logout = LogoutService(logoutCallback);
     refer = ReferService(
+        refreshCallback: refreshCallback,
         accessToken: accessToken,
         address: combinedKeys.split(".").first);
     model.qrCode = combinedKeys;

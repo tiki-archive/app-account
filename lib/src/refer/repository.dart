@@ -19,8 +19,10 @@ class ReferRepository {
   static const String _domain = 'signup.mytiki.com';
 
   final HttppClient _client;
+  final Function(void Function(String?)? onComplete) _refresh;
 
-  ReferRepository(client) :
+  ReferRepository(client, refresh) :
+      _refresh = refresh,
       _client = client;
 
   /// Get the share code from user wallet address.
@@ -43,7 +45,7 @@ class ReferRepository {
               },
               onError: onError));
 
-  /// Creates a share code from user's wallet address
+  /// Claims an existing referCode to a specific wallet address.
   Future<void> claimCode(
       {required String accessToken,
         required ReferModelClaim claim,
@@ -103,11 +105,7 @@ class ReferRepository {
                 (json) => ReferModelCodeRsp.fromJson(json)));
           }
         },
-        onResult: (rsp) {
-          if (onError != null) {
-            onError(ReferModelRsp.fromJson(rsp.body?.jsonBody, (json) {}));
-          }
-        },
+        onResult: (rsp) => _error(onError, ReferModelRsp.fromJson(rsp.body?.jsonBody, (json) {})),
         onError: onError);
     _log.finest('${request.verb.value} — ${request.uri}');
     return client.request(request);
@@ -130,12 +128,8 @@ class ReferRepository {
                 (json) => ReferModelCodeRsp.fromJson(json)));
           }
         },
-        onResult: (rsp) {
-          if (onError != null) {
-            onError(ReferModelRsp.fromJson(rsp.body?.jsonBody, (json) {}));
-          }
-        },
-        onError: onError);
+        onResult: (rsp) => _error(onError, ReferModelRsp.fromJson(rsp.body?.jsonBody, (json) {})),
+        onError: (error) => _error(onError, error));
     _log.finest('${request.verb.value} — ${request.uri}');
     return client.request(request);
   }
@@ -144,20 +138,14 @@ class ReferRepository {
       Future<T> Function(String, Future<void> Function(Object)) request) async {
     return request(accessToken, (error) async {
       if (error is ReferModelCodeRsp && error.code == '401') {
-        await _refresh((token) async =>
-                    await request(
-                        token,
-                            (error) async =>
-                        onError != null ? onError(error) : throw error)
-        );
+        await _refresh((token) async => token != null ?
+          await request(token, (error) async => _error(onError, error)) :
+          _error(onError, error));
       } else {
-        onError != null ? onError(error) : throw error;
+        _error(onError, error);
       }
     });
   }
 
-  // TODO the refresh function
-  Future<void> _refresh(Function onResult) async {
-
-  }
+  _error(onError, error) => onError != null ? onError(error) : throw error;
 }

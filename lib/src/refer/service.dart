@@ -64,14 +64,14 @@ class ReferService extends ChangeNotifier {
   /// If the code was not loaded yet, it returns an empty String and calls
   /// [_getReferCode] to update the code asynchronously. After the update,
   /// [notifyListeners] is called to rebuild the UI with updated code.
-  String get referCode => _model.referCode ?? _getReferCode();
+  String get referCode => _model.referCode ?? '';
 
   /// The referrals count.
   ///
   /// If the code was not loaded yet, it returns an empty String and calls
   /// [_getReferCount] to update the count asynchronously. After the update,
   /// [notifyListeners] is called to rebuild the UI with updated count.
-  String get referCount => _model.referCount ?? _getReferCount();
+  String get referCount => _model.referCount ?? '';
 
   Future<void> _upgrade({String? accessToken}) async {
     Logger log = Logger('upgrade');

@@ -37,25 +37,25 @@ class ReferService extends ChangeNotifier {
   /// The [ReferService] main constructor.
   ReferService(
       {Httpp? httpp,
-      required String accessToken,
+      String? accessToken,
       required String combinedKeys,
       required Function refreshCallback,
       required Database database})
-      : _model = ReferModel(accessToken, combinedKeys.split(".").first),
+      : _model = ReferModel(combinedKeys.split(".").first),
         _repository = ReferRepository(
             httpp?.client() ?? Httpp().client(), refreshCallback),
         _database = database {
     controller = ReferController(this);
     presenter = ReferPresenter(this);
-    _updateReferCount();
+    _updateReferCount(accessToken: accessToken);
   }
 
   /// Initializes the variables for [ReferService].
   ///
   /// This method is just used if one needs to await the initilization of the
   /// variables. In any other scenario, the default main constructor is enough.
-  Future<ReferService> init() async {
-    await _updateReferCount();
+  Future<ReferService> init({String? accessToken}) async {
+    await _updateReferCount(accessToken: accessToken);
     return this;
   }
 
@@ -73,13 +73,13 @@ class ReferService extends ChangeNotifier {
   /// [notifyListeners] is called to rebuild the UI with updated count.
   String get referCount => _model.referCount ?? _getReferCount();
 
-  Future<void> _upgrade() async {
+  Future<void> _upgrade({String? accessToken}) async {
     Logger log = Logger('upgrade');
     String? code = await _getCodeFromDatabase();
     if (code == null) return;
     FlutterSecureStorage secureStorage = const FlutterSecureStorage();
     await _repository.claimCode(
-        accessToken: _model.accessToken,
+        accessToken: accessToken,
         claim: ReferModelClaim(code: code, address: _model.address),
         onSuccess: (rsp) async {
           await secureStorage.delete(key: _currentPrefix);
@@ -96,25 +96,25 @@ class ReferService extends ChangeNotifier {
     return null;
   }
 
-  String _getReferCount() {
-    _updateReferCount();
+  String _getReferCount({String? accessToken}) {
+    _updateReferCount(accessToken: accessToken);
     return '';
   }
 
-  String _getReferCode() {
+  String _getReferCode({String? accessToken}) {
     _repository.getCode(
-        accessToken: _model.accessToken,
+        accessToken: accessToken,
         address: _model.address,
         onSuccess: (rsp) => _model.referCode = rsp.code,
         onError: (error) => _log.warning(error));
     return '';
   }
 
-  Future<void> _updateReferCount() async {
+  Future<void> _updateReferCount({String? accessToken}) async {
     if (_model.referCode == null) {
       await _upgrade();
       await _repository.getCode(
-          accessToken: _model.accessToken,
+          accessToken: accessToken,
           address: _model.address,
           onSuccess: (rsp) => _model.referCode = rsp.code,
           onError: (error) => _log.warning(error));

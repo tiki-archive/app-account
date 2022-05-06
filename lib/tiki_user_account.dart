@@ -8,14 +8,14 @@ class TikiUserAccount {
   final UserAccountService _service;
 
   TikiUserAccount({
-    HttppClient? httppClient,
+    Httpp? httpp,
     required Database database,
     required Function logout,
     required Function refresh,
     required String combinedKeys,
-    required String accessToken,
+    String? accessToken,
   }) : _service = UserAccountService(
-            httppClient: httppClient ?? Httpp().client(),
+            httpp: httpp,
             logoutCallback: logout,
             refreshCallback: refresh,
             combinedKeys: combinedKeys,

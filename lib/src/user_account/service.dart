@@ -23,9 +23,9 @@ class UserAccountService extends ChangeNotifier {
     required refreshCallback,
     required String combinedKeys,
     required Database database,
-    required String accessToken,
-    required this.httppClient,
-  }) {
+    String? accessToken,
+    Httpp? httpp,
+  }) : httppClient = httpp == null ? Httpp().client() : httpp.client() {
     presenter = UserAccountPresenter(this);
     model = UserAccountModel();
     controller = UserAccountController(this);

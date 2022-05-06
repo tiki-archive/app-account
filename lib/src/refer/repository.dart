@@ -27,7 +27,7 @@ class ReferRepository {
 
   /// Get the share code from user wallet address.
   Future<void> getCode(
-          {required String accessToken,
+          {String? accessToken,
           required String address,
           Function(Object)? onError,
           Function(ReferModelCodeRsp)? onSuccess}) async =>
@@ -47,7 +47,7 @@ class ReferRepository {
 
   /// Claims an existing referCode to a specific wallet address.
   Future<void> claimCode(
-          {required String accessToken,
+          {String? accessToken,
           required ReferModelClaim claim,
           Function(Object)? onError,
           Function(ReferModelRsp)? onSuccess}) async =>
@@ -136,8 +136,11 @@ class ReferRepository {
     return client.request(request);
   }
 
-  Future<T> _auth<T>(String accessToken, Function(Object)? onError,
-      Future<T> Function(String, Future<void> Function(Object)) request) async {
+  Future<T> _auth<T>(
+      String? accessToken,
+      Function(Object)? onError,
+      Future<T> Function(String?, Future<void> Function(Object))
+          request) async {
     return request(accessToken, (error) async {
       if (error is ReferModelCodeRsp && error.code == '401') {
         await _refresh((token) async => token != null

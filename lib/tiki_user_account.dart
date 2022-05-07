@@ -8,14 +8,14 @@ class TikiUserAccount {
   final UserAccountService _service;
 
   TikiUserAccount({
-    HttppClient? httppClient,
+    Httpp? httpp,
     required Database database,
-    required Function logout,
-    required Function refresh,
+    required Future<void> Function() logout,
     required String combinedKeys,
-    required String accessToken,
+    Future<void> Function(void Function(String?)? onSuccess)? refresh,
+    String? Function()? accessToken,
   }) : _service = UserAccountService(
-            httppClient: httppClient ?? Httpp().client(),
+            httpp: httpp,
             logoutCallback: logout,
             refreshCallback: refresh,
             combinedKeys: combinedKeys,

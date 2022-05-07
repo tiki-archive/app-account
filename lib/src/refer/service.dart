@@ -30,6 +30,7 @@ class ReferService extends ChangeNotifier {
   final ReferRepository _repository;
   final ReferModel _model;
   final Database _database;
+  final String? Function() accessToken;
 
   late final ReferController controller;
   late final ReferPresenter presenter;
@@ -37,11 +38,12 @@ class ReferService extends ChangeNotifier {
   /// The [ReferService] main constructor.
   ReferService(
       {Httpp? httpp,
-      required String accessToken,
+      required this.accessToken,
       required String combinedKeys,
-      required Function refreshCallback,
+      required Future<void> Function(void Function(String?)? onSuccess)?
+          refreshCallback,
       required Database database})
-      : _model = ReferModel(accessToken, combinedKeys.split(".").first),
+      : _model = ReferModel(combinedKeys.split(".").first),
         _repository = ReferRepository(
             httpp?.client() ?? Httpp().client(), refreshCallback),
         _database = database {
@@ -73,13 +75,13 @@ class ReferService extends ChangeNotifier {
   /// [notifyListeners] is called to rebuild the UI with updated count.
   String get referCount => _model.referCount ?? _getReferCount();
 
-  Future<void> _upgrade() async {
+  Future<void> _upgrade({String? accessToken}) async {
     Logger log = Logger('upgrade');
     String? code = await _getCodeFromDatabase();
     if (code == null) return;
     FlutterSecureStorage secureStorage = const FlutterSecureStorage();
     await _repository.claimCode(
-        accessToken: _model.accessToken,
+        accessToken: accessToken,
         claim: ReferModelClaim(code: code, address: _model.address),
         onSuccess: (rsp) async {
           await secureStorage.delete(key: _currentPrefix);
@@ -103,7 +105,7 @@ class ReferService extends ChangeNotifier {
 
   String _getReferCode() {
     _repository.getCode(
-        accessToken: _model.accessToken,
+        accessToken: accessToken(),
         address: _model.address,
         onSuccess: (rsp) => _model.referCode = rsp.code,
         onError: (error) => _log.warning(error));
@@ -114,7 +116,7 @@ class ReferService extends ChangeNotifier {
     if (_model.referCode == null) {
       await _upgrade();
       await _repository.getCode(
-          accessToken: _model.accessToken,
+          accessToken: accessToken(),
           address: _model.address,
           onSuccess: (rsp) => _model.referCode = rsp.code,
           onError: (error) => _log.warning(error));

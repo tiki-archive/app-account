@@ -19,20 +19,21 @@ class UserAccountService extends ChangeNotifier {
   final HttppClient httppClient;
 
   UserAccountService({
-    required logoutCallback,
-    required refreshCallback,
+    required Future<void> Function() logoutCallback,
+    required Future<void> Function(void Function(String?)? onSuccess)?
+        refreshCallback,
     required String combinedKeys,
     required Database database,
-    required String accessToken,
-    required this.httppClient,
-  }) {
+    String? Function()? accessToken,
+    Httpp? httpp,
+  }) : httppClient = httpp == null ? Httpp().client() : httpp.client() {
     presenter = UserAccountPresenter(this);
     model = UserAccountModel();
     controller = UserAccountController(this);
     logout = LogoutService(logoutCallback);
     refer = ReferService(
         refreshCallback: refreshCallback,
-        accessToken: accessToken,
+        accessToken: accessToken ?? () => null,
         database: database,
         combinedKeys: combinedKeys.split(".").first);
     model.qrCode = combinedKeys;

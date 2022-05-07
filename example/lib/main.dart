@@ -14,7 +14,6 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-
   late final Database _db;
 
   @override
@@ -35,12 +34,11 @@ class _MyAppState extends State<MyApp> {
           child: LayoutBuilder(
               builder: (context, _) => ElevatedButton(
                   onPressed: () => TikiUserAccount(
-                          refresh: () => throw "NotImplemented",
-                          logout: () => Navigator.of(context).pop(),
-                          database: _db,
-                          combinedKeys: 'teste',
-                          accessToken: 'abc')
-                      .open(context),
+                      refresh: (_) async => {},
+                      logout: () async => Navigator.of(context).pop(),
+                      database: _db,
+                      combinedKeys: 'test',
+                      accessToken: () => 'abc').open(context),
                   child: const Text('Open modal'))),
         ),
       ),

@@ -30,6 +30,7 @@ class ReferService extends ChangeNotifier {
   final ReferRepository _repository;
   final ReferModel _model;
   final Database _database;
+  final String? Function() accessToken;
 
   late final ReferController controller;
   late final ReferPresenter presenter;
@@ -37,9 +38,10 @@ class ReferService extends ChangeNotifier {
   /// The [ReferService] main constructor.
   ReferService(
       {Httpp? httpp,
-      String? accessToken,
+      required this.accessToken,
       required String combinedKeys,
-      required Function refreshCallback,
+      required Future<void> Function(void Function(String?)? onSuccess)?
+          refreshCallback,
       required Database database})
       : _model = ReferModel(combinedKeys.split(".").first),
         _repository = ReferRepository(
@@ -47,15 +49,15 @@ class ReferService extends ChangeNotifier {
         _database = database {
     controller = ReferController(this);
     presenter = ReferPresenter(this);
-    _updateReferCount(accessToken: accessToken);
+    _updateReferCount();
   }
 
   /// Initializes the variables for [ReferService].
   ///
   /// This method is just used if one needs to await the initilization of the
   /// variables. In any other scenario, the default main constructor is enough.
-  Future<ReferService> init({String? accessToken}) async {
-    await _updateReferCount(accessToken: accessToken);
+  Future<ReferService> init() async {
+    await _updateReferCount();
     return this;
   }
 
@@ -64,14 +66,14 @@ class ReferService extends ChangeNotifier {
   /// If the code was not loaded yet, it returns an empty String and calls
   /// [_getReferCode] to update the code asynchronously. After the update,
   /// [notifyListeners] is called to rebuild the UI with updated code.
-  String get referCode => _model.referCode ?? '';
+  String get referCode => _model.referCode ?? _getReferCode();
 
   /// The referrals count.
   ///
   /// If the code was not loaded yet, it returns an empty String and calls
   /// [_getReferCount] to update the count asynchronously. After the update,
   /// [notifyListeners] is called to rebuild the UI with updated count.
-  String get referCount => _model.referCount ?? '';
+  String get referCount => _model.referCount ?? _getReferCount();
 
   Future<void> _upgrade({String? accessToken}) async {
     Logger log = Logger('upgrade');
@@ -96,25 +98,25 @@ class ReferService extends ChangeNotifier {
     return null;
   }
 
-  String _getReferCount({String? accessToken}) {
-    _updateReferCount(accessToken: accessToken);
+  String _getReferCount() {
+    _updateReferCount();
     return '';
   }
 
-  String _getReferCode({String? accessToken}) {
+  String _getReferCode() {
     _repository.getCode(
-        accessToken: accessToken,
+        accessToken: accessToken(),
         address: _model.address,
         onSuccess: (rsp) => _model.referCode = rsp.code,
         onError: (error) => _log.warning(error));
     return '';
   }
 
-  Future<void> _updateReferCount({String? accessToken}) async {
+  Future<void> _updateReferCount() async {
     if (_model.referCode == null) {
       await _upgrade();
       await _repository.getCode(
-          accessToken: accessToken,
+          accessToken: accessToken(),
           address: _model.address,
           onSuccess: (rsp) => _model.referCode = rsp.code,
           onError: (error) => _log.warning(error));

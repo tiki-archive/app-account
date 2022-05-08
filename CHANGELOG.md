@@ -1,3 +1,7 @@
+## 0.0.5
+
+* bumped tiki_style, zendesk_flutter, and tiki_upvoty versions
+
 ## 0.0.4
 
 * slice refactor

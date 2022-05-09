@@ -16,6 +16,6 @@ class UserAccountController {
   /// Replaces [UserAccountService] bottom sheet with [ZendeskFlutter] bottom sheet.
   void goToSupport(BuildContext context) {
     Navigator.of(context).pop();
-    ZendeskFlutter().show(context);
+    ZendeskFlutter().helpDesk(context);
   }
 }

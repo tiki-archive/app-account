@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:tiki_style/tiki_style.dart';
 
 class UserAccountUiProfileAvatar extends StatelessWidget {
-  static const double _labelWidth = 26.5;
 
   final String label;
   final Image avatar;
@@ -27,15 +26,17 @@ class UserAccountUiProfileAvatar extends StatelessWidget {
         Stack(alignment: AlignmentDirectional.center, children: [
           SizedBox(
               width: SizeProvider.instance.width(115),
-              child: ImgProvider.badgeAccount),
+              child: ImgProvider.menuRibbon),
           SizedBox(
-              width: SizeProvider.instance.width(_labelWidth * 3.75),
+              width: SizeProvider.instance.width(100),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
                     label,
                     style: TextStyle(
+                        fontFamily: TextProvider.familyNunitoSans,
+                        package: 'tiki_style',
                         fontWeight: FontWeight.w800,
                         color: Colors.white,
                         fontSize: SizeProvider.instance.text(11)),

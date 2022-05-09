@@ -19,8 +19,10 @@ class UserAccountPresenter {
         backgroundColor: Colors.white,
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.vertical(
-                top: Radius.circular(SizeProvider.instance.width(26)))),
+                top: Radius.circular(SizeProvider.instance.width(40)))),
         builder: (BuildContext context) => ChangeNotifierProvider.value(
             value: service, child: const UserAccountLayout()));
   }
 }
+
+

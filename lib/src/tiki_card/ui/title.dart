@@ -12,8 +12,10 @@ class TikiCardUiTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(title ?? "",
         style: TextStyle(
-            color: textColor ?? const Color(0xFF27002E),
+            color: textColor ?? ColorProvider.tikiPurple,
             fontSize: SizeProvider.instance.text(18),
+            fontFamily: TextProvider.familyNunitoSans,
+            package: 'tiki_style',
             fontWeight: FontWeight.w800));
   }
 }

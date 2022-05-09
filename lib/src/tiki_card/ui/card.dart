@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tiki_style/tiki_style.dart';
 
 import 'cta.dart';
 import 'cta_inline.dart';
@@ -59,9 +60,13 @@ class TikiCard extends StatelessWidget {
 
   getPadding() {
     if (cta == null || cta is TikiCardUiCtaInline) {
-      return const EdgeInsets.only(top: 16, left: 18, right: 18, bottom: 8);
+      return EdgeInsets.only(
+          top: SizeProvider.instance.size(18),
+          left: SizeProvider.instance.size(26),
+          right: SizeProvider.instance.size(26),
+          bottom: SizeProvider.instance.size(8));
     }
-    return const EdgeInsets.only(top: 24, left: 0, right: 0, bottom: 0);
+    return EdgeInsets.only(top: SizeProvider.instance.size(18), left: 0, right: 0, bottom: 0);
   }
 
   getColumnPadding() {

@@ -498,14 +498,14 @@ packages:
       name: tiki_style
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.0.14"
+    version: "0.0.17"
   tiki_upvoty:
     dependency: transitive
     description:
       name: tiki_upvoty
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.0.12"
+    version: "0.0.13"
   tiki_user_account:
     dependency: "direct main"
     description:
@@ -722,7 +722,7 @@ packages:
       name: zendesk_flutter
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.0.4"
+    version: "0.0.5"
 sdks:
   dart: ">=2.16.1 <3.0.0"
   flutter: ">=2.10.0"

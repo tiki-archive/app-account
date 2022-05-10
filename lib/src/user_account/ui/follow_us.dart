@@ -15,6 +15,7 @@ class UserAccountUiFollowUs extends StatelessWidget {
   static const String _instagramUrl = "https://www.instagram.com/my.tiki/";
   static const String _tiktokUrl = "https://www.tiktok.com/@my.tiki";
 
+
   const UserAccountUiFollowUs({Key? key}) : super(key: key);
 
   @override
@@ -22,76 +23,53 @@ class UserAccountUiFollowUs extends StatelessWidget {
     return TikiCard(
       const TikiCardUiTitle(_title),
       const TikiCardUiText(_text),
-      TikiCardUiFigure(ImgProvider.tikiPool),
+      TikiCardUiFigure(SizedBox(height: SizeProvider.instance.height(80), child: ImgProvider.pineappleFloatie)),
       cta: TikiCardUiCtaGrid([
         Expanded(
             child: GestureDetector(
                 onTap: () => TikiCardController.launchUrl(_facebookUrl),
                 child: Container(
                     padding: EdgeInsets.only(
-                        left: SizeProvider.instance
-                            .width(3 * _btnPaddingHorizontal * 3.75),
-                        top: SizeProvider.instance
-                            .width(3 * _btnPaddingVertical * 8.12),
-                        right: SizeProvider.instance
-                            .width(_btnPaddingHorizontal * 3.75),
-                        bottom: SizeProvider.instance
-                            .width(_btnPaddingVertical * 8.12)),
-                    child: SizedBox(
-                        child: ImgProvider.facebookButton,
-                        height:
-                            SizeProvider.instance.width(_btnHeight * 8.12))))),
+                        left: SizeProvider.instance.width(3 * _btnPaddingHorizontal*3.75),
+                        top: SizeProvider.instance.width(3 * _btnPaddingVertical*8.12),
+                        right: SizeProvider.instance.width(_btnPaddingHorizontal*3.75),
+                        bottom: SizeProvider.instance.width(_btnPaddingVertical*8.12)),
+                    child:
+                    SizedBox(child: ImgProvider.facebookButton, height: SizeProvider.instance.width(_btnHeight*8.12))))),
         Expanded(
             child: GestureDetector(
                 onTap: () => TikiCardController.launchUrl(_twitterUrl),
                 child: Container(
                     padding: EdgeInsets.only(
-                        left: SizeProvider.instance
-                            .width(_btnPaddingHorizontal * 3.75),
-                        top: SizeProvider.instance
-                            .width(3 * _btnPaddingVertical * 8.12),
-                        right: SizeProvider.instance
-                            .width(3 * _btnPaddingHorizontal * 3.75),
-                        bottom: SizeProvider.instance
-                            .width(_btnPaddingVertical * 8.12)),
-                    child: SizedBox(
-                        child: ImgProvider.twitterButton,
-                        height:
-                            SizeProvider.instance.width(_btnHeight * 8.12))))),
+                        left: SizeProvider.instance.width(_btnPaddingHorizontal*3.75),
+                        top: SizeProvider.instance.width(3 * _btnPaddingVertical*8.12),
+                        right: SizeProvider.instance.width(3 * _btnPaddingHorizontal*3.75),
+                        bottom: SizeProvider.instance.width(_btnPaddingVertical*8.12)),
+                    child:
+                    SizedBox(child:ImgProvider.twitterButton, height: SizeProvider.instance.width(_btnHeight*8.12))))),
         Expanded(
             child: GestureDetector(
                 onTap: () => TikiCardController.launchUrl(_instagramUrl),
                 child: Container(
                     padding: EdgeInsets.only(
-                        left: SizeProvider.instance
-                            .width(3 * _btnPaddingHorizontal * 3.75),
-                        top: SizeProvider.instance
-                            .width(_btnPaddingVertical * 8.12),
-                        right: SizeProvider.instance
-                            .width(_btnPaddingHorizontal * 3.75),
-                        bottom: SizeProvider.instance
-                            .width(4 * _btnPaddingVertical * 8.12)),
-                    child: SizedBox(
-                        child: ImgProvider.instagramButton,
-                        height:
-                            SizeProvider.instance.width(_btnHeight * 8.12))))),
+                        left: SizeProvider.instance.width(3 * _btnPaddingHorizontal*3.75),
+                        top: SizeProvider.instance.width(_btnPaddingVertical*8.12),
+                        right: SizeProvider.instance.width(_btnPaddingHorizontal*3.75),
+                        bottom: SizeProvider.instance.width(4 * _btnPaddingVertical*8.12)),
+                    child: SizedBox(child: ImgProvider.instagramButton,
+                        height: SizeProvider.instance.width(_btnHeight*8.12))))),
         Expanded(
             child: GestureDetector(
                 onTap: () => TikiCardController.launchUrl(_tiktokUrl),
                 child: Container(
                     padding: EdgeInsets.only(
-                        left: SizeProvider.instance
-                            .width(_btnPaddingHorizontal * 3.75),
-                        top: SizeProvider.instance
-                            .width(_btnPaddingVertical * 8.12),
-                        right: SizeProvider.instance
-                            .width(3 * _btnPaddingHorizontal * 3.75),
-                        bottom: SizeProvider.instance
-                            .width(4 * _btnPaddingVertical * 8.12)),
-                    child: SizedBox(
-                        child: ImgProvider.tiktokButton,
-                        height:
-                            SizeProvider.instance.width(_btnHeight * 8.12)))))
+                        left: SizeProvider.instance.width(_btnPaddingHorizontal*3.75),
+                        top: SizeProvider.instance.width(_btnPaddingVertical*8.12),
+                        right: SizeProvider.instance.width(3 * _btnPaddingHorizontal*3.75),
+                        bottom: SizeProvider.instance.width(4 * _btnPaddingVertical*8.12)),
+                    child:
+                    SizedBox(child: ImgProvider.tiktokButton,
+                        height: SizeProvider.instance.width(_btnHeight*8.12)))))
       ]),
     );
   }

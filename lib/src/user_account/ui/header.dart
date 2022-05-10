@@ -8,37 +8,45 @@ import 'package:tiki_style/tiki_style.dart';
 
 class UserAccountUiHeader extends StatelessWidget {
   static const String _text = "Account";
-  static const num _paddingHoriz = 6;
-  static const num _paddingVert = 2.5;
 
   const UserAccountUiHeader({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Stack(children: [
-      GestureDetector(
-          behavior: HitTestBehavior.opaque,
-          onTap: () => Navigator.of(context).pop(),
-          child: Container(
-              alignment: Alignment.centerRight,
-              child: Container(
-                  width: SizeProvider.instance.width(3.75 * _paddingHoriz * 3),
-                  height: SizeProvider.instance.width(3.75 * _paddingVert * 3),
-                  padding: EdgeInsets.only(
-                      right: SizeProvider.instance.width(3.75 * _paddingHoriz)),
-                  child: Center(
-                      child: Icon(IconProvider.x,
-                          size: SizeProvider.instance.text(12)))))),
-      Container(
-          alignment: Alignment.center,
-          padding: EdgeInsets.only(
-            top: SizeProvider.instance.width(_paddingVert * 8.12),
-          ),
-          child: Text(_text,
-              style: TextStyle(
-                  color: const Color(0xFF27002E),
-                  fontWeight: FontWeight.w800,
-                  fontSize: SizeProvider.instance.text(16)))),
-    ]);
+    return Padding(padding: EdgeInsets.only(top: SizeProvider.instance.height(20)),
+        child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              GestureDetector(
+                  behavior: HitTestBehavior.opaque,
+                  onTap: null,
+                  child: Container(
+                      alignment: Alignment.center,
+                      child: Container(
+                          padding: EdgeInsets.only(left: SizeProvider.instance.size(25)),
+                          child: Center(
+                              child: SizedBox.fromSize(
+                                  size: Size(SizeProvider.instance.size(10),SizeProvider.instance.size(10))))))),
+              Container(
+                  alignment: Alignment.center,
+                  child: Text(_text,
+                      style: TextStyle(
+                          color: ColorProvider.tikiPurple,
+                          fontWeight: FontWeight.w800,
+                          fontFamily: TextProvider.familyNunitoSans,
+                          package: 'tiki_style',
+                          fontSize: SizeProvider.instance.size(16)))),
+              GestureDetector(
+                  behavior: HitTestBehavior.opaque,
+                  onTap: () => Navigator.of(context).pop(),
+                  child: Container(
+                      alignment: Alignment.centerRight,
+                      child: Container(
+                          padding: EdgeInsets.only(right: SizeProvider.instance.size(25)),
+                          child: const Center(
+                              child: Icon(IconProvider.x, size: 18)
+                          )))),
+            ]));
   }
 }

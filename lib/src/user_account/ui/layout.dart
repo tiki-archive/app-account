@@ -22,7 +22,7 @@ import 'support.dart';
 import 'version.dart';
 
 class UserAccountLayout extends StatelessWidget {
-  static const num _cardMarginTop = 2.25;
+  static const num _cardMarginTop = 20;
 
   const UserAccountLayout({Key? key}) : super(key: key);
 
@@ -41,61 +41,63 @@ class UserAccountLayout extends StatelessWidget {
               child: SingleChildScrollView(
                   child: Padding(
                       padding: EdgeInsets.only(
-                          left: SizeProvider.instance.width(6 * 3.75),
-                          right: SizeProvider.instance.width(6 * 3.75),
-                          bottom: SizeProvider.instance.width(5 * 8.12)),
+                          left: SizeProvider.instance.width(24),
+                          right: SizeProvider.instance.width(24),
+                          bottom: SizeProvider.instance.width(40)),
                       child: Column(mainAxisSize: MainAxisSize.min, children: [
-                        const UserAccountUiProfile(),
+                        Container(
+                        margin: EdgeInsets.only(
+                        top: SizeProvider.instance.width(0)),
+                           child: UserAccountUiProfile()),
                         Container(
                             margin: EdgeInsets.only(
-                                top: SizeProvider.instance.width(4 * 8.12)),
+                                top: SizeProvider.instance.width(40)),
                             child: service.refer.presenter.refer),
                         Container(
                             margin: EdgeInsets.only(
-                                top: SizeProvider.instance
-                                    .width(_cardMarginTop * 8.12)),
+                                top: SizeProvider.instance.width(_cardMarginTop)),
                             child: const UserAccountUiRelease()),
                         Container(
                             margin: EdgeInsets.only(
                                 top: SizeProvider.instance
-                                    .width(_cardMarginTop * 8.12)),
+                                    .width(_cardMarginTop)),
                             child: const UserAccountUiNews()),
                         Container(
                             margin: EdgeInsets.only(
                                 top: SizeProvider.instance
-                                    .width(_cardMarginTop * 8.12)),
+                                    .width(_cardMarginTop)),
                             child: const UserAccountUiCommunity()),
                         Container(
                             margin: EdgeInsets.only(
                                 top: SizeProvider.instance
-                                    .width(_cardMarginTop * 8.12)),
+                                    .width(_cardMarginTop)),
                             child: const UserAccountUiFollowUs()),
                         Container(
                             margin: EdgeInsets.only(
                                 top: SizeProvider.instance
-                                    .width(_cardMarginTop * 8.12)),
+                                    .width(_cardMarginTop)),
                             child: const UserAccountUiBadges()),
                         Container(
                             margin: EdgeInsets.only(
                                 top: SizeProvider.instance
-                                    .width(_cardMarginTop * 8.12)),
+                                    .width(_cardMarginTop)),
                             child: service.model.showQrCode
                                 ? const UserAccountUiQrCodeShow()
                                 : const UserAccountUiQrCodeBtn()),
                         Container(
                             margin: EdgeInsets.only(
                                 top: SizeProvider.instance
-                                    .width(_cardMarginTop * 8.12)),
+                                    .width(_cardMarginTop)),
                             child: const UserAccountUiSupport()),
                         Container(
                             margin: EdgeInsets.only(
                                 top: SizeProvider.instance
-                                    .size(_cardMarginTop * 8.12)),
+                                    .size(_cardMarginTop)),
                             child: upvoty.buttonSuggestions()),
                         Container(
                             margin: EdgeInsets.only(
                                 top: SizeProvider.instance
-                                    .size(_cardMarginTop * 8.12)),
+                                    .size(_cardMarginTop)),
                             child: upvoty.buttonBugs()),
                         Container(
                             margin: EdgeInsets.only(

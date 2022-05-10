@@ -10,8 +10,8 @@ import 'package:tiki_style/tiki_style.dart';
 import '../service.dart';
 
 class ReferUiCount extends StatelessWidget {
-  static const double _fontSize = 13;
-  static const String _text = " people joined";
+  static const double _fontSize = 14;
+  static const String _text = "10 people joined";
 
   const ReferUiCount({Key? key}) : super(key: key);
 
@@ -20,13 +20,15 @@ class ReferUiCount extends StatelessWidget {
     ReferService service = Provider.of<ReferService>(context);
     return Row(mainAxisSize: MainAxisSize.min, children: [
       Container(
-        margin: EdgeInsets.only(right: SizeProvider.instance.width(8)),
+        margin: EdgeInsets.only(right: SizeProvider.instance.width(6)),
         child: Icon(IconProvider.person,
-            size: SizeProvider.instance.text(_fontSize),
+            size: SizeProvider.instance.text(15),
             color: ColorProvider.green),
       ),
       Text(service.referCount.toString() + _text,
           style: TextStyle(
+              fontFamily: TextProvider.familyNunitoSans,
+              package: 'tiki_style',
               fontSize: SizeProvider.instance.text(_fontSize),
               fontWeight: FontWeight.w600,
               color: const Color(0xFF00B272)))

@@ -33,7 +33,7 @@ class UserAccountUiCommunity extends StatelessWidget {
               child: GestureDetector(
                   onTap: () => TikiCardController.launchUrl(_discordLink),
                   child: Container(
-                      height: SizeProvider.instance.width(_btnHeight * 8.12),
+                      height: SizeProvider.instance.width(50),
                       decoration: const BoxDecoration(
                           color: _discordColor,
                           borderRadius: BorderRadius.only(
@@ -43,10 +43,8 @@ class UserAccountUiCommunity extends StatelessWidget {
                           children: [
                             Container(
                                 padding: EdgeInsets.only(
-                                    right: SizeProvider.instance
-                                        .width(_btnIconPaddingRight * 3.75)),
-                                height: SizeProvider.instance
-                                    .width(_btnIconHeight * 8.12),
+                                    right: SizeProvider.instance.width(8)),
+                                height: SizeProvider.instance.height(12),
                                 child: ImgProvider.discordLogo),
                             Text(_discord,
                                 style: TextStyle(
@@ -60,19 +58,16 @@ class UserAccountUiCommunity extends StatelessWidget {
               child: GestureDetector(
                   onTap: () => TikiCardController.launchUrl(_signalLink),
                   child: Container(
-                      height: SizeProvider.instance.width(_btnHeight * 8.12),
+                      height: SizeProvider.instance.width(50),
                       color: _signalColor,
                       child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Container(
-                              padding: EdgeInsets.only(
-                                  right: SizeProvider.instance
-                                      .width(_btnIconPaddingRight * 3.75)),
-                              height: SizeProvider.instance
-                                  .width(_btnIconHeight * 8.12),
-                              child: ImgProvider.signalLogo,
-                            ),
+                                padding: EdgeInsets.only(
+                                    right: SizeProvider.instance.width(8)),
+                                height: SizeProvider.instance.width(12),
+                                child: ImgProvider.signalLogo),
                             Text(_signal,
                                 style: TextStyle(
                                     fontSize: SizeProvider.instance
@@ -89,16 +84,14 @@ class UserAccountUiCommunity extends StatelessWidget {
                           borderRadius: BorderRadius.only(
                               bottomRight: Radius.circular(24)),
                           color: _telegramColor),
-                      height: SizeProvider.instance.width(_btnHeight * 8.12),
+                      height: SizeProvider.instance.width(50),
                       child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Container(
                                 padding: EdgeInsets.only(
-                                    right: SizeProvider.instance
-                                        .width(_btnIconPaddingRight * 3.75)),
-                                height: SizeProvider.instance
-                                    .width(_btnIconHeight * 8.12),
+                                    right: SizeProvider.instance.width(8)),
+                                height: SizeProvider.instance.width(12),
                                 child: ImgProvider.telegramLogo),
                             Text(_telegram,
                                 style: TextStyle(

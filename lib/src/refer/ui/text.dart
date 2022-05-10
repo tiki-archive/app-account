@@ -21,6 +21,8 @@ class ReferUiText extends StatelessWidget {
           _textL1,
           textAlign: TextAlign.center,
           style: TextStyle(
+              fontFamily: TextProvider.familyNunitoSans,
+              package: 'tiki_style',
               fontSize: SizeProvider.instance.text(_fontSize),
               fontWeight: FontWeight.w600,
               color: const Color(0xFF00133F)),
@@ -29,6 +31,10 @@ class ReferUiText extends StatelessWidget {
           _textL2,
           textAlign: TextAlign.center,
           style: TextStyle(
+              fontFamily: TextProvider.familyNunitoSans,
+              package: 'tiki_style',
+              letterSpacing: -0.1,
+              height: 1.1,
               fontSize: SizeProvider.instance.text(_fontSize),
               fontWeight: FontWeight.w800,
               color: const Color(0xFF00133F)),

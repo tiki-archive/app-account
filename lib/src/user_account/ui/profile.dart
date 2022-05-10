@@ -23,7 +23,7 @@ class UserAccountUiProfile extends StatelessWidget {
             avatar: ImgProvider.badgeBetaAvatar, label: _avatarLabel),
         Padding(
             padding:
-                EdgeInsets.only(top: SizeProvider.instance.height(4 * 8.12)),
+                EdgeInsets.only(top: SizeProvider.instance.height(32)),
             child: Text(
               _member,
               style: TextStyle(

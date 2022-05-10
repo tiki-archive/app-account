@@ -45,7 +45,10 @@ class UserAccountLayout extends StatelessWidget {
                           right: SizeProvider.instance.width(24),
                           bottom: SizeProvider.instance.width(40)),
                       child: Column(mainAxisSize: MainAxisSize.min, children: [
-                        const UserAccountUiProfile(),
+                        Container(
+                        margin: EdgeInsets.only(
+                        top: SizeProvider.instance.width(0)),
+                           child: UserAccountUiProfile()),
                         Container(
                             margin: EdgeInsets.only(
                                 top: SizeProvider.instance.width(40)),

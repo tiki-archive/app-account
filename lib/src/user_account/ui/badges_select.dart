@@ -31,7 +31,7 @@ class UserAccountUiBadgesSelect extends StatelessWidget {
               fontSize: SizeProvider.instance.text(11),
               color: isSelected
                   ? const Color(0xFF00133F)
-                  : ColorProvider.greyFour),
+                  : ColorProvider.greyFive),
         ),
         Container(
             decoration: BoxDecoration(

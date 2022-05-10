@@ -5,7 +5,7 @@ import '../../tiki_card/tiki_card.dart';
 
 class UserAccountUiRelease extends StatelessWidget {
   static const String _title = "Coming next";
-  static const String _text = "See which companies \nemail you";
+  static const String _text = "See which companies \nemail you.";
   static const String _cta = "Read more";
   static const String _url = "https://mytiki.com/blog/peek-TIKI-app-prototype";
 
@@ -21,7 +21,8 @@ class UserAccountUiRelease extends StatelessWidget {
           cta: TikiCardUiCtaInline(
               Text(_cta,
                   style: TextStyle(
-                      fontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.w700,
+                      fontFamily: TextProvider.familyNunitoSans,
                       fontSize: SizeProvider.instance.text(15),
                       color: ColorProvider.orange)),
               Icon(Icons.arrow_forward, color: ColorProvider.orange, size: SizeProvider.instance.text(24)),

@@ -27,7 +27,7 @@ class TikiCard extends StatelessWidget {
         ),
         padding: getPadding(),
         child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[

@@ -21,7 +21,8 @@ dependencies:
   qr_flutter: ^4.0.0
   tiki_style: ^0.0.17
   zendesk_flutter: ^0.0.5
-  tiki_upvoty: ^0.0.13
+  tiki_upvoty:
+    path: ../upvoty
   url_launcher: ^6.1.0
   sqflite_sqlcipher: ^2.1.0
 

@@ -34,7 +34,9 @@ class UserAccountUiBadges extends StatelessWidget {
             style: TextStyle(
                 fontWeight: FontWeight.w800,
                 color: const Color(0xFF00133F),
-                fontSize: SizeProvider.instance.text(14)),
+                fontFamily: TextProvider.familyNunitoSans,
+                package:"tiki_style",
+                fontSize: SizeProvider.instance.text(16)),
           ),
           Padding(
               padding: EdgeInsets.only(top: SizeProvider.instance.width(12)),
@@ -43,7 +45,9 @@ class UserAccountUiBadges extends StatelessWidget {
                   style: TextStyle(
                       fontWeight: FontWeight.w600,
                       color: const Color(0xFF00133F),
-                      fontSize: SizeProvider.instance.text(12)))),
+                      fontFamily: TextProvider.familyNunitoSans,
+                      package:"tiki_style",
+                      fontSize: SizeProvider.instance.text(14)))),
           Padding(
               padding: EdgeInsets.only(top: SizeProvider.instance.width(24)),
               child: Row(

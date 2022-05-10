@@ -25,12 +25,14 @@ class LogoutUiBtn extends StatelessWidget {
           children: [
             Text(_text,
                 style: TextStyle(
+                    fontFamily: TextProvider.familyNunitoSans,
+                    package: 'tiki_style',
                     color: ColorProvider.tikiRed,
                     fontWeight: FontWeight.bold,
-                    fontSize: SizeProvider.instance.text(15))),
+                    fontSize: SizeProvider.instance.text(18))),
             Container(
                 margin: EdgeInsets.only(
-                    left: SizeProvider.instance.width(3 * 3.75)),
+                    left: SizeProvider.instance.width(12)),
                 child: Icon(IconProvider.logout,
                     size: SizeProvider.instance.text(15),
                     color: ColorProvider.tikiRed))

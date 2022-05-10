@@ -13,6 +13,7 @@ class TikiCardUiText extends StatelessWidget {
             fontFamily: TextProvider.familyNunitoSans,
             package: 'tiki_style',
             color: ColorProvider.tikiBlue,
+            height: 1.2,
             fontWeight: FontWeight.w600,
             fontSize: SizeProvider.instance.text(14)));
   }

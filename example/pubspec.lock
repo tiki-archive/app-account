@@ -502,9 +502,9 @@ packages:
   tiki_upvoty:
     dependency: transitive
     description:
-      name: tiki_upvoty
-      url: "https://pub.dartlang.org"
-    source: hosted
+      path: "../../upvoty"
+      relative: true
+    source: path
     version: "0.0.13"
   tiki_user_account:
     dependency: "direct main"

@@ -1,6 +1,6 @@
 name: tiki_user_account
 description: User account SDK for TIKI
-version: 0.0.5
+version: 0.0.6
 homepage: https://mytiki.com
 repository: https://github.com/tiki/user_account
 issue_tracker: https://github.com/tiki/user_account/issues
@@ -19,10 +19,9 @@ dependencies:
   flutter_secure_storage: ^5.0.2
   share_plus: ^3.1.0
   qr_flutter: ^4.0.0
-  tiki_style: ^0.0.17
-  zendesk_flutter: ^0.0.5
-  tiki_upvoty:
-    path: ../upvoty
+  tiki_style: ^0.0.18
+  zendesk_flutter: ^0.0.6
+  tiki_upvoty: ^0.0.14
   url_launcher: ^6.1.0
   sqflite_sqlcipher: ^2.1.0
 

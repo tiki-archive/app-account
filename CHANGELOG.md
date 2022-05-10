@@ -1,3 +1,8 @@
+## 
+
+* bumped dependencies
+* updated ui to fit design
+
 ## 0.0.5
 
 * bumped tiki_style, zendesk_flutter, and tiki_upvoty versions

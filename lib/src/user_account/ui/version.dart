@@ -16,7 +16,9 @@ class UserAccountUiVersion extends StatelessWidget {
                       ? " | Release " + snapshot.data!.version
                       : ""),
               style: TextStyle(
-                  fontSize: SizeProvider.instance.text(11),
+                  fontFamily: TextProvider.familyNunitoSans,
+                  package: 'tiki_style',
+                  fontSize: SizeProvider.instance.text(14),
                   fontWeight: FontWeight.w600,
                   color: const Color(0xFF797979)));
         });

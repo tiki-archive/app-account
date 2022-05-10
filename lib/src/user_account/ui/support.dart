@@ -15,9 +15,11 @@ class UserAccountUiSupport extends StatelessWidget {
     return GestureDetector(
         onTap: () => service.controller.goToSupport(context),
         child: Container(
-            padding: EdgeInsets.symmetric(
-                vertical: SizeProvider.instance.width(18),
-                horizontal: SizeProvider.instance.width(16)),
+            padding: EdgeInsets.only(
+                top: SizeProvider.instance.width(18),
+                bottom: SizeProvider.instance.width(18),
+                left: SizeProvider.instance.width(18),
+                right: SizeProvider.instance.width(18)),
             decoration: BoxDecoration(
               color: const Color(0xFFF0F0F0),
               borderRadius: BorderRadius.circular(12),
@@ -27,16 +29,21 @@ class UserAccountUiSupport extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   Icon(IconProvider.help_outline,
+                      color: ColorProvider.tikiBlue,
                       size: SizeProvider.instance.width(24)),
                   Padding(
                       padding: EdgeInsets.only(
-                          right: SizeProvider.instance.width(16))),
+                          right: SizeProvider.instance.width(14))),
                   Expanded(
                       child: Text(_title,
                           style: TextStyle(
-                              fontSize: SizeProvider.instance.text(12),
+                              fontFamily: TextProvider.familyNunitoSans,
+                              package: 'tiki_style',
+                              color: ColorProvider.tikiBlue,
+                              fontSize: SizeProvider.instance.text(16),
                               fontWeight: FontWeight.bold))),
                   Icon(IconProvider.arrow_right,
+                      color: ColorProvider.tikiBlue,
                       size: SizeProvider.instance.width(16)),
                 ])));
   }

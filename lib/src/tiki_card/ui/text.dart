@@ -10,7 +10,11 @@ class TikiCardUiText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(text,
         style: TextStyle(
-            fontSize: SizeProvider.instance.text(15),
-            fontWeight: FontWeight.w300));
+            fontFamily: TextProvider.familyNunitoSans,
+            package: 'tiki_style',
+            color: ColorProvider.tikiBlue,
+            height: 1.2,
+            fontWeight: FontWeight.w600,
+            fontSize: SizeProvider.instance.text(14)));
   }
 }

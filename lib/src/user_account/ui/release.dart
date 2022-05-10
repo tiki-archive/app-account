@@ -5,8 +5,8 @@ import '../../tiki_card/tiki_card.dart';
 
 class UserAccountUiRelease extends StatelessWidget {
   static const String _title = "Coming next";
-  static const String _text = "See which companies \nemail you";
-  static const String _cta = "Read More";
+  static const String _text = "See which companies \nemail you.";
+  static const String _cta = "Read more";
   static const String _url = "https://mytiki.com/blog/peek-TIKI-app-prototype";
 
   const UserAccountUiRelease({Key? key}) : super(key: key);
@@ -21,10 +21,11 @@ class UserAccountUiRelease extends StatelessWidget {
           cta: TikiCardUiCtaInline(
               Text(_cta,
                   style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: SizeProvider.instance.text(12.5),
-                      color: const Color(0xFFFF521C))),
-              const Icon(Icons.arrow_forward, color: Color(0xFFFF521C)),
+                      fontWeight: FontWeight.w700,
+                      fontFamily: TextProvider.familyNunitoSans,
+                      fontSize: SizeProvider.instance.text(15),
+                      color: ColorProvider.orange)),
+              Icon(Icons.arrow_forward, color: ColorProvider.orange, size: SizeProvider.instance.text(24)),
               () => TikiCardController.launchUrl(_url)),
         ),
         onTap: () => TikiCardController.launchUrl(_url));

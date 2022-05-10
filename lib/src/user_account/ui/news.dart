@@ -7,7 +7,7 @@ class UserAccountUiNews extends StatelessWidget {
   static const String _title = "Latest news";
   static const String _text =
       "For the latest news and updates, check out our blog.";
-  static const String _cta = "Read More";
+  static const String _cta = "Read more";
   static const String _url = "https://mytiki.com/blog";
 
   const UserAccountUiNews({Key? key}) : super(key: key);
@@ -23,11 +23,11 @@ class UserAccountUiNews extends StatelessWidget {
               Text(_cta,
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: SizeProvider.instance.text(12.5),
-                      color: const Color(0xFFFF521C))),
+                      fontSize: SizeProvider.instance.text(15),
+                      color: ColorProvider.orange)),
               Icon(Icons.arrow_forward,
-                  color: const Color(0xFFFF521C),
-                  size: SizeProvider.instance.text(12.5)),
+                  color: ColorProvider.orange,
+                  size: SizeProvider.instance.text(24)),
               () => TikiCardController.launchUrl(_url)),
         ),
         onTap: () => TikiCardController.launchUrl(_url));

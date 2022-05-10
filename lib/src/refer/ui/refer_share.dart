@@ -22,7 +22,7 @@ class ReferUiShare extends StatelessWidget {
     return ElevatedButton(
         style: ElevatedButton.styleFrom(
             padding:
-                EdgeInsets.symmetric(vertical: SizeProvider.instance.width(10)),
+                EdgeInsets.symmetric(vertical: SizeProvider.instance.height(12)),
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.all(
                     Radius.circular(SizeProvider.instance.width(80)))),
@@ -37,9 +37,10 @@ class ReferUiShare extends StatelessWidget {
                 child: Text(_text,
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      fontWeight: FontWeight.w800,
-                      fontSize: SizeProvider.instance.text(18),
-                      letterSpacing: SizeProvider.instance.width(2),
+                      fontFamily: TextProvider.familyNunitoSans,
+                      fontWeight: FontWeight.w600,
+                      fontSize: SizeProvider.instance.text(20),
+                      letterSpacing: SizeProvider.instance.width(1),
                     ))),
             Icon(
               Icons.share,

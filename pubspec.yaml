@@ -19,7 +19,7 @@ dependencies:
   flutter_secure_storage: ^5.0.2
   share_plus: ^3.1.0
   qr_flutter: ^4.0.0
-  tiki_style: ^0.0.18
+  tiki_style: ^0.0.17
   zendesk_flutter: ^0.0.6
   tiki_upvoty: ^0.0.14
   url_launcher: ^6.1.0

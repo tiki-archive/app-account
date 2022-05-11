@@ -44,7 +44,7 @@ class ReferUiCode extends StatelessWidget {
                 Container(
                     margin: EdgeInsets.only(
                         left:SizeProvider.instance.width(11)),
-                    child: Text("KA3F", //service.referCode,
+                    child: Text(service.referCode, //service.referCode,
                         style: TextStyle(
                             fontFamily: TextProvider.familyNunitoSans,
                             package: 'tiki_style',

@@ -11,7 +11,7 @@ import '../service.dart';
 
 class ReferUiCount extends StatelessWidget {
   static const double _fontSize = 14;
-  static const String _text = "10 people joined";
+  static const String _text = " people joined";
 
   const ReferUiCount({Key? key}) : super(key: key);
 

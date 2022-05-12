@@ -1,6 +1,6 @@
 class ReferModel {
   String? referCode;
-  String? referCount;
+  int? referCount;
   final String address;
 
   ReferModel(this.address);

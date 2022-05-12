@@ -3,7 +3,6 @@ import 'package:provider/provider.dart';
 
 import 'service.dart';
 import 'ui/layout.dart';
-import 'ui/refer_box.dart';
 
 class ReferPresenter {
   final ReferService service;

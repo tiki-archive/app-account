@@ -1,4 +1,9 @@
-## 
+## 0.0.7
+
+* fix font
+* update version
+
+## 0.0.6
 
 * bumped dependencies
 * updated ui to fit design

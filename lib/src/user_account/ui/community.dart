@@ -38,7 +38,7 @@ class UserAccountUiCommunity extends StatelessWidget {
                       child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Container(
+                            SizedBox(
                                 height: SizeProvider.instance.height(16),
                                 child: FittedBox(
                                   fit: BoxFit.fill, child: ImgProvider.discordLogo)),

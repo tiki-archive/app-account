@@ -67,7 +67,7 @@ class ReferRepository {
 
   /// Gets the total of successful invites for that user.
   Future<void> getTotal(
-      {required String code, Function? onSuccess, Function? onError}) async {
+      {required String code, Function(int total)? onSuccess, Function(Object)? onError}) async {
     var query = {"referrer": code};
     HttppRequest request = HttppRequest(
         uri: Uri.https(_domain, _userPath, query),

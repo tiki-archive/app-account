@@ -1,3 +1,7 @@
+## 0.0.8
+
+* update refercount type
+
 ## 0.0.7
 
 * fix font

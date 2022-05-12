@@ -92,9 +92,13 @@ class ReferService extends ChangeNotifier {
   }
 
   Future<String?> _getCodeFromDatabase() async {
-    List<Map<String, Object?>> rows = await _database
-        .query('app_data', where: "key = ?", whereArgs: ['user_refer_code']);
-    if (rows.isNotEmpty) return rows[0]['value'] as String;
+    try {
+      List<Map<String, Object?>> rows = await _database
+          .query('app_data', where: "key = ?", whereArgs: ['user_refer_code']);
+      if (rows.isNotEmpty) return rows[0]['value'] as String;
+    } catch (err) {
+      _log.info(err);
+    }
     return null;
   }
 
@@ -123,7 +127,7 @@ class ReferService extends ChangeNotifier {
     }
     _repository.getTotal(
         code: referCode,
-        onSuccess: (total) {
+        onSuccess: (int total) {
           _model.referCount = total;
           notifyListeners();
         },

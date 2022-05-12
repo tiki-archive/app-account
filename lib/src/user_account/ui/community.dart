@@ -4,9 +4,6 @@ import 'package:tiki_style/tiki_style.dart';
 import '../../tiki_card/tiki_card.dart';
 
 class UserAccountUiCommunity extends StatelessWidget {
-  static const double _btnHeight = 5;
-  static const double _btnIconPaddingRight = 2;
-  static const double _btnIconHeight = 1.5;
   static const double _btnTextFontSize = 12;
   static const String _title = "TIKI tribe";
   static const String _text =
@@ -42,12 +39,13 @@ class UserAccountUiCommunity extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Container(
-                                padding: EdgeInsets.only(
-                                    right: SizeProvider.instance.width(8)),
-                                height: SizeProvider.instance.height(12),
-                                child: ImgProvider.discordLogo),
+                                height: SizeProvider.instance.height(16),
+                                child: FittedBox(
+                                  fit: BoxFit.fill, child: ImgProvider.discordLogo)),
                             Text(_discord,
                                 style: TextStyle(
+                                    fontFamily: TextProvider.familyNunitoSans,
+                                    package: 'tiki_style',
                                     fontSize: SizeProvider.instance
                                         .text(_btnTextFontSize),
                                     color: Colors.white,
@@ -64,15 +62,17 @@ class UserAccountUiCommunity extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Container(
-                                padding: EdgeInsets.only(
-                                    right: SizeProvider.instance.width(8)),
-                                height: SizeProvider.instance.width(12),
-                                child: ImgProvider.signalLogo),
+                                height: SizeProvider.instance.height(12),
+                                padding: EdgeInsets.only(right:SizeProvider.instance.width(8)),
+                                child: FittedBox(
+                                    fit: BoxFit.fill, child: ImgProvider.signalLogo)),
                             Text(_signal,
                                 style: TextStyle(
                                     fontSize: SizeProvider.instance
                                         .text(_btnTextFontSize),
                                     color: Colors.white,
+                                    fontFamily: TextProvider.familyNunitoSans,
+                                    package: 'tiki_style',
                                     fontWeight: FontWeight.bold))
                           ])))),
           Container(width: 1, color: Colors.white),
@@ -89,15 +89,17 @@ class UserAccountUiCommunity extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Container(
-                                padding: EdgeInsets.only(
-                                    right: SizeProvider.instance.width(8)),
-                                height: SizeProvider.instance.width(12),
-                                child: ImgProvider.telegramLogo),
+                                height: SizeProvider.instance.height(10),
+                                padding: EdgeInsets.only(right: SizeProvider.instance.width(8)),
+                                child: FittedBox(
+                                    fit: BoxFit.fill, child: ImgProvider.telegramLogo)),
                             Text(_telegram,
                                 style: TextStyle(
                                     fontSize: SizeProvider.instance
                                         .text(_btnTextFontSize),
                                     color: Colors.white,
+                                    fontFamily: TextProvider.familyNunitoSans,
+                                    package: 'tiki_style',
                                     fontWeight: FontWeight.bold))
                           ])))),
         ]));

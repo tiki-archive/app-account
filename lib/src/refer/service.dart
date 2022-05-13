@@ -75,13 +75,13 @@ class ReferService extends ChangeNotifier {
   /// [notifyListeners] is called to rebuild the UI with updated count.
   String get referCount => _model.referCount?.toString() ?? _getReferCount();
 
-  Future<void> _upgrade({String? accessToken}) async {
+  Future<void> _upgrade() async {
     Logger log = Logger('upgrade');
     String? code = await _getCodeFromDatabase();
     if (code == null) return;
     FlutterSecureStorage secureStorage = const FlutterSecureStorage();
     await _repository.claimCode(
-        accessToken: accessToken,
+        accessToken: accessToken(),
         claim: ReferModelClaim(code: code, address: _model.address),
         onSuccess: (rsp) async {
           await secureStorage.delete(key: _currentPrefix);

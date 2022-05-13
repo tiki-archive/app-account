@@ -1,3 +1,8 @@
+## 0.0.9
+
+* bug fix for new installs without app-data table
+* access token bug fix
+
 ## 0.0.8
 
 * update refercount type

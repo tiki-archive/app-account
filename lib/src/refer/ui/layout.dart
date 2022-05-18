@@ -27,9 +27,8 @@ class ReferUiBox extends StatelessWidget {
               Container(
                   width: SizeProvider.instance.width(220),
                   padding: EdgeInsets.only(
-                    top: SizeProvider.instance.height(37),
-                    bottom: SizeProvider.instance.height(44)
-                  ),
+                      top: SizeProvider.instance.height(37),
+                      bottom: SizeProvider.instance.height(44)),
                   child: const ReferUiShare()),
             ]));
   }

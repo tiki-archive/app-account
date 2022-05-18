@@ -1,3 +1,7 @@
+## 0.0.10
+
+* bug fix for community images
+
 ## 0.0.9
 
 * bug fix for new installs without app-data table

@@ -38,14 +38,13 @@ class UserAccountUiCommunity extends StatelessWidget {
                       child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            SizedBox(
-                                height: SizeProvider.instance.height(16),
-                                child: FittedBox(
-                                  fit: BoxFit.fill, child: ImgProvider.discordLogo)),
+                            Image(
+                                image: ImgProvider.discordLogo.image,
+                                height: SizeProvider.instance.height(16)),
                             Text(_discord,
                                 style: TextStyle(
                                     fontFamily: TextProvider.familyNunitoSans,
-                                    package: 'tiki_style',
+                                    package: TextProvider.package,
                                     fontSize: SizeProvider.instance
                                         .text(_btnTextFontSize),
                                     color: Colors.white,
@@ -62,17 +61,18 @@ class UserAccountUiCommunity extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Container(
-                                height: SizeProvider.instance.height(12),
-                                padding: EdgeInsets.only(right:SizeProvider.instance.width(8)),
-                                child: FittedBox(
-                                    fit: BoxFit.fill, child: ImgProvider.signalLogo)),
+                                padding: EdgeInsets.only(
+                                    right: SizeProvider.instance.width(8)),
+                                child: Image(
+                                    image: ImgProvider.signalLogo.image,
+                                    height: SizeProvider.instance.height(12))),
                             Text(_signal,
                                 style: TextStyle(
                                     fontSize: SizeProvider.instance
                                         .text(_btnTextFontSize),
                                     color: Colors.white,
                                     fontFamily: TextProvider.familyNunitoSans,
-                                    package: 'tiki_style',
+                                    package: TextProvider.package,
                                     fontWeight: FontWeight.bold))
                           ])))),
           Container(width: 1, color: Colors.white),
@@ -89,17 +89,16 @@ class UserAccountUiCommunity extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Container(
-                                height: SizeProvider.instance.height(10),
-                                padding: EdgeInsets.only(right: SizeProvider.instance.width(8)),
-                                child: FittedBox(
-                                    fit: BoxFit.fill, child: ImgProvider.telegramLogo)),
+                                padding: EdgeInsets.only(
+                                    right: SizeProvider.instance.width(8)),
+                                child: Image(image: ImgProvider.telegramLogo.image, height: SizeProvider.instance.height(10))),
                             Text(_telegram,
                                 style: TextStyle(
                                     fontSize: SizeProvider.instance
                                         .text(_btnTextFontSize),
                                     color: Colors.white,
                                     fontFamily: TextProvider.familyNunitoSans,
-                                    package: 'tiki_style',
+                                    package: TextProvider.package,
                                     fontWeight: FontWeight.bold))
                           ])))),
         ]));

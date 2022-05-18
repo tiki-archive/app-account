@@ -20,7 +20,7 @@ class Refer extends StatelessWidget {
           padding: EdgeInsets.only(
             top: SizeProvider.instance.height(8),
           ),
-          width: SizeProvider.instance.width(230),
+          width: SizeProvider.instance.width(240),
           child: const ReferUiCode()),
       Container(
           margin: EdgeInsets.only(top: SizeProvider.instance.height(3)),

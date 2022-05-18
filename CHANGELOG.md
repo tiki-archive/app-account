@@ -1,3 +1,8 @@
+## 0.0.11
+
+* bug fix for modal height
+* bug fix for referral code overflow
+
 ## 0.0.10
 
 * bug fix for community images

@@ -1,3 +1,7 @@
+## 0.0.12
+
+* update dependencies
+
 ## 0.0.11
 
 * bug fix for modal height

@@ -28,7 +28,7 @@ class UserAccountUiCommunity extends StatelessWidget {
         cta: TikiCardUiCtaRow([
           Expanded(
               child: GestureDetector(
-                  onTap: () => TikiCardController.launchUrl(_discordLink),
+                  onTap: () => TikiCardController.openUrl(_discordLink),
                   child: Container(
                       height: SizeProvider.instance.width(50),
                       decoration: const BoxDecoration(
@@ -53,7 +53,7 @@ class UserAccountUiCommunity extends StatelessWidget {
           Container(width: 1, color: Colors.white),
           Expanded(
               child: GestureDetector(
-                  onTap: () => TikiCardController.launchUrl(_signalLink),
+                  onTap: () => TikiCardController.openUrl(_signalLink),
                   child: Container(
                       height: SizeProvider.instance.width(50),
                       color: _signalColor,
@@ -78,7 +78,7 @@ class UserAccountUiCommunity extends StatelessWidget {
           Container(width: 1, color: Colors.white),
           Expanded(
               child: GestureDetector(
-                  onTap: () => TikiCardController.launchUrl(_telegramLink),
+                  onTap: () => TikiCardController.openUrl(_telegramLink),
                   child: Container(
                       decoration: const BoxDecoration(
                           borderRadius: BorderRadius.only(

@@ -26,8 +26,8 @@ class UserAccountUiRelease extends StatelessWidget {
                       fontSize: SizeProvider.instance.text(15),
                       color: ColorProvider.orange)),
               Icon(Icons.arrow_forward, color: ColorProvider.orange, size: SizeProvider.instance.text(24)),
-              () => TikiCardController.launchUrl(_url)),
+              () => TikiCardController.openUrl(_url)),
         ),
-        onTap: () => TikiCardController.launchUrl(_url));
+        onTap: () => TikiCardController.openUrl(_url));
   }
 }

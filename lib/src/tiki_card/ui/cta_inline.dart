@@ -17,10 +17,10 @@ class TikiCardUiCtaInline extends TikiCardUiCta {
     return Row(mainAxisAlignment: MainAxisAlignment.start, children: <Widget>[
       headline,
       IconButton(
+        onPressed: () => callback!(),
         padding: const EdgeInsets.only(left: 4),
         alignment: Alignment.centerLeft,
         icon: trailingIcon,
-        onPressed: () => callback!(),
       )
     ]);
   }

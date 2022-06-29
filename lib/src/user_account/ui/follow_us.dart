@@ -27,7 +27,7 @@ class UserAccountUiFollowUs extends StatelessWidget {
       cta: TikiCardUiCtaGrid([
         Expanded(
             child: GestureDetector(
-                onTap: () => TikiCardController.launchUrl(_facebookUrl),
+                onTap: () => TikiCardController.openUrl(_facebookUrl),
                 child: Container(
                     padding: EdgeInsets.only(
                         left: SizeProvider.instance.width(3 * _btnPaddingHorizontal*3.75),
@@ -38,7 +38,7 @@ class UserAccountUiFollowUs extends StatelessWidget {
                     SizedBox(child: ImgProvider.facebookButton, height: SizeProvider.instance.width(_btnHeight*8.12))))),
         Expanded(
             child: GestureDetector(
-                onTap: () => TikiCardController.launchUrl(_twitterUrl),
+                onTap: () => TikiCardController.openUrl(_twitterUrl),
                 child: Container(
                     padding: EdgeInsets.only(
                         left: SizeProvider.instance.width(_btnPaddingHorizontal*3.75),
@@ -49,7 +49,7 @@ class UserAccountUiFollowUs extends StatelessWidget {
                     SizedBox(child:ImgProvider.twitterButton, height: SizeProvider.instance.width(_btnHeight*8.12))))),
         Expanded(
             child: GestureDetector(
-                onTap: () => TikiCardController.launchUrl(_instagramUrl),
+                onTap: () => TikiCardController.openUrl(_instagramUrl),
                 child: Container(
                     padding: EdgeInsets.only(
                         left: SizeProvider.instance.width(3 * _btnPaddingHorizontal*3.75),
@@ -60,7 +60,7 @@ class UserAccountUiFollowUs extends StatelessWidget {
                         height: SizeProvider.instance.width(_btnHeight*8.12))))),
         Expanded(
             child: GestureDetector(
-                onTap: () => TikiCardController.launchUrl(_tiktokUrl),
+                onTap: () => TikiCardController.openUrl(_tiktokUrl),
                 child: Container(
                     padding: EdgeInsets.only(
                         left: SizeProvider.instance.width(_btnPaddingHorizontal*3.75),
